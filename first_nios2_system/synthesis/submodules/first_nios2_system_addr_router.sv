@@ -102,7 +102,7 @@ module first_nios2_system_addr_router
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(32'h8000000 - 32'h4000000);
+    localparam PAD0 = log2ceil(32'h4800000 - 32'h4000000);
     localparam PAD1 = log2ceil(32'h8001000 - 32'h8000800);
 
     // -------------------------------------------------------
@@ -149,7 +149,7 @@ module first_nios2_system_addr_router
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-        // ( 0x4000000 .. 0x8000000 )
+        // ( 0x4000000 .. 0x4800000 )
         if ( {address[RG:PAD0],{PAD0{1'b0}}} == 'h4000000 ) begin
             src_channel = 6'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;

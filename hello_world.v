@@ -17,75 +17,34 @@
 // CREATED		"Wed Feb 06 13:18:54 2013"
 
 module hello_world(
-	iCLK_50,
-	oDRAM0_WE_N,
-	oDRAM0_CAS_N,
-	oDRAM0_CKE,
-	oDRAM0_CS_N,
-	oDRAM0_RAS_N,
-	oDRAM1_CKE,
-	oDRAM1_CS_N,
-	oDRAM1_RAS_N,
-	oDRAM1_WE_N,
-	oDRAM1_CAS_N,
-	oDRAM0_CLK,
-	oDRAM1_CLK,
-	DRAM_DQ,
-	oDRAM0_A,
-	oDRAM0_BA,
-	oDRAM1_A,
-	oDRAM1_BA,
-	oDRAM_DM,
-	oLEDG
+	input CLOCK_50,
+	output DRAM_CAS_N,
+	output DRAM_WE_N,
+	output DRAM_RAS_N,
+	output DRAM_CKE,
+	output DRAM_CS_N,
+	output DRAM_CLK,
+	inout [15:0] DRAM_DQ,
+	output [11:0] DRAM_ADDR,
+	output [1:0] DRAM_BA,
+	output [1:0] DRAM_DQM
 );
 
-
-input wire	iCLK_50;
-output wire	oDRAM0_WE_N;
-output wire	oDRAM0_CAS_N;
-output wire	oDRAM0_CKE;
-output wire	oDRAM0_CS_N;
-output wire	oDRAM0_RAS_N;
-output wire	oDRAM1_CKE;
-output wire	oDRAM1_CS_N;
-output wire	oDRAM1_RAS_N;
-output wire	oDRAM1_WE_N;
-output wire	oDRAM1_CAS_N;
-output wire	oDRAM0_CLK;
-output wire	oDRAM1_CLK;
-inout wire	[31:0] DRAM_DQ;
-output wire	[12:0] oDRAM0_A;
-output wire	[1:0] oDRAM0_BA;
-output wire	[12:0] oDRAM1_A;
-output wire	[1:0] oDRAM1_BA;
-output wire	[3:0] oDRAM_DM;
-output wire	[7:0] oLEDG;
-
-	first_nios2_system u0 (
-        .clk_clk                            (iCLK_50),                            //                         clk.clk
+    first_nios2_system u0 (
+        .clk_clk                            (CLOCK_50),                            //                         clk.clk
         .reset_reset_n                      (1),                      //                       reset.reset_n
-        .led_pio_external_connection_export (oLEDG), // led_pio_external_connection.export
-        .sdram_0_wire_addr                  (oDRAM0_A),                  //                sdram_0_wire.addr
-        .sdram_0_wire_ba                    (oDRAM0_BA),                    //                            .ba
-        .sdram_0_wire_cas_n                 (oDRAM0_CAS_N),                 //                            .cas_n
-        .sdram_0_wire_cke                   (oDRAM0_CKE),                   //                            .cke
-        .sdram_0_wire_cs_n                  (oDRAM0_CS_N),                  //                            .cs_n
+        .led_pio_external_connection_export (LEDG), // led_pio_external_connection.export
+        .sdram_0_wire_addr                  (DRAM_ADDR),                  //                sdram_0_wire.addr
+        .sdram_0_wire_ba                    (DRAM_BA),                    //                            .ba
+        .sdram_0_wire_cas_n                 (DRAM_CAS_N),                 //                            .cas_n
+        .sdram_0_wire_cke                   (DRAM_CKE),                   //                            .cke
+        .sdram_0_wire_cs_n                  (DRAM_CS_N),                  //                            .cs_n
         .sdram_0_wire_dq                    (DRAM_DQ),                    //                            .dq
-        .sdram_0_wire_dqm                   (oDRAM_DM),                   //                            .dqm
-        .sdram_0_wire_ras_n                 (oDRAM0_RAS_N),                 //                            .ras_n
-        .sdram_0_wire_we_n                  (oDRAM0_WE_N),                   //                            .we_n
-		  .sdram_external_clk_clk             (oDRAM0_CLK)
+        .sdram_0_wire_dqm                   (DRAM_DQM),                   //                            .dqm
+        .sdram_0_wire_ras_n                 (DRAM_RAS_N),                 //                            .ras_n
+        .sdram_0_wire_we_n                  (DRAM_WE_N),                  //                            .we_n
+        .sdram_external_clk_clk             (DRAM_CLK)              //          sdram_external_clk.clk
     );
-	 
-	//parallell drive hack
-	assign oDRAM1_A = oDRAM0_A;
-	assign oDRAM1_BA = oDRAM0_BA;
-	assign oDRAM1_CAS_N = oDRAM0_CAS_N;
-	assign oDRAM1_CKE = oDRAM0_CKE;
-	assign oDRAM1_CS_N = oDRAM0_CS_N;
-	assign oDRAM1_RAS_N = oDRAM0_RAS_N;
-	assign oDRAM1_WE_N = oDRAM0_WE_N;
-	assign oDRAM1_CLK = oDRAM0_CLK;
 
 
 endmodule

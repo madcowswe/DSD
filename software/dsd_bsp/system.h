@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
  *
- * Generated: Wed Feb 06 18:50:58 GMT 2013
+ * Generated: Fri Feb 22 16:52:36 GMT 2013
  */
 
 /*
@@ -136,7 +136,7 @@
  *
  */
 
-#define ALT_DEVICE_FAMILY "Cyclone II"
+#define ALT_DEVICE_FAMILY "Cyclone III"
 #define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
 #define ALT_LOG_PORT "/dev/null"
@@ -205,7 +205,7 @@
 #define LED_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_PIO_CAPTURE 0
-#define LED_PIO_DATA_WIDTH 8
+#define LED_PIO_DATA_WIDTH 10
 #define LED_PIO_DO_TEST_BENCH_WIRING 0
 #define LED_PIO_DRIVEN_SIM_VALUE 0x0
 #define LED_PIO_EDGE_TYPE "NONE"
@@ -237,19 +237,19 @@
 #define SDRAM_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SDRAM_0_IS_INITIALIZED 1
 #define SDRAM_0_NAME "/dev/sdram_0"
-#define SDRAM_0_POWERUP_DELAY 200.0
-#define SDRAM_0_REFRESH_PERIOD 7.8125
+#define SDRAM_0_POWERUP_DELAY 100.0
+#define SDRAM_0_REFRESH_PERIOD 15.625
 #define SDRAM_0_REGISTER_DATA_IN 1
-#define SDRAM_0_SDRAM_ADDR_WIDTH 0x18
+#define SDRAM_0_SDRAM_ADDR_WIDTH 0x16
 #define SDRAM_0_SDRAM_BANK_WIDTH 2
-#define SDRAM_0_SDRAM_COL_WIDTH 9
-#define SDRAM_0_SDRAM_DATA_WIDTH 32
+#define SDRAM_0_SDRAM_COL_WIDTH 8
+#define SDRAM_0_SDRAM_DATA_WIDTH 16
 #define SDRAM_0_SDRAM_NUM_BANKS 4
 #define SDRAM_0_SDRAM_NUM_CHIPSELECTS 1
-#define SDRAM_0_SDRAM_ROW_WIDTH 13
+#define SDRAM_0_SDRAM_ROW_WIDTH 12
 #define SDRAM_0_SHARED_DATA 0
 #define SDRAM_0_SIM_MODEL_BASE 0
-#define SDRAM_0_SPAN 67108864
+#define SDRAM_0_SPAN 8388608
 #define SDRAM_0_STARVATION_INDICATOR 0
 #define SDRAM_0_TRISTATE_BRIDGE_SLAVE ""
 #define SDRAM_0_TYPE "altera_avalon_new_sdram_controller"
@@ -299,7 +299,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1360176292
+#define SYSID_TIMESTAMP 1361551226
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

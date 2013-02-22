@@ -84,19 +84,19 @@
          type = "int";
       }
    }
-   element onchip_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "65536";
-         type = "long";
-      }
-   }
    element sys_clk_timer.s1
    {
       datum baseAddress
       {
          value = "134221824";
+         type = "long";
+      }
+   }
+   element onchip_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "65536";
          type = "long";
       }
    }
@@ -160,7 +160,7 @@
  <parameter name="projectName" value="hello_world.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1360168749125" />
+ <parameter name="timeStamp" value="1361549382208" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -295,8 +295,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x4000000' end='0x8000000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x4000000' end='0x8000000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /><slave name='sys_clk_timer.s1' start='0x8001000' end='0x8001020' /><slave name='led_pio.s1' start='0x8001020' end='0x8001030' /><slave name='jtag_uart.avalon_jtag_slave' start='0x8001030' end='0x8001038' /><slave name='sysid.control_slave' start='0x8001038' end='0x8001040' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x4000000' end='0x4800000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x4000000' end='0x4800000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /><slave name='sys_clk_timer.s1' start='0x8001000' end='0x8001020' /><slave name='led_pio.s1' start='0x8001020' end='0x8001030' /><slave name='jtag_uart.avalon_jtag_slave' start='0x8001030' end='0x8001038' /><slave name='sysid.control_slave' start='0x8001038' end='0x8001040' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
@@ -367,7 +367,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="8" />
+  <parameter name="width" value="10" />
  </module>
  <module
    kind="altera_avalon_new_sdram_controller"
@@ -382,8 +382,8 @@
   <parameter name="TWR" value="14.0" />
   <parameter name="casLatency" value="3" />
   <parameter name="clockRate" value="50000000" />
-  <parameter name="columnWidth" value="9" />
-  <parameter name="dataWidth" value="32" />
+  <parameter name="columnWidth" value="8" />
+  <parameter name="dataWidth" value="16" />
   <parameter name="generateSimulationModel" value="false" />
   <parameter name="initNOPDelay" value="0.0" />
   <parameter name="initRefreshCommands" value="2" />
@@ -392,10 +392,10 @@
   <parameter name="numberOfBanks" value="4" />
   <parameter name="numberOfChipSelects" value="1" />
   <parameter name="pinsSharedViaTriState" value="false" />
-  <parameter name="powerUpDelay" value="200.0" />
-  <parameter name="refreshPeriod" value="7.8125" />
+  <parameter name="powerUpDelay" value="100.0" />
+  <parameter name="refreshPeriod" value="15.625" />
   <parameter name="registerDataIn" value="true" />
-  <parameter name="rowWidth" value="13" />
+  <parameter name="rowWidth" value="12" />
  </module>
  <module kind="altpll" version="12.0" enabled="1" name="altpll_0">
   <parameter name="HIDDEN_CUSTOM_ELABORATION">altpll_avalon_elaboration</parameter>
