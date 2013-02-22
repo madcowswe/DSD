@@ -1,0 +1,9 @@
+*.a
+*.o
+*.rpt
+*.pof
+*.sof
+*.pin
+*.summary
+db/
+incremental_db/
