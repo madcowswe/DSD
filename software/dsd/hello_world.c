@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define MXSIZE 20
+#define MXSIZE 8
 
 float **tempmat;
 
