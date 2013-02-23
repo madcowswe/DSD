@@ -1,7 +1,7 @@
-Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(1690): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(1692): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(1848): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(2767): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(2008): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(2010): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(2166): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_cpu.v(3085): conditional expression evaluates to a constant
 Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_sdram_0.v(316): conditional expression evaluates to a constant
 Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_sdram_0.v(326): conditional expression evaluates to a constant
 Warning (10037): Verilog HDL or VHDL warning at first_nios2_system_sdram_0.v(336): conditional expression evaluates to a constant
