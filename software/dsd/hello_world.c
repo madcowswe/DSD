@@ -22,10 +22,17 @@
 #include "system.h"
 #include <stdio.h>
 #include <unistd.h>
+#include "altera_avalon_pio_regs.h"
+
+#include "./fp_custom/fp_custom.h"
 
 #define MXSIZE 20
 
 float **tempmat;
+/*
+int alt_main(){
+	main();
+}*/
 
 typedef float mat3x3[3][3];
 float det3x3(volatile mat3x3 inmat){
@@ -81,8 +88,44 @@ float detmat(float matrix[][MXSIZE]){
 
 int main()
 {
-	while(1){
-		printf("Hello from Nios II!\n");
+	float a = 1.5;
+	float b = 0.7;
+	float c = 0;
+
+	char buf[10];
+
+
+	//printf("Hello from Nios II!\n");
+while(1)
+{
+		c = FP_ADD_CI(a,b);
+		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
+		gcvt(c, 10, buf);
+		alt_putstr("a+b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+
+		c = FP_SUB_CI(a,b);
+		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
+		gcvt(c, 10, buf);
+		alt_putstr("a-b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+
+		c = FP_MUL_CI(a,b);
+		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
+		gcvt(c, 10, buf);
+		alt_putstr("a*b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+
+		a += 1;
+		b += 1;
+
+}
+		/*
+		c = FP_SUB_CI(a,b);
+		gcvt(c, 10, buf);
+		alt_putstr("a-b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+
+		c = FP_MUL_CI(a,b);
+		gcvt(c, 10, buf);
+		alt_putstr("a*b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");*/
+		/*
 
 		volatile float testmat[MXSIZE][MXSIZE] = {{-2,2,-3},{-1,1,3},{2,0,-1}};
 		char buf[10];
@@ -110,6 +153,6 @@ int main()
 		free(tempmat);
 
 	}
-
+*/
 	return 0;
 }

@@ -1,4 +1,4 @@
-//altpll_avalon avalon_use_separate_sysclk="NO" CBX_SINGLE_OUTPUT_FILE="ON" CBX_SUBMODULE_USED_PORTS="altpll:areset,clk,locked,inclk" address areset c0 clk locked phasedone read readdata reset write writedata clk0_divide_by=1 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="-2550" compensate_clock="CLK0" device_family="CYCLONEII" inclk0_input_frequency=20000 intended_device_family="Cyclone II" operation_mode="normal" port_clk0="PORT_USED" port_clk1="PORT_UNUSED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED"
+//altpll_avalon avalon_use_separate_sysclk="NO" CBX_SINGLE_OUTPUT_FILE="ON" CBX_SUBMODULE_USED_PORTS="altpll:areset,clk,locked,inclk" address areset c0 clk locked phasedone read readdata reset write writedata bandwidth_type="AUTO" clk0_divide_by=1 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="-2550" compensate_clock="CLK0" device_family="CYCLONEIII" inclk0_input_frequency=20000 intended_device_family="Cyclone III" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_UNUSED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" width_clock=5
 //VERSION_BEGIN 12.0 cbx_altclkbuf 2012:05:31:20:08:35:SJ cbx_altiobuf_bidir 2012:05:31:20:08:35:SJ cbx_altiobuf_in 2012:05:31:20:08:35:SJ cbx_altiobuf_out 2012:05:31:20:08:35:SJ cbx_altpll 2012:05:31:20:08:35:SJ cbx_altpll_avalon 2012:05:31:20:08:35:SJ cbx_cycloneii 2012:05:31:20:08:35:SJ cbx_lpm_add_sub 2012:05:31:20:08:35:SJ cbx_lpm_compare 2012:05:31:20:08:35:SJ cbx_lpm_counter 2012:05:31:20:08:35:SJ cbx_lpm_decode 2012:05:31:20:08:35:SJ cbx_lpm_mux 2012:05:31:20:08:35:SJ cbx_lpm_shiftreg 2012:05:31:20:08:35:SJ cbx_mgl 2012:05:31:20:09:47:SJ cbx_stratix 2012:05:31:20:08:35:SJ cbx_stratixii 2012:05:31:20:08:35:SJ cbx_stratixiii 2012:05:31:20:08:35:SJ cbx_stratixv 2012:05:31:20:08:35:SJ cbx_util_mgl 2012:05:31:20:08:35:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -119,10 +119,94 @@ module  first_nios2_system_altpll_0_stdsync_sv6
 endmodule //first_nios2_system_altpll_0_stdsync_sv6
 
 
-//altpll CBX_SINGLE_OUTPUT_FILE="ON" clk0_divide_by=1 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="-2550" compensate_clock="CLK0" device_family="CYCLONEII" inclk0_input_frequency=20000 intended_device_family="Cyclone II" operation_mode="normal" port_clk0="PORT_USED" port_clk1="PORT_UNUSED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" areset clk inclk locked
+//altpll bandwidth_type="AUTO" CBX_SINGLE_OUTPUT_FILE="ON" clk0_divide_by=1 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="-2550" compensate_clock="CLK0" device_family="CYCLONEIII" inclk0_input_frequency=20000 intended_device_family="Cyclone III" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_UNUSED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" width_clock=5 areset clk inclk locked
 //VERSION_BEGIN 12.0 cbx_altclkbuf 2012:05:31:20:08:35:SJ cbx_altiobuf_bidir 2012:05:31:20:08:35:SJ cbx_altiobuf_in 2012:05:31:20:08:35:SJ cbx_altiobuf_out 2012:05:31:20:08:35:SJ cbx_altpll 2012:05:31:20:08:35:SJ cbx_cycloneii 2012:05:31:20:08:35:SJ cbx_lpm_add_sub 2012:05:31:20:08:35:SJ cbx_lpm_compare 2012:05:31:20:08:35:SJ cbx_lpm_counter 2012:05:31:20:08:35:SJ cbx_lpm_decode 2012:05:31:20:08:35:SJ cbx_lpm_mux 2012:05:31:20:08:35:SJ cbx_mgl 2012:05:31:20:09:47:SJ cbx_stratix 2012:05:31:20:08:35:SJ cbx_stratixii 2012:05:31:20:08:35:SJ cbx_stratixiii 2012:05:31:20:08:35:SJ cbx_stratixv 2012:05:31:20:08:35:SJ cbx_util_mgl 2012:05:31:20:08:35:SJ  VERSION_END
 
-//synthesis_resources = altpll 1 reg 5 
+//synthesis_resources = cycloneiii_pll 1 reg 1 
+//synopsys translate_off
+`timescale 1 ps / 1 ps
+//synopsys translate_on
+(* ALTERA_ATTRIBUTE = {"SUPPRESS_DA_RULE_INTERNAL=C104;SUPPRESS_DA_RULE_INTERNAL=R101"} *)
+module  first_nios2_system_altpll_0_altpll_c842
+	( 
+	areset,
+	clk,
+	inclk,
+	locked) /* synthesis synthesis_clearbox=1 */;
+	input   areset;
+	output   [4:0]  clk;
+	input   [1:0]  inclk;
+	output   locked;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_off
+`endif
+	tri0   areset;
+	tri0   [1:0]  inclk;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_on
+`endif
+
+	reg	pll_lock_sync;
+	wire  [4:0]   wire_pll7_clk;
+	wire  wire_pll7_fbout;
+	wire  wire_pll7_locked;
+
+	// synopsys translate_off
+	initial
+		pll_lock_sync = 0;
+	// synopsys translate_on
+	always @ ( posedge wire_pll7_locked or  posedge areset)
+		if (areset == 1'b1) pll_lock_sync <= 1'b0;
+		else  pll_lock_sync <= 1'b1;
+	cycloneiii_pll   pll7
+	( 
+	.activeclock(),
+	.areset(areset),
+	.clk(wire_pll7_clk),
+	.clkbad(),
+	.fbin(wire_pll7_fbout),
+	.fbout(wire_pll7_fbout),
+	.inclk(inclk),
+	.locked(wire_pll7_locked),
+	.phasedone(),
+	.scandataout(),
+	.scandone(),
+	.vcooverrange(),
+	.vcounderrange()
+	`ifndef FORMAL_VERIFICATION
+	// synopsys translate_off
+	`endif
+	,
+	.clkswitch(1'b0),
+	.configupdate(1'b0),
+	.pfdena(1'b1),
+	.phasecounterselect({3{1'b0}}),
+	.phasestep(1'b0),
+	.phaseupdown(1'b0),
+	.scanclk(1'b0),
+	.scanclkena(1'b1),
+	.scandata(1'b0)
+	`ifndef FORMAL_VERIFICATION
+	// synopsys translate_on
+	`endif
+	);
+	defparam
+		pll7.bandwidth_type = "auto",
+		pll7.clk0_divide_by = 1,
+		pll7.clk0_duty_cycle = 50,
+		pll7.clk0_multiply_by = 1,
+		pll7.clk0_phase_shift = "-2550",
+		pll7.compensate_clock = "clk0",
+		pll7.inclk0_input_frequency = 20000,
+		pll7.operation_mode = "normal",
+		pll7.pll_type = "auto",
+		pll7.lpm_type = "cycloneiii_pll";
+	assign
+		clk = {wire_pll7_clk[4:0]},
+		locked = (wire_pll7_locked & pll_lock_sync);
+endmodule //first_nios2_system_altpll_0_altpll_c842
+
+//synthesis_resources = cycloneiii_pll 1 reg 6 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -152,7 +236,7 @@ module  first_nios2_system_altpll_0
 	input   [31:0]  writedata;
 
 	wire  wire_stdsync2_dout;
-	wire  [5:0]   wire_sd1_clk;
+	wire  [4:0]   wire_sd1_clk;
 	wire  wire_sd1_locked;
 	(* ALTERA_ATTRIBUTE = {"POWER_UP_LEVEL=HIGH"} *)
 	reg	pfdena_reg;
@@ -172,77 +256,12 @@ module  first_nios2_system_altpll_0
 	.din(wire_sd1_locked),
 	.dout(wire_stdsync2_dout),
 	.reset_n((~ reset)));
-	altpll   sd1
+	first_nios2_system_altpll_0_altpll_c842   sd1
 	( 
-	.activeclock(),
 	.areset((w_pll_areset_in | areset)),
 	.clk(wire_sd1_clk),
-	.clkbad(),
-	.clkloss(),
-	.enable0(),
-	.enable1(),
-	.extclk(),
-	.fbout(),
-	.fref(),
-	.icdrclk(),
 	.inclk({{1{1'b0}}, clk}),
-	.locked(wire_sd1_locked),
-	.phasedone(),
-	.scandataout(),
-	.scandone(),
-	.sclkout0(),
-	.sclkout1(),
-	.vcooverrange(),
-	.vcounderrange()
-	`ifndef FORMAL_VERIFICATION
-	// synopsys translate_off
-	`endif
-	,
-	.clkena({6{1'b1}}),
-	.clkswitch(1'b0),
-	.configupdate(1'b0),
-	.extclkena({4{1'b1}}),
-	.fbin(1'b1),
-	.pfdena(1'b1),
-	.phasecounterselect({4{1'b1}}),
-	.phasestep(1'b1),
-	.phaseupdown(1'b1),
-	.pllena(1'b1),
-	.scanaclr(1'b0),
-	.scanclk(1'b0),
-	.scanclkena(1'b1),
-	.scandata(1'b0),
-	.scanread(1'b0),
-	.scanwrite(1'b0)
-	`ifndef FORMAL_VERIFICATION
-	// synopsys translate_on
-	`endif
-	);
-	defparam
-		sd1.clk0_divide_by = 1,
-		sd1.clk0_duty_cycle = 50,
-		sd1.clk0_multiply_by = 1,
-		sd1.clk0_phase_shift = "-2550",
-		sd1.compensate_clock = "CLK0",
-		sd1.inclk0_input_frequency = 20000,
-		sd1.operation_mode = "normal",
-		sd1.port_clk0 = "PORT_USED",
-		sd1.port_clk1 = "PORT_UNUSED",
-		sd1.port_clk2 = "PORT_UNUSED",
-		sd1.port_clk3 = "PORT_UNUSED",
-		sd1.port_clk4 = "PORT_UNUSED",
-		sd1.port_clk5 = "PORT_UNUSED",
-		sd1.port_extclk0 = "PORT_UNUSED",
-		sd1.port_extclk1 = "PORT_UNUSED",
-		sd1.port_extclk2 = "PORT_UNUSED",
-		sd1.port_extclk3 = "PORT_UNUSED",
-		sd1.port_inclk1 = "PORT_UNUSED",
-		sd1.port_phasecounterselect = "PORT_UNUSED",
-		sd1.port_phasedone = "PORT_UNUSED",
-		sd1.port_scandata = "PORT_UNUSED",
-		sd1.port_scandataout = "PORT_UNUSED",
-		sd1.intended_device_family = "Cyclone II",
-		sd1.lpm_type = "altpll";
+	.locked(wire_sd1_locked));
 	// synopsys translate_off
 	initial
 		pfdena_reg = {1{1'b1}};

@@ -87,11 +87,11 @@ ACDS_VERSION := 12.0
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
-JDI_FILE := H:/DSD/student_files_v2/de2-70_system_template/hello_world.jdi
+JDI_FILE := H:/DSD_DE0/DSD/hello_world.jdi
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
+SOPCINFO_FILE := H:/DSD_DE0/DSD/first_nios2_system.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -156,9 +156,9 @@ SOPC_SYSID_FLAG += --sidp=0x8001038
 ELF_PATCH_FLAG  += --sidp 0x8001038
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1361551226
-SOPC_SYSID_FLAG += --timestamp=1361551226
-ELF_PATCH_FLAG  += --timestamp 1361551226
+# setting SOPC_TIMESTAMP is 1361656246
+SOPC_SYSID_FLAG += --timestamp=1361656246
+ELF_PATCH_FLAG  += --timestamp 1361656246
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false

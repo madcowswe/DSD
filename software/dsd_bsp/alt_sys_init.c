@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
- * SOPC Builder design path: H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
+ * SOPC Builder design path: H:/DSD_DE0/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Wed Feb 06 15:44:38 GMT 2013
+ * Generated: Fri Feb 22 17:33:08 GMT 2013
  */
 
 /*

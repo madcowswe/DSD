@@ -101,7 +101,7 @@ ACDS_VERSION := 12.0
 # BUILD_NUMBER: 178
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
+SOPC_FILE := H:/DSD_DE0/DSD/first_nios2_system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
