@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+valtera_avalon_clock_source
+Z1 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+DXx4 work 13 verbosity_pkg 0 22 I19AYoFHDUcfkEiQT;4mm0
+!s100 ^ib^62WdPg9[W`_SgKf>=2
+IA`0;@?THjEca3SHS>gi<V2
+V:d=elT9HoX`Bh48e@o66B2
+!s105 altera_avalon_clock_source_sv_unit
+S1
+Z2 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+Z3 w1361660691
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv
+L0 23
+Z4 OV;L;10.0d;49
+r1
+!s85 0
+31
+!s108 1361661126.378000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv|
+!s90 -reportprogress|300|-sv|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv|-work|first_nios2_system_tb_first_nios2_system_inst_clk_bfm|
+!s101 -O0
+Z5 o-sv -work first_nios2_system_tb_first_nios2_system_inst_clk_bfm -O0
+Xverbosity_pkg
+R1
+II19AYoFHDUcfkEiQT;4mm0
+VI19AYoFHDUcfkEiQT;4mm0
+S1
+R2
+R3
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+L0 61
+R4
+r1
+31
+R5
+!s100 c>BzFGj`SZ7JehOiOA]d;2
+!s85 0
+!s108 1361661125.601000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv|
+!s90 -reportprogress|300|-sv|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv|-work|first_nios2_system_tb_first_nios2_system_inst_clk_bfm|
+!s101 -O0

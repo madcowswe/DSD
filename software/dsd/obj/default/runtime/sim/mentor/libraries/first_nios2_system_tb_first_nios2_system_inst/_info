@@ -1,0 +1,23 @@
+m255
+K3
+13
+cModel Technology
+Z0 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system
+!s100 Ni@=9^YIb]@<`AGgl28380
+IcG@HznP9>jH^B`d4A_P?a2
+VXa=;9f:Yed[R1=]23;D`F2
+Z1 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+w1361660691
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v
+L0 6
+OV;L;10.0d;49
+r1
+!s85 0
+31
+!s108 1361661126.959000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v|
+!s90 -reportprogress|300|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v|-work|first_nios2_system_tb_first_nios2_system_inst|
+!s101 -O0
+o-work first_nios2_system_tb_first_nios2_system_inst -O0

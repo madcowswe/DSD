@@ -144,18 +144,18 @@ flash2dat_extra_args = $(mem_pad_flag) $(mem_reloc_input_flag)
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.0
-ACDS_VERSION := 12.0
+# ACDS_VERSION: 12.0sp2
+ACDS_VERSION := 12.0sp2
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 178
+# BUILD_NUMBER: 263
 
 # Optimize for simulation
 SIM_OPTIMIZE ?= 0
 
 # The CPU reset address as needed by elf2flash
-RESET_ADDRESS ?= 0x04000000
+RESET_ADDRESS ?= 0x00800000
 
 #-------------------------------------
 # Pre-Initialized Memory Descriptions
@@ -164,12 +164,13 @@ RESET_ADDRESS ?= 0x04000000
 # Memory: sdram_0
 MEM_0 := sdram_0
 $(MEM_0)_NAME := sdram_0
+$(MEM_0)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_0).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
-$(MEM_0)_START := 0x04000000
-$(MEM_0)_END := 0x047fffff
+$(MEM_0)_START := 0x00800000
+$(MEM_0)_END := 0x00ffffff
 $(MEM_0)_HIERARCHICAL_PATH := sdram_0
 $(MEM_0)_WIDTH := 16
 $(MEM_0)_ENDIANNESS := --little-endian-mem

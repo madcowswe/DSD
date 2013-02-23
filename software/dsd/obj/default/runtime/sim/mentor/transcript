@@ -1,0 +1,554 @@
+# Reading C:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do msim_setup.tcl 
+# first_nios2_system_tb
+# ./../
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# List Of Command Line Aliases 
+# 
+# dev_com                       -- Compile device library files 
+# 
+# com                           -- Compile the design files in correct order 
+# 
+# elab                          -- Elaborate top level design 
+# 
+# elab_debug                    -- Elaborate the top level design with novopt option 
+# 
+# ld                            -- Compile all the design files and elaborate the top level design 
+# 
+# ld_debug                      -- Compile all the design files and elaborate the top level design with -novopt 
+# 
+# 
+# 
+# List Of Variables 
+# 
+# TOP_LEVEL_NAME                -- Top level module name. 
+# 
+# SYSTEM_INSTANCE_NAME          -- Instantiated system module name inside top level module. 
+# 
+# QSYS_SIMDIR                   -- Qsys base simulation directory. 
+#  ld 
+# [exec] dev_com 
+# [exec] com 
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_irq_mapper
+# 
+# Top level modules:
+# 	first_nios2_system_irq_mapper
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_width_adapter
+# 
+# Top level modules:
+# 	altera_merlin_width_adapter
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_rsp_xbar_mux_001
+# 
+# Top level modules:
+# 	first_nios2_system_rsp_xbar_mux_001
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_rsp_xbar_mux
+# 
+# Top level modules:
+# 	first_nios2_system_rsp_xbar_mux
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_rsp_xbar_demux_002
+# 
+# Top level modules:
+# 	first_nios2_system_rsp_xbar_demux_002
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_rsp_xbar_demux
+# 
+# Top level modules:
+# 	first_nios2_system_rsp_xbar_demux
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cmd_xbar_mux
+# 
+# Top level modules:
+# 	first_nios2_system_cmd_xbar_mux
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cmd_xbar_demux_001
+# 
+# Top level modules:
+# 	first_nios2_system_cmd_xbar_demux_001
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cmd_xbar_demux
+# 
+# Top level modules:
+# 	first_nios2_system_cmd_xbar_demux
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_burst_adapter_burstwrap_increment
+# -- Compiling module altera_merlin_burst_adapter_adder
+# -- Compiling module altera_merlin_burst_adapter_subtractor
+# -- Compiling module altera_merlin_burst_adapter_min
+# -- Compiling module altera_merlin_burst_adapter
+# -- Compiling module altera_merlin_burst_adapter_uncompressed_only
+# -- Compiling module altera_merlin_burst_adapter_full
+# 
+# Top level modules:
+# 	altera_merlin_burst_adapter
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_traffic_limiter
+# 
+# Top level modules:
+# 	altera_merlin_traffic_limiter
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_avalon_st_pipeline_base
+# 
+# Top level modules:
+# 	altera_avalon_st_pipeline_base
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_id_router_002_default_decode
+# -- Compiling module first_nios2_system_id_router_002
+# 
+# Top level modules:
+# 	first_nios2_system_id_router_002
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_id_router_001_default_decode
+# -- Compiling module first_nios2_system_id_router_001
+# 
+# Top level modules:
+# 	first_nios2_system_id_router_001
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_id_router_default_decode
+# -- Compiling module first_nios2_system_id_router
+# 
+# Top level modules:
+# 	first_nios2_system_id_router
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_addr_router_001_default_decode
+# -- Compiling module first_nios2_system_addr_router_001
+# 
+# Top level modules:
+# 	first_nios2_system_addr_router_001
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_addr_router_default_decode
+# -- Compiling module first_nios2_system_addr_router
+# 
+# Top level modules:
+# 	first_nios2_system_addr_router
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_slave_agent
+# 
+# Top level modules:
+# 	altera_merlin_slave_agent
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_master_agent
+# 
+# Top level modules:
+# 	altera_merlin_master_agent
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_slave_translator
+# 
+# Top level modules:
+# 	altera_merlin_slave_translator
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_merlin_master_translator
+# 
+# Top level modules:
+# 	altera_merlin_master_translator
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_sdram_0_input_efifo_module
+# -- Compiling module first_nios2_system_sdram_0
+# 
+# Top level modules:
+# 	first_nios2_system_sdram_0
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_sdram_0_test_component_ram_module
+# -- Compiling module first_nios2_system_sdram_0_test_component
+# 
+# Top level modules:
+# 	first_nios2_system_sdram_0_test_component
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_led_pio
+# 
+# Top level modules:
+# 	first_nios2_system_led_pio
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_sysid
+# 
+# Top level modules:
+# 	first_nios2_system_sysid
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_sys_clk_timer
+# 
+# Top level modules:
+# 	first_nios2_system_sys_clk_timer
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_jtag_uart_log_module
+# -- Compiling module first_nios2_system_jtag_uart_sim_scfifo_w
+# -- Compiling module first_nios2_system_jtag_uart_scfifo_w
+# -- Compiling module first_nios2_system_jtag_uart_drom_module
+# -- Compiling module first_nios2_system_jtag_uart_sim_scfifo_r
+# -- Compiling module first_nios2_system_jtag_uart_scfifo_r
+# -- Compiling module first_nios2_system_jtag_uart
+# 
+# Top level modules:
+# 	first_nios2_system_jtag_uart
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu
+# 
+# Top level modules:
+# 	first_nios2_system_cpu
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_jtag_debug_module_sysclk
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_jtag_debug_module_sysclk
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_jtag_debug_module_tck
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_jtag_debug_module_tck
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_jtag_debug_module_wrapper
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_jtag_debug_module_wrapper
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_mult_cell
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_mult_cell
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_oci_test_bench
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_oci_test_bench
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_cpu_test_bench
+# 
+# Top level modules:
+# 	first_nios2_system_cpu_test_bench
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_sdram_partner_module
+# 
+# Top level modules:
+# 	altera_sdram_partner_module
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling package verbosity_pkg
+# 
+# Top level modules:
+# 	--none--
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_conduit_bfm
+# -- Importing package verbosity_pkg
+# 
+# Top level modules:
+# 	altera_conduit_bfm
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling package verbosity_pkg
+# 
+# Top level modules:
+# 	--none--
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_avalon_reset_source
+# -- Importing package verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_reset_source
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling package verbosity_pkg
+# 
+# Top level modules:
+# 	--none--
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module altera_avalon_clock_source
+# -- Importing package verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_clock_source
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system
+# 
+# Top level modules:
+# 	first_nios2_system
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module first_nios2_system_tb
+# 
+# Top level modules:
+# 	first_nios2_system_tb
+# [exec] elab 
+# vsim -L work -L first_nios2_system_tb_irq_mapper -L first_nios2_system_tb_width_adapter -L first_nios2_system_tb_rsp_xbar_mux_001 -L first_nios2_system_tb_rsp_xbar_mux -L first_nios2_system_tb_rsp_xbar_demux_002 -L first_nios2_system_tb_rsp_xbar_demux -L first_nios2_system_tb_cmd_xbar_mux -L first_nios2_system_tb_cmd_xbar_demux_001 -L first_nios2_system_tb_cmd_xbar_demux -L first_nios2_system_tb_rst_controller -L first_nios2_system_tb_burst_adapter -L first_nios2_system_tb_limiter -L first_nios2_system_tb_id_router_002 -L first_nios2_system_tb_id_router_001 -L first_nios2_system_tb_id_router -L first_nios2_system_tb_addr_router_001 -L first_nios2_system_tb_addr_router -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent -L first_nios2_system_tb_cpu_jtag_debug_module_translator -L first_nios2_system_tb_cpu_instruction_master_translator -L first_nios2_system_tb_sdram_0 -L first_nios2_system_tb_led_pio -L first_nios2_system_tb_sysid -L first_nios2_system_tb_sys_clk_timer -L first_nios2_system_tb_jtag_uart -L first_nios2_system_tb_cpu -L first_nios2_system_tb_sdram_0_my_partner -L first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_tb_first_nios2_system_inst_reset_bfm -L first_nios2_system_tb_first_nios2_system_inst_clk_bfm -L first_nios2_system_tb_first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -t ps -G/first_nios2_system_tb/sdram_0_my_partner/INIT_FILE=\"H:/DSD/student_files_v2/de2-70_system_template/software/dsd/mem_init/hdl_sim/sdram_0.dat\" first_nios2_system_tb 
+# Loading work.first_nios2_system_tb
+# Loading first_nios2_system_tb_first_nios2_system_inst.first_nios2_system
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_jtag_debug_module_wrapper
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_jtag_debug_module_tck
+# Loading altera_mf_ver.altera_std_synchronizer
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_jtag_debug_module_sysclk
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_mult_cell
+# Loading altera_mf_ver.altmult_add
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_oci_test_bench
+# Loading first_nios2_system_tb_cpu.first_nios2_system_cpu_test_bench
+# Loading sgate_ver.oper_add
+# Loading lpm_ver.lpm_add_sub
+# Loading sgate_ver.oper_less_than
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_scfifo_w
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_sim_scfifo_w
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_log_module
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_scfifo_r
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_sim_scfifo_r
+# Loading first_nios2_system_tb_jtag_uart.first_nios2_system_jtag_uart_drom_module
+# Loading first_nios2_system_tb_sys_clk_timer.first_nios2_system_sys_clk_timer
+# Loading first_nios2_system_tb_sysid.first_nios2_system_sysid
+# Loading first_nios2_system_tb_led_pio.first_nios2_system_led_pio
+# Loading first_nios2_system_tb_sdram_0.first_nios2_system_sdram_0
+# Loading first_nios2_system_tb_sdram_0.first_nios2_system_sdram_0_input_efifo_module
+# Loading sv_std.std
+# Loading first_nios2_system_tb_cpu_instruction_master_translator.altera_merlin_master_translator
+# Loading first_nios2_system_tb_cpu_jtag_debug_module_translator.altera_merlin_slave_translator
+# Loading first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
+# Loading first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_slave_agent
+# Loading first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_burst_uncompressor
+# Loading first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.altera_avalon_sc_fifo
+# Loading first_nios2_system_tb_addr_router.first_nios2_system_addr_router
+# Loading first_nios2_system_tb_addr_router.first_nios2_system_addr_router_default_decode
+# Loading first_nios2_system_tb_addr_router_001.first_nios2_system_addr_router_001
+# Loading first_nios2_system_tb_addr_router_001.first_nios2_system_addr_router_001_default_decode
+# Loading first_nios2_system_tb_id_router.first_nios2_system_id_router
+# Loading first_nios2_system_tb_id_router.first_nios2_system_id_router_default_decode
+# Loading first_nios2_system_tb_id_router_001.first_nios2_system_id_router_001
+# Loading first_nios2_system_tb_id_router_001.first_nios2_system_id_router_001_default_decode
+# Loading first_nios2_system_tb_id_router_002.first_nios2_system_id_router_002
+# Loading first_nios2_system_tb_id_router_002.first_nios2_system_id_router_002_default_decode
+# Loading first_nios2_system_tb_limiter.altera_merlin_traffic_limiter
+# Loading first_nios2_system_tb_burst_adapter.altera_merlin_burst_adapter
+# Loading first_nios2_system_tb_rst_controller.altera_reset_controller
+# Loading first_nios2_system_tb_cmd_xbar_demux.first_nios2_system_cmd_xbar_demux
+# Loading first_nios2_system_tb_cmd_xbar_demux_001.first_nios2_system_cmd_xbar_demux_001
+# Loading first_nios2_system_tb_cmd_xbar_mux.first_nios2_system_cmd_xbar_mux
+# Loading first_nios2_system_tb_cmd_xbar_mux.altera_merlin_arbitrator
+# Loading first_nios2_system_tb_cmd_xbar_mux.altera_merlin_arb_adder
+# Loading first_nios2_system_tb_rsp_xbar_demux.first_nios2_system_rsp_xbar_demux
+# Loading first_nios2_system_tb_rsp_xbar_demux_002.first_nios2_system_rsp_xbar_demux_002
+# Loading first_nios2_system_tb_rsp_xbar_mux.first_nios2_system_rsp_xbar_mux
+# Loading first_nios2_system_tb_rsp_xbar_mux.altera_merlin_arbitrator
+# Loading first_nios2_system_tb_rsp_xbar_mux.altera_merlin_arb_adder
+# Loading first_nios2_system_tb_rsp_xbar_mux_001.first_nios2_system_rsp_xbar_mux_001
+# Loading first_nios2_system_tb_rsp_xbar_mux_001.altera_merlin_arbitrator
+# Loading first_nios2_system_tb_rsp_xbar_mux_001.altera_merlin_arb_adder
+# Loading first_nios2_system_tb_width_adapter.altera_merlin_width_adapter
+# Loading first_nios2_system_tb_irq_mapper.first_nios2_system_irq_mapper
+# Loading first_nios2_system_tb_first_nios2_system_inst_clk_bfm.verbosity_pkg
+# Loading first_nios2_system_tb_first_nios2_system_inst_clk_bfm.altera_avalon_clock_source
+# Loading first_nios2_system_tb_first_nios2_system_inst_reset_bfm.verbosity_pkg
+# Loading first_nios2_system_tb_first_nios2_system_inst_reset_bfm.altera_avalon_reset_source
+# Loading first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm.verbosity_pkg
+# Loading first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm.altera_conduit_bfm
+# Loading first_nios2_system_tb_sdram_0_my_partner.altera_sdram_partner_module
+# Loading first_nios2_system_tb_burst_adapter.altera_merlin_burst_adapter_uncompressed_only
+# Loading first_nios2_system_tb_rst_controller.altera_reset_synchronizer
+# Loading first_nios2_system_tb_width_adapter.altera_merlin_burst_uncompressor
+# ** Warning: (vsim-3017) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Too few port connections. Expected 52, found 6.
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/n0iiOOl/the_altmult_add_part_1
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'datac'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'scanina'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'scaninb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'sourcea'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'sourceb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'clock3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'clock2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'aclr3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'aclr2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'ena3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'ena2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'ena1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'signa'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'signb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'addnsub1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'addnsub3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'scanouta'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'scanoutb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult01_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult23_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult01_saturation'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult23_saturation'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'addnsub1_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'addnsub3_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult0_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult1_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult2_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'mult3_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'output_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'chainout_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'output_saturate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'chainout_saturate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'chainout_sat_overflow'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'chainin'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'zero_chainout'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'rotate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'shift_right'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'zero_loopback'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'accum_sload'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'coefsel0'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'coefsel1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'coefsel2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(52): [TFMPC] - Missing connection for port 'coefsel3'.
+# ** Warning: (vsim-3017) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Too few port connections. Expected 52, found 6.
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/n0iiOOl/the_altmult_add_part_2
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'datac'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'scanina'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'scaninb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'sourcea'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'sourceb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'clock3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'clock2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'aclr3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'aclr2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'ena3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'ena2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'ena1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'signa'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'signb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'addnsub1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'addnsub3'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'scanouta'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'scanoutb'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult01_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult23_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult01_saturation'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult23_saturation'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'addnsub1_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'addnsub3_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult0_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult1_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult2_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'mult3_is_saturated'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'output_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'chainout_round'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'output_saturate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'chainout_saturate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'chainout_sat_overflow'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'chainin'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'zero_chainout'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'rotate'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'shift_right'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'zero_loopback'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'accum_sload'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'coefsel0'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'coefsel1'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'coefsel2'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v(92): [TFMPC] - Missing connection for port 'coefsel3'.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(40148): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-3017) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(534): [TFMPC] - Too few port connections. Expected 12, found 10.
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(534): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(534): [TFMPC] - Missing connection for port 'readyfordata'.
+#   
+#  
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/led_pio/out_port
+run 100us
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.cpu.n0iiO0O
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.cpu.n0iiOlO
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/06/21 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/06/21 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_assert: Reset asserted
+# 
+# ************************************************************
+# This testbench includes an SOPC Builder Generated Altera model:
+# 'altera_sdram_partner_module.v', to simulate accesses to SDRAM.
+# Initial contents are loaded from the file: 'altera_sdram_partner_module.dat'.
+# ************************************************************
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/06/21 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50
+#                    0: INFO: ------------------------------------------------------------
+#               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+run 100us

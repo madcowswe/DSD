@@ -22,6 +22,8 @@
 #include "system.h"
 #include <stdio.h>
 #include <unistd.h>
+#include "determinant.h"
+#include "altera_avalon_pio_regs.h"
 
 #define MXSIZE 10
 
@@ -81,6 +83,15 @@ float detmat(float matrix[][MXSIZE]){
 
 int main()
 {
+
+	int i = 0;
+	while(1){
+		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, i++);
+	}
+
+	//barrier for old tests
+	while(1);
+
 	while(1){
 		printf("Hello from Nios II!\n");
 
@@ -112,4 +123,8 @@ int main()
 	}
 
 	return 0;
+}
+
+int alt_main(){
+	return main();
 }

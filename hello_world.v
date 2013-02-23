@@ -27,8 +27,10 @@ module hello_world(
 	inout [15:0] DRAM_DQ,
 	output [11:0] DRAM_ADDR,
 	output [1:0] DRAM_BA,
-	output [1:0] DRAM_DQM
+	output [1:0] DRAM_DQM,
+	output [9:0] LEDG
 );
+
 
     first_nios2_system u0 (
         .clk_clk                            (CLOCK_50),                            //                         clk.clk
@@ -43,7 +45,8 @@ module hello_world(
         .sdram_0_wire_dqm                   (DRAM_DQM),                   //                            .dqm
         .sdram_0_wire_ras_n                 (DRAM_RAS_N),                 //                            .ras_n
         .sdram_0_wire_we_n                  (DRAM_WE_N),                  //                            .we_n
-        .sdram_external_clk_clk             (DRAM_CLK)              //          sdram_external_clk.clk
+        //.sdram_external_clk_clk             (DRAM_CLK)              //          sdram_external_clk.clk
+		  .clock_bridge_0_out_clk_clk				(DRAM_CLK)
     );
 
 

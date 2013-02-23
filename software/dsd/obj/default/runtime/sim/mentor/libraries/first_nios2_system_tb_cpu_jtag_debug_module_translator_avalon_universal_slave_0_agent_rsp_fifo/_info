@@ -1,0 +1,23 @@
+m255
+K3
+13
+cModel Technology
+Z0 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+valtera_avalon_sc_fifo
+!s100 CQ5D2iz6Azz6>2l5h06?=2
+IG]cY;1CM3LHaJIQABH?DE3
+VjOzUMS5nAQIa6?lLKEfID0
+Z1 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+w1361660762
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
+L0 21
+OV;L;10.0d;49
+r1
+!s85 0
+31
+!s108 1361661103.876000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v|-work|first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo|
+!s101 -O0
+o-work first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -O0

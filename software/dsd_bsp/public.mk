@@ -78,12 +78,12 @@ ALT_CPPFLAGS += -DSYSTEM_BUS_WIDTH=32 \
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.0
-ACDS_VERSION := 12.0
+# ACDS_VERSION: 12.0sp2
+ACDS_VERSION := 12.0sp2
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 178
+# BUILD_NUMBER: 263
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
@@ -151,14 +151,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x8001038
-SOPC_SYSID_FLAG += --sidp=0x8001038
-ELF_PATCH_FLAG  += --sidp 0x8001038
+# setting SOPC_SYSID_BASE_ADDRESS is 0x1001038
+SOPC_SYSID_FLAG += --sidp=0x1001038
+ELF_PATCH_FLAG  += --sidp 0x1001038
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1361635545
-SOPC_SYSID_FLAG += --timestamp=1361635545
-ELF_PATCH_FLAG  += --timestamp 1361635545
+# setting SOPC_TIMESTAMP is 1361661571
+SOPC_SYSID_FLAG += --timestamp=1361661571
+ELF_PATCH_FLAG  += --timestamp 1361661571
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false

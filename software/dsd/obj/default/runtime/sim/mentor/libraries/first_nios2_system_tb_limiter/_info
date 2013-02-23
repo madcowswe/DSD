@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+valtera_avalon_st_pipeline_base
+!s100 fA[@EQzG952_`[:TT[kGj0
+ImV=cfD[mDm1dE99omeEA?2
+VzC;0]nBLKo0Q[zO07mJ[H0
+Z1 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
+Z2 w1361660762
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+L0 22
+Z3 OV;L;10.0d;49
+r1
+!s85 0
+31
+!s108 1361661098.461000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v|
+!s90 -reportprogress|300|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v|-work|first_nios2_system_tb_limiter|
+!s101 -O0
+o-work first_nios2_system_tb_limiter -O0
+valtera_merlin_traffic_limiter
+DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+Io@XeB`4ld:d]8:mz_>[V]2
+VFToJ:O^P1mK>hGEjaBQXC3
+S1
+R1
+R2
+8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv
+FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv
+L0 44
+R3
+r1
+31
+o-sv -work first_nios2_system_tb_limiter -O0
+!s100 SNiYZ5IFZf_E`9F__42eX0
+!s105 altera_merlin_traffic_limiter_sv_unit
+!s85 0
+!s108 1361661097.844000
+!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv|
+!s90 -reportprogress|300|-sv|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv|-work|first_nios2_system_tb_limiter|
+!s101 -O0

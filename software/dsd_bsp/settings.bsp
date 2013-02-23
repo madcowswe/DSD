@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>23-Feb-2013 16:13:59</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1361636039705</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2013-feb-23 23:35:07</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1361662507379</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>H:\DSD\student_files_v2\de2-70_system_template\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>H:\DSD\student_files_v2\de2-70_system_template\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -852,31 +852,31 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>sdram_0</slaveDescriptor>
-                <addressRange>0x04000000 - 0x047FFFFF</addressRange>
+                <addressRange>0x00800000 - 0x00FFFFFF</addressRange>
                 <addressSpan>8388608</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sys_clk_timer</slaveDescriptor>
-                <addressRange>0x08001000 - 0x0800101F</addressRange>
+                <addressRange>0x01001000 - 0x0100101F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>led_pio</slaveDescriptor>
-                <addressRange>0x08001020 - 0x0800102F</addressRange>
+                <addressRange>0x01001020 - 0x0100102F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
-                <addressRange>0x08001030 - 0x08001037</addressRange>
+                <addressRange>0x01001030 - 0x01001037</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x08001038 - 0x0800103F</addressRange>
+                <addressRange>0x01001038 - 0x0100103F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
