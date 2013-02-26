@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // -------------------------------------
@@ -28,7 +28,7 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         first_nios2_system_rsp_xbar_demux_002
-//   ST_DATA_W:           96
+//   ST_DATA_W:           98
 //   ST_CHANNEL_W:        6
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
@@ -46,7 +46,7 @@ module first_nios2_system_rsp_xbar_demux_002
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [96-1    : 0]   sink_data, // ST_DATA_W=96
+    input  [98-1    : 0]   sink_data, // ST_DATA_W=98
     input  [6-1 : 0]   sink_channel, // ST_CHANNEL_W=6
     input                         sink_startofpacket,
     input                         sink_endofpacket,
@@ -56,7 +56,7 @@ module first_nios2_system_rsp_xbar_demux_002
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [96-1    : 0] src0_data, // ST_DATA_W=96
+    output reg [98-1    : 0] src0_data, // ST_DATA_W=98
     output reg [6-1 : 0] src0_channel, // ST_CHANNEL_W=6
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
@@ -93,7 +93,8 @@ module first_nios2_system_rsp_xbar_demux_002
     // Backpressure
     // -------------------
     assign ready_vector[0] = src0_ready;
-    assign sink_ready = |(sink_channel & ready_vector);
+
+    assign sink_ready = |(sink_channel & {{5{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 

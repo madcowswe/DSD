@@ -120,51 +120,51 @@ module first_nios2_system_cpu_jtag_debug_module_sysclk (
     end
 
 
-  assign take_action_ocimem_a = enable_action_strobe && (ir == 2'b00) && 
+  assign take_action_ocimem_a = enable_action_strobe && (ir == 2'b00) && 
     ~jdo[35] && jdo[34];
 
-  assign take_no_action_ocimem_a = enable_action_strobe && (ir == 2'b00) && 
+  assign take_no_action_ocimem_a = enable_action_strobe && (ir == 2'b00) && 
     ~jdo[35] && ~jdo[34];
 
-  assign take_action_ocimem_b = enable_action_strobe && (ir == 2'b00) && 
+  assign take_action_ocimem_b = enable_action_strobe && (ir == 2'b00) && 
     jdo[35];
 
-  assign take_action_tracemem_a = enable_action_strobe && (ir == 2'b01) &&
-    ~jdo[37] && 
+  assign take_action_tracemem_a = enable_action_strobe && (ir == 2'b01) &&
+    ~jdo[37] && 
     jdo[36];
 
-  assign take_no_action_tracemem_a = enable_action_strobe && (ir == 2'b01) &&
-    ~jdo[37] && 
+  assign take_no_action_tracemem_a = enable_action_strobe && (ir == 2'b01) &&
+    ~jdo[37] && 
     ~jdo[36];
 
-  assign take_action_tracemem_b = enable_action_strobe && (ir == 2'b01) &&
+  assign take_action_tracemem_b = enable_action_strobe && (ir == 2'b01) &&
     jdo[37];
 
-  assign take_action_break_a = enable_action_strobe && (ir == 2'b10) && 
-    ~jdo[36] && 
+  assign take_action_break_a = enable_action_strobe && (ir == 2'b10) && 
+    ~jdo[36] && 
     jdo[37];
 
-  assign take_no_action_break_a = enable_action_strobe && (ir == 2'b10) && 
-    ~jdo[36] && 
+  assign take_no_action_break_a = enable_action_strobe && (ir == 2'b10) && 
+    ~jdo[36] && 
     ~jdo[37];
 
-  assign take_action_break_b = enable_action_strobe && (ir == 2'b10) && 
-    jdo[36] && ~jdo[35] &&
+  assign take_action_break_b = enable_action_strobe && (ir == 2'b10) && 
+    jdo[36] && ~jdo[35] &&
     jdo[37];
 
-  assign take_no_action_break_b = enable_action_strobe && (ir == 2'b10) && 
-    jdo[36] && ~jdo[35] &&
+  assign take_no_action_break_b = enable_action_strobe && (ir == 2'b10) && 
+    jdo[36] && ~jdo[35] &&
     ~jdo[37];
 
-  assign take_action_break_c = enable_action_strobe && (ir == 2'b10) && 
-    jdo[36] &&  jdo[35] &&
+  assign take_action_break_c = enable_action_strobe && (ir == 2'b10) && 
+    jdo[36] &&  jdo[35] &&
     jdo[37];
 
-  assign take_no_action_break_c = enable_action_strobe && (ir == 2'b10) && 
-    jdo[36] &&  jdo[35] &&
+  assign take_no_action_break_c = enable_action_strobe && (ir == 2'b10) && 
+    jdo[36] &&  jdo[35] &&
     ~jdo[37];
 
-  assign take_action_tracectrl = enable_action_strobe && (ir == 2'b11) &&  
+  assign take_action_tracectrl = enable_action_strobe && (ir == 2'b11) &&  
     jdo[15];
 
   always @(posedge clk)

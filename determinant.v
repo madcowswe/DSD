@@ -1,12 +1,5 @@
-// determinant.v
 
-// This file was auto-generated as a prototype implementation of a module
-// created in component editor.  It ties off all outputs to ground and
-// ignores all inputs.  It needs to be edited to make it do something
-// useful.
-// 
-// This file will not be automatically regenerated.  You should check it in
-// to your version control system if you want to keep it.
+//modelsim command: vlog ../../../../../../../determinant.v; restart -f; run 200us
 
 `timescale 1 ps / 1 ps
 module determinant #(
@@ -14,12 +7,12 @@ module determinant #(
 	) (
 		input  wire [31:0] dataa,         // nios_custom_instruction_slave.dataa
 		input  wire [31:0] datab,         //                              .datab
-		output wire [31:0] result,        //                              .result
+		output reg [31:0] result,        //                              .result
 		input  wire        cstm_reset,    //                              .reset
 		input  wire        cstm_clk,      //                              .clk
 		input  wire        clk_en,        //                              .clk_en
 		input  wire        start,         //                              .start
-		output wire        done,          //                              .done
+		output reg        done,          //                              .done
 		input  wire [1:0]  n,             //                              .n
 		output wire [29:0] address,       //                 avalon_master.address
 		input  wire [31:0] readdata,      //                              .readdata
@@ -33,14 +26,48 @@ module determinant #(
 
 	// TODO: Auto-generated HDL template
 
-	assign result = 32'b00000000000000000000000000000000;
+	localparam DMA_OPCODE = 0;
 
-	assign done = 1'b1;
+	localparam DMA_SUCCESS = 0;
+	localparam DMA_BUSY_FAIL = 1;
+	localparam DMA_GENERIC_FAIL = 2;
 
 	assign burstcount = 3'b000;
 
 	assign address = 30'b000000000000000000000000000000;
 
 	assign read = 1'b0;
+
+	reg dma_active;
+
+	always @(posedge cstm_clk) begin : proc_custom_regs
+
+		if (cstm_reset) begin
+			dma_active <= 0;
+		end
+	   	else if (clk_en) begin
+	   		if (start) begin
+	   			if (n == DMA_OPCODE && !dma_active)
+		   			dma_active <= 1;
+	   		end
+	  	end
+	end
+
+	always @(*) begin : proc_custom_logic
+
+		//by default we are not done
+		done <= 0;
+		if (n == DMA_OPCODE) begin
+			if (dma_active) begin
+	   			result <= DMA_BUSY_FAIL;
+	   			done <= 1;
+	   		end
+	   		else begin
+				result <= DMA_SUCCESS;
+				done <= 1;
+	   		end
+   		end
+
+	end
 
 endmodule

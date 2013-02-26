@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_customins_master_translator
+!i10b 1
+!s100 7WH2[8;c4nUh8JM^3kRZe0
+I@Ug?l8R33=Q]8kfT2V?Yd0
+Vb3omjLeRHV7XazPWX[C1V1
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361844181
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v
+L0 23
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848408.061000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v|-work|cpu_custom_instruction_master_translator|
+!s101 -O0
+o-work cpu_custom_instruction_master_translator -O0

@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_slave_agent/altera_merlin_slave_agent.sv#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_slave_agent/altera_merlin_slave_agent.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 `timescale 1 ns / 1 ns
@@ -375,6 +375,7 @@ module altera_merlin_slave_agent
         rf_source_data[PKT_DATA_H   :PKT_DATA_L]        = {DATA_W {1'b0}};
         rf_source_data[PKT_BYTEEN_H :PKT_BYTEEN_L]      = cmd_byteen;
         rf_source_data[PKT_ADDR_H   :PKT_ADDR_L]        = cmd_addr;
+        //rf_source_data[PKT_ADDR_H   :PKT_ADDR_L]        = m0_address;
         rf_source_data[PKT_TRANS_COMPRESSED_READ]       = cmd_compressed;
         rf_source_data[PKT_TRANS_POSTED]                = cmd_posted;
         rf_source_data[PKT_TRANS_WRITE]                 = cmd_write;

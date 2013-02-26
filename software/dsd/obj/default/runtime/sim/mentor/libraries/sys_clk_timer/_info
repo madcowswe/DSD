@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system_sys_clk_timer
+!i10b 1
+!s100 nO3j=7S;e]Hb[AhjQZk5b1
+IH0G[FilX^F>cSbN;f99S;2
+Vd1afDTK2?@=RLV<FHfhYH1
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361844171
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v
+L0 21
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848408.567000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v|-work|sys_clk_timer|
+!s101 -O0
+o-work sys_clk_timer -O0

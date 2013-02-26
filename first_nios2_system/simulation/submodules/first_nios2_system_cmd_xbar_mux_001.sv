@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/02/13 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // ------------------------------------------
@@ -31,7 +31,7 @@
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
 //   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
-//   ST_DATA_W:           107
+//   ST_DATA_W:           109
 //   ST_CHANNEL_W:        6
 // ------------------------------------------
 
@@ -41,21 +41,21 @@ module first_nios2_system_cmd_xbar_mux_001
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [107-1   : 0]  sink0_data,
+    input [109-1   : 0]  sink0_data,
     input [6-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
-    input [107-1   : 0]  sink1_data,
+    input [109-1   : 0]  sink1_data,
     input [6-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
     output                      sink1_ready,
 
     input                       sink2_valid,
-    input [107-1   : 0]  sink2_data,
+    input [109-1   : 0]  sink2_data,
     input [6-1: 0]  sink2_channel,
     input                       sink2_startofpacket,
     input                       sink2_endofpacket,
@@ -66,7 +66,7 @@ module first_nios2_system_cmd_xbar_mux_001
     // Source
     // ----------------------
     output                      src_valid,
-    output [107-1    : 0] src_data,
+    output [109-1    : 0] src_data,
     output [6-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
@@ -78,11 +78,11 @@ module first_nios2_system_cmd_xbar_mux_001
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 107 + 6 + 2;
+    localparam PAYLOAD_W        = 109 + 6 + 2;
     localparam NUM_INPUTS       = 3;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 107;
+    localparam ST_DATA_W        = 109;
     localparam ST_CHANNEL_W     = 6;
     localparam PKT_TRANS_LOCK   = 72;
 
@@ -255,7 +255,10 @@ module first_nios2_system_cmd_xbar_mux_001
 
     // ------------------------------------------
     // Create a request vector that stays high during
-    // the packet
+    // the packet for unpipelined arbitration.
+    //
+    // The pipelined arbitration scheme does not require
+    // request to be held high during the packet.
     // ------------------------------------------
     reg  [NUM_INPUTS - 1 : 0] prev_request;
     always @(posedge clk, posedge reset) begin
@@ -264,7 +267,9 @@ module first_nios2_system_cmd_xbar_mux_001
         else
             prev_request <= request & ~(valid & eop);
     end
-    assign request = prev_request | valid | locked;
+
+    assign request = (PIPELINE_ARB == 1) ? valid | locked :
+                                           prev_request | valid | locked;
 
 
     altera_merlin_arbitrator

@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_reset_controller
+IHf=B57jWiM>ER[ZZ:?Ecc3
+V:mR1fj3Rf>NGziDN_:U030
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+Z2 w1361844181
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v
+L0 28
+Z3 OV;L;10.1b;51
+r1
+31
+Z4 o-work rst_controller -O0
+!i10b 1
+!s100 O:@7IcZ?P2TFQNlLHP>Uk3
+!s85 0
+!s108 1361848406.497000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+!s101 -O0
+valtera_reset_synchronizer
+!i10b 1
+!s100 >=<[K;e9ZQn;XeNBWYMhW1
+IEg6H;CGQVW<LOHM<dNC2G1
+V3CjoOZCIEdzCJgPn8]D7`2
+R1
+R2
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v
+L0 24
+R3
+r1
+!s85 0
+31
+!s108 1361848406.557000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!s101 -O0
+R4

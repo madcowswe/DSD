@@ -93,15 +93,15 @@ OBJ_DIR := ./obj
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.0sp2
-ACDS_VERSION := 12.0sp2
+# ACDS_VERSION: 12.1
+ACDS_VERSION := 12.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 263
+# BUILD_NUMBER: 177
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
+SOPC_FILE := C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

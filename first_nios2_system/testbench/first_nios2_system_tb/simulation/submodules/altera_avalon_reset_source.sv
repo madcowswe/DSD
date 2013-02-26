@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $File: //acds/rel/12.0sp2/ip/sopc/components/verification/altera_avalon_reset_source/altera_avalon_reset_source.sv $
+// $File: //acds/rel/12.1/ip/sopc/components/verification/altera_avalon_reset_source/altera_avalon_reset_source.sv $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 //------------------------------------------------------------------------------
 // Reset generator
@@ -53,7 +53,7 @@ module altera_avalon_reset_source (
       print(VERBOSITY_INFO, message);            
       $sformat(message, "%m: -   $Revision: #1 $");
       print(VERBOSITY_INFO, message);            
-      $sformat(message, "%m: -   $Date: 2012/06/21 $");
+      $sformat(message, "%m: -   $Date: 2012/08/12 $");
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   ASSERT_HIGH_RESET = %0d", ASSERT_HIGH_RESET);      
       print(VERBOSITY_INFO, message);
@@ -65,7 +65,7 @@ module altera_avalon_reset_source (
    function automatic string get_version();  // public
       // Return BFM version as a string of three integers separated by periods.
       // For example, version 9.1 sp1 is encoded as "9.1.1".      
-      string ret_version = "12.0";
+      string ret_version = "12.1";
       return ret_version;
    endfunction
    

@@ -2,22 +2,42 @@ m255
 K3
 13
 cModel Technology
-Z0 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
-vfirst_nios2_system_tb
-!s100 kE:RES:UcW87j:ddb;a443
-IAZA8]cGJ8AN_LVNAMVXQg1
-Z1 V_:ndCQW<Ki^PjdC>XCc=63
-Z2 dH:\DSD\student_files_v2\de2-70_system_template\software\dsd\obj\default\runtime\sim\mentor
-w1361660688
-Z3 8H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v
-Z4 FH:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v
-L0 6
-Z5 OV;L;10.0d;49
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+vdeterminant
+!i10b 1
+Z1 !s100 Qe[zBm0db7R:H2ModO1lE2
+Z2 I;FOd[PaS1jV:c9=aCVeWh3
+Z3 VljEcj6KL0ETU6DWf5mVj63
+Z4 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361849088
+Z5 8../../../../../../../determinant.v
+Z6 F../../../../../../../determinant.v
+L0 5
+Z7 OV;L;10.1b;51
 r1
 !s85 0
 31
-!s108 1361661127.681000
-!s107 H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v|
-Z6 !s90 -reportprogress|300|H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v|
+!s108 1361849216.294000
+!s107 ../../../../../../../determinant.v|
+Z8 !s90 -reportprogress|300|../../../../../../../determinant.v|
 !s101 -O0
 o-O0
+vfirst_nios2_system_tb
+Z9 !s100 k@Xi6IEJ3kL9;mEkQflYj0
+Z10 IK0mKl?g<2@RAE7FXz0ecH0
+Z11 V_:ndCQW<Ki^PjdC>XCc=63
+R4
+Z12 w1361844156
+Z13 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v
+Z14 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v
+L0 6
+R7
+r1
+31
+Z15 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v|
+o-O0
+Z16 !s108 1361848411.115000
+Z17 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0

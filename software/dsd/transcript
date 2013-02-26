@@ -1,0 +1,7 @@
+# Reading C:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# vsim -gui null_sim.mpf 
+# ** Error: (vsim-19) Failed to access library 'null_sim' at "null_sim".
+# 
+# No such file or directory. (errno = ENOENT)
+# Error loading design

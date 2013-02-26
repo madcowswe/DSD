@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // -------------------------------------
@@ -28,10 +28,10 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         first_nios2_system_cmd_xbar_demux_001
-//   ST_DATA_W:           96
+//   ST_DATA_W:           109
 //   ST_CHANNEL_W:        6
 //   NUM_OUTPUTS:         6
-//   VALID_WIDTH:         6
+//   VALID_WIDTH:         1
 // ------------------------------------------
 
 //------------------------------------------
@@ -45,8 +45,8 @@ module first_nios2_system_cmd_xbar_demux_001
     // -------------------
     // Sink
     // -------------------
-    input  [6-1      : 0]   sink_valid,
-    input  [96-1    : 0]   sink_data, // ST_DATA_W=96
+    input  [1-1      : 0]   sink_valid,
+    input  [109-1    : 0]   sink_data, // ST_DATA_W=109
     input  [6-1 : 0]   sink_channel, // ST_CHANNEL_W=6
     input                         sink_startofpacket,
     input                         sink_endofpacket,
@@ -56,42 +56,42 @@ module first_nios2_system_cmd_xbar_demux_001
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [96-1    : 0] src0_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src0_data, // ST_DATA_W=109
     output reg [6-1 : 0] src0_channel, // ST_CHANNEL_W=6
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
 
     output reg                      src1_valid,
-    output reg [96-1    : 0] src1_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src1_data, // ST_DATA_W=109
     output reg [6-1 : 0] src1_channel, // ST_CHANNEL_W=6
     output reg                      src1_startofpacket,
     output reg                      src1_endofpacket,
     input                           src1_ready,
 
     output reg                      src2_valid,
-    output reg [96-1    : 0] src2_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src2_data, // ST_DATA_W=109
     output reg [6-1 : 0] src2_channel, // ST_CHANNEL_W=6
     output reg                      src2_startofpacket,
     output reg                      src2_endofpacket,
     input                           src2_ready,
 
     output reg                      src3_valid,
-    output reg [96-1    : 0] src3_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src3_data, // ST_DATA_W=109
     output reg [6-1 : 0] src3_channel, // ST_CHANNEL_W=6
     output reg                      src3_startofpacket,
     output reg                      src3_endofpacket,
     input                           src3_ready,
 
     output reg                      src4_valid,
-    output reg [96-1    : 0] src4_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src4_data, // ST_DATA_W=109
     output reg [6-1 : 0] src4_channel, // ST_CHANNEL_W=6
     output reg                      src4_startofpacket,
     output reg                      src4_endofpacket,
     input                           src4_ready,
 
     output reg                      src5_valid,
-    output reg [96-1    : 0] src5_data, // ST_DATA_W=96
+    output reg [109-1    : 0] src5_data, // ST_DATA_W=109
     output reg [6-1 : 0] src5_channel, // ST_CHANNEL_W=6
     output reg                      src5_startofpacket,
     output reg                      src5_endofpacket,
@@ -120,42 +120,42 @@ module first_nios2_system_cmd_xbar_demux_001
         src0_endofpacket   = sink_endofpacket;
         src0_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src0_valid         = sink_channel[0] && sink_valid[0];
+        src0_valid         = sink_channel[0] && sink_valid;
 
         src1_data          = sink_data;
         src1_startofpacket = sink_startofpacket;
         src1_endofpacket   = sink_endofpacket;
         src1_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src1_valid         = sink_channel[1] && sink_valid[1];
+        src1_valid         = sink_channel[1] && sink_valid;
 
         src2_data          = sink_data;
         src2_startofpacket = sink_startofpacket;
         src2_endofpacket   = sink_endofpacket;
         src2_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src2_valid         = sink_channel[2] && sink_valid[2];
+        src2_valid         = sink_channel[2] && sink_valid;
 
         src3_data          = sink_data;
         src3_startofpacket = sink_startofpacket;
         src3_endofpacket   = sink_endofpacket;
         src3_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src3_valid         = sink_channel[3] && sink_valid[3];
+        src3_valid         = sink_channel[3] && sink_valid;
 
         src4_data          = sink_data;
         src4_startofpacket = sink_startofpacket;
         src4_endofpacket   = sink_endofpacket;
         src4_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src4_valid         = sink_channel[4] && sink_valid[4];
+        src4_valid         = sink_channel[4] && sink_valid;
 
         src5_data          = sink_data;
         src5_startofpacket = sink_startofpacket;
         src5_endofpacket   = sink_endofpacket;
         src5_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src5_valid         = sink_channel[5] && sink_valid[5];
+        src5_valid         = sink_channel[5] && sink_valid;
 
     end
 
@@ -168,6 +168,7 @@ module first_nios2_system_cmd_xbar_demux_001
     assign ready_vector[3] = src3_ready;
     assign ready_vector[4] = src4_ready;
     assign ready_vector[5] = src5_ready;
+
     assign sink_ready = |(sink_channel & ready_vector);
 
 endmodule

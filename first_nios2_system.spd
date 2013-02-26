@@ -13,6 +13,10 @@
    type="SYSTEM_VERILOG"
    library="width_adapter" />
  <file
+   path="first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv"
+   type="SYSTEM_VERILOG"
+   library="width_adapter" />
+ <file
    path="first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
    library="rsp_xbar_mux_001" />
@@ -29,13 +33,17 @@
    type="SYSTEM_VERILOG"
    library="rsp_xbar_mux" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv"
+   path="first_nios2_system/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_demux_002" />
+   library="rsp_xbar_demux_001" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv"
+   path="first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_demux" />
+   library="cmd_xbar_mux_001" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_xbar_mux_001" />
  <file
    path="first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
@@ -44,6 +52,10 @@
    path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv"
    type="SYSTEM_VERILOG"
    library="cmd_xbar_mux" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_xbar_demux_002" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv"
    type="SYSTEM_VERILOG"
@@ -65,13 +77,9 @@
    type="SYSTEM_VERILOG"
    library="burst_adapter" />
  <file
-   path="first_nios2_system/simulation/submodules/altera_merlin_traffic_limiter.sv"
+   path="first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv"
    type="SYSTEM_VERILOG"
-   library="limiter" />
- <file
-   path="first_nios2_system/simulation/submodules/altera_avalon_st_pipeline_base.v"
-   type="VERILOG"
-   library="limiter" />
+   library="burst_adapter" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_id_router_002.sv"
    type="SYSTEM_VERILOG"
@@ -84,6 +92,10 @@
    path="first_nios2_system/simulation/submodules/first_nios2_system_id_router.sv"
    type="SYSTEM_VERILOG"
    library="id_router" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_addr_router_002.sv"
+   type="SYSTEM_VERILOG"
+   library="addr_router_002" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_addr_router_001.sv"
    type="SYSTEM_VERILOG"
@@ -116,6 +128,22 @@
    path="first_nios2_system/simulation/submodules/altera_merlin_master_translator.sv"
    type="SYSTEM_VERILOG"
    library="cpu_instruction_master_translator" />
+ <file
+   path="first_nios2_system/simulation/submodules/altera_customins_slave_translator.sv"
+   type="SYSTEM_VERILOG"
+   library="cpu_custom_instruction_master_multi_slave_translator0" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv"
+   type="SYSTEM_VERILOG"
+   library="cpu_custom_instruction_master_multi_xconnect" />
+ <file
+   path="first_nios2_system/simulation/submodules/altera_customins_master_translator.v"
+   type="VERILOG"
+   library="cpu_custom_instruction_master_translator" />
+ <file
+   path="first_nios2_system/simulation/submodules/determinant.v"
+   type="VERILOG"
+   library="determinant_0" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_sdram_0.v"
    type="VERILOG"
@@ -157,52 +185,12 @@
    type="OTHER"
    library="cpu" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.ocp"
-   type="OTHER"
-   library="cpu" />
- <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.sdc"
    type="SDC"
    library="cpu" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.vo"
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.v"
    type="VERILOG"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.mif"
-   type="MIF"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.mif"
-   type="MIF"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.mif"
-   type="MIF"
    library="cpu" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"
@@ -214,10 +202,6 @@
    library="cpu" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"
-   type="VERILOG"
-   library="cpu" />
- <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_mult_cell.v"
    type="VERILOG"
    library="cpu" />
  <file

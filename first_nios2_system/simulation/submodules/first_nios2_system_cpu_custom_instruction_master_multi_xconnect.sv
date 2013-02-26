@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0/ip/merlin/altera_customins_xconnect/altera_customins_xconnect.sv.terp#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_customins_xconnect/altera_customins_xconnect.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/02/13 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // -------------------------------------------------------

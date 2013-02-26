@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $File: //acds/rel/12.0sp2/ip/avalon_st/altera_avalon_st_pipeline_stage/altera_avalon_st_pipeline_base.v $
+// $File: //acds/rel/12.1/ip/avalon_st/altera_avalon_st_pipeline_stage/altera_avalon_st_pipeline_base.v $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 //------------------------------------------------------------------------------
 
@@ -61,8 +61,8 @@ module altera_avalon_st_pipeline_base (
 
             always @(posedge clk, posedge reset) begin
                 if (reset) begin
-                    data0 <= 1'b0;
-                    data1 <= 1'b0;
+                    data0 <= {DATA_WIDTH{1'b0}};
+                    data1 <= {DATA_WIDTH{1'b0}};
                 end else begin
                     // ----------------------------
                     // always load the second slot if we can

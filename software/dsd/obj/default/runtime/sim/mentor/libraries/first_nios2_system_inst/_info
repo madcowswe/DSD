@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system
+!i10b 1
+!s100 `[KR_SZb0MInONYiiG5hU0
+Ic`0DaagN;m:MLCM_Z2me;1
+VXa=;9f:Yed[R1=]23;D`F2
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361844158
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v
+L0 6
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848411.028000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v|-work|first_nios2_system_inst|
+!s101 -O0
+o-work first_nios2_system_inst -O0

@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2013-feb-23 23:35:07</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1361662507379</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>H:\DSD\student_files_v2\de2-70_system_template\software\dsd_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Feb 26, 2013 3:12:51 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1361848371111</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>H:\DSD\student_files_v2\de2-70_system_template\first_nios2_system.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -794,7 +794,7 @@
                 <SettingName>hal.enable_sim_optimize</SettingName>
                 <Identifier>ALT_SIM_OPTIMIZE</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>The BSP is compiled with optimizations to speedup HDL simulation such as initializing the cache, clearing the .bss section, and skipping long delay loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk.</Description>
@@ -869,16 +869,16 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>jtag_uart</slaveDescriptor>
+                <slaveDescriptor>sysid</slaveDescriptor>
                 <addressRange>0x01001030 - 0x01001037</addressRange>
                 <addressSpan>8</addressSpan>
-                <attributes>printable</attributes>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sysid</slaveDescriptor>
+                <slaveDescriptor>jtag_uart</slaveDescriptor>
                 <addressRange>0x01001038 - 0x0100103F</addressRange>
                 <addressSpan>8</addressSpan>
-                <attributes/>
+                <attributes>printable</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

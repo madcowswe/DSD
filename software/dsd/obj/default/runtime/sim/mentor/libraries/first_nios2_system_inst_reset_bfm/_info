@@ -1,0 +1,49 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_avalon_reset_source
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+DXx4 work 13 verbosity_pkg 0 22 X0X5SI:NCz^k_dZ<BEc[a0
+!i10b 1
+!s100 DDZb_2Mo9Vh8L=8z1YiUm1
+I]hdMGAN1zZ@C]SNO;C:PS3
+Vk1]bU7T^0F5>e8jlRd2OT1
+!s105 altera_avalon_reset_source_sv_unit
+S1
+Z2 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+Z3 w1361844158
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv
+L0 23
+Z4 OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848410.835000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv|
+!s90 -reportprogress|300|-sv|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv|-work|first_nios2_system_inst_reset_bfm|
+!s101 -O0
+Z5 o-sv -work first_nios2_system_inst_reset_bfm -O0
+Xverbosity_pkg
+R1
+IX0X5SI:NCz^k_dZ<BEc[a0
+VX0X5SI:NCz^k_dZ<BEc[a0
+S1
+R2
+R3
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+L0 61
+R4
+r1
+31
+R5
+!i10b 1
+!s100 hZFIYU4lWX0TOfGGh`lWg3
+!s85 0
+!s108 1361848410.760000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv|
+!s90 -reportprogress|300|-sv|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv|-work|first_nios2_system_inst_reset_bfm|
+!s101 -O0

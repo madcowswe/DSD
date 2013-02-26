@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $File: //acds/rel/12.0sp2/ip/sopc/components/verification/altera_avalon_clock_source/altera_avalon_clock_source.sv $
+// $File: //acds/rel/12.1/ip/sopc/components/verification/altera_avalon_clock_source/altera_avalon_clock_source.sv $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 //------------------------------------------------------------------------------
 // Clock generator
@@ -23,26 +23,29 @@
 module altera_avalon_clock_source (clk);
    output clk;
 
-   parameter CLOCK_RATE = 10;  // clock rate in MHz
+   parameter CLOCK_RATE = 10;       // clock rate in MHz / kHz / Hz depends on the clock unit
+   parameter CLOCK_UNIT = 1000000;  // clock unit MHz / kHz / Hz
 
 // synthesis translate_off
    import verbosity_pkg::*;
 
-   localparam HALF_CLOCK_PERIOD   = 1000.000000/CLOCK_RATE/2; // half clock period in ns
+   localparam HALF_CLOCK_PERIOD   = 1000000000.000000/(CLOCK_RATE*CLOCK_UNIT*2); // half clock period in ns
    
    logic clk = 1'b0;
 
    string message   = "*uninitialized*";
+   string freq_unit = (CLOCK_UNIT == 1)? "Hz" : 
+                      (CLOCK_UNIT == 1000)? "kHz" : "MHz";
    bit    run_state = 1'b1;
-
+   
    function automatic void __hello();
       $sformat(message, "%m: - Hello from altera_clock_source.");
       print(VERBOSITY_INFO, message);            
       $sformat(message, "%m: -   $Revision: #1 $");
       print(VERBOSITY_INFO, message);            
-      $sformat(message, "%m: -   $Date: 2012/06/21 $");
+      $sformat(message, "%m: -   $Date: 2012/08/12 $");
       print(VERBOSITY_INFO, message);
-      $sformat(message, "%m: -   CLOCK_RATE = %0d", CLOCK_RATE);      
+      $sformat(message, "%m: -   CLOCK_RATE = %0d %s", CLOCK_RATE, freq_unit);      
       print(VERBOSITY_INFO, message);
       print_divider(VERBOSITY_INFO);      
    endfunction
@@ -50,7 +53,7 @@ module altera_avalon_clock_source (clk);
    function automatic string get_version();  // public
       // Return BFM version as a string of three integers separated by periods.
       // For example, version 9.1 sp1 is encoded as "9.1.1".      
-      string ret_version = "12.0";
+      string ret_version = "12.1";
       return ret_version;
    endfunction
    

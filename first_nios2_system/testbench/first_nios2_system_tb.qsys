@@ -72,7 +72,7 @@
  <parameter name="projectName" value="hello_world.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1361660669990" />
+ <parameter name="timeStamp" value="1361844148511" />
  <parameter name="useTestBenchNamingPattern" value="true" />
  <instanceScript></instanceScript>
  <module
@@ -83,20 +83,22 @@
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_UNIQUE_ID" value="first_nios2_system" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+  <parameter name="AUTO_DEVICE" value="EP3C16F484C6" />
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
  </module>
  <module
    kind="altera_avalon_clock_source"
-   version="12.0"
+   version="12.1"
    enabled="1"
    name="first_nios2_system_inst_clk_bfm">
-  <parameter name="CLOCK_RATE" value="50" />
+  <parameter name="CLOCK_RATE" value="50000000" />
+  <parameter name="CLOCK_UNIT" value="1" />
  </module>
  <module
    kind="altera_avalon_reset_source"
-   version="12.0"
+   version="12.1"
    enabled="1"
    name="first_nios2_system_inst_reset_bfm">
   <parameter name="ASSERT_HIGH_RESET" value="0" />
@@ -104,9 +106,11 @@
  </module>
  <module
    kind="altera_conduit_bfm"
-   version="12.0"
+   version="12.1"
    enabled="1"
    name="first_nios2_system_inst_led_pio_external_connection_bfm">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
   <parameter name="SIGNAL_ROLES" value="export" />
   <parameter name="SIGNAL_WIDTHS" value="10" />
   <parameter name="SIGNAL_DIRECTIONS" value="input" />
@@ -128,29 +132,30 @@
  </module>
  <module
    kind="altera_avalon_clock_source"
-   version="12.0"
+   version="12.1"
    enabled="1"
    name="sdram_0_my_partner_clk_bfm">
-  <parameter name="CLOCK_RATE" value="50" />
+  <parameter name="CLOCK_RATE" value="50000000" />
+  <parameter name="CLOCK_UNIT" value="1" />
  </module>
  <connection
    kind="clock"
-   version="12.0"
+   version="12.1"
    start="first_nios2_system_inst_clk_bfm.clk"
    end="first_nios2_system_inst.clk" />
  <connection
    kind="clock"
-   version="12.0"
+   version="12.1"
    start="first_nios2_system_inst_clk_bfm.clk"
    end="first_nios2_system_inst_reset_bfm.clk" />
  <connection
    kind="reset"
-   version="12.0"
+   version="12.1"
    start="first_nios2_system_inst_reset_bfm.reset"
    end="first_nios2_system_inst.reset" />
  <connection
    kind="conduit"
-   version="12.0"
+   version="12.1"
    start="first_nios2_system_inst_led_pio_external_connection_bfm.conduit"
    end="first_nios2_system_inst.led_pio_external_connection">
   <parameter name="endPort" value="" />
@@ -161,12 +166,12 @@
  </connection>
  <connection
    kind="clock"
-   version="12.0"
+   version="12.1"
    start="sdram_0_my_partner_clk_bfm.clk"
    end="sdram_0_my_partner.clk" />
  <connection
    kind="conduit"
-   version="12.0"
+   version="12.1"
    start="sdram_0_my_partner.conduit"
    end="first_nios2_system_inst.sdram_0_wire">
   <parameter name="endPort" value="" />

@@ -29,7 +29,7 @@
 // Generation parameters:
 // output_name:                                       altera_conduit_bfm
 // role:width:direction:                              export:10:input
-// 0
+// false
 //-----------------------------------------------------------------------------
 `timescale 1 ns / 1 ns
 
@@ -74,7 +74,7 @@ module altera_conduit_bfm
    
    function automatic string get_version();  // public
       // Return BFM version string. For example, version 9.1 sp1 is "9.1sp1" 
-      string ret_version = "12.0";
+      string ret_version = "12.1";
       return ret_version;
    endfunction
 

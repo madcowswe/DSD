@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_master_agent/altera_merlin_master_agent.sv#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_master_agent/altera_merlin_master_agent.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // --------------------------------------
@@ -30,7 +30,11 @@ module altera_merlin_master_agent
     // -------------------
     // Packet Format Parameters
     // -------------------
-    parameter PKT_ADDR_SIDEBAND_H  = 97, 
+    parameter PKT_QOS_H            = 109,
+              PKT_QOS_L            = 106,
+              PKT_DATA_SIDEBAND_H  = 105,
+              PKT_DATA_SIDEBAND_L  = 98,
+              PKT_ADDR_SIDEBAND_H  = 97, 
               PKT_ADDR_SIDEBAND_L  = 93,
               PKT_CACHE_H          = 92,
               PKT_CACHE_L          = 89,
@@ -63,7 +67,7 @@ module altera_merlin_master_agent
               PKT_SRC_ID_L         = 1,
               PKT_DEST_ID_H        = 0,
               PKT_DEST_ID_L        = 0,
-              ST_DATA_W            = 95,
+              ST_DATA_W            = 110,
               ST_CHANNEL_W         = 1,
 
     // -------------------
@@ -204,8 +208,10 @@ module altera_merlin_master_agent
         cp_data[PKT_SRC_ID_H   :PKT_SRC_ID_L     ] = id_int[PKT_SRC_ID_W-1:0];
         cp_data[PKT_THREAD_ID_H:PKT_THREAD_ID_L  ] = '0;
         cp_data[PKT_CACHE_H    :PKT_CACHE_L      ] = CACHE_VALUE;
+        cp_data[PKT_QOS_H      : PKT_QOS_L]        = '0;        
         cp_data[PKT_ADDR_SIDEBAND_H:PKT_ADDR_SIDEBAND_L] = '0;
-       
+        cp_data[PKT_DATA_SIDEBAND_H :PKT_DATA_SIDEBAND_L] = '0;
+               
         av_readdata = rp_data[PKT_DATA_H : PKT_DATA_L];
     end
 

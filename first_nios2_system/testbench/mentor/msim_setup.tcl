@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.0sp2 263 win32 2013.02.23.23:06:01
+# ACDS 12.1 177 win32 2013.02.26.02:03:01
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -40,15 +40,6 @@ if ![info exists QSYS_SIMDIR] {
 
 # ----------------------------------------
 # Copy ROM/RAM files to simulation directory
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.dat ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.hex ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.mif ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.dat ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.hex ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.mif ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.dat ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.hex ./
-file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.mif ./
 file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.dat ./
 file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.hex ./
 file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.mif ./
@@ -62,9 +53,10 @@ file copy -force $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_
 # ----------------------------------------
 # Create compilation libraries
 proc ensure_lib { lib } { if ![file isdirectory $lib] { vlib $lib } }
-ensure_lib      ./libraries/     
-ensure_lib      ./libraries/work/
-vmap       work ./libraries/work/
+ensure_lib          ./libraries/     
+ensure_lib          ./libraries/work/
+vmap       work     ./libraries/work/
+vmap       work_lib ./libraries/work/
 if { ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] } {
   ensure_lib                  ./libraries/altera_ver/      
   vmap       altera_ver       ./libraries/altera_ver/      
@@ -79,84 +71,94 @@ if { ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] } {
   ensure_lib                  ./libraries/cycloneiii_ver/  
   vmap       cycloneiii_ver   ./libraries/cycloneiii_ver/  
 }
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_irq_mapper/                                                              
-vmap       first_nios2_system_tb_irq_mapper                                                               ./libraries/first_nios2_system_tb_irq_mapper/                                                              
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_width_adapter/                                                           
-vmap       first_nios2_system_tb_width_adapter                                                            ./libraries/first_nios2_system_tb_width_adapter/                                                           
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_rsp_xbar_mux_001/                                                        
-vmap       first_nios2_system_tb_rsp_xbar_mux_001                                                         ./libraries/first_nios2_system_tb_rsp_xbar_mux_001/                                                        
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_rsp_xbar_mux/                                                            
-vmap       first_nios2_system_tb_rsp_xbar_mux                                                             ./libraries/first_nios2_system_tb_rsp_xbar_mux/                                                            
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_rsp_xbar_demux_002/                                                      
-vmap       first_nios2_system_tb_rsp_xbar_demux_002                                                       ./libraries/first_nios2_system_tb_rsp_xbar_demux_002/                                                      
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_rsp_xbar_demux/                                                          
-vmap       first_nios2_system_tb_rsp_xbar_demux                                                           ./libraries/first_nios2_system_tb_rsp_xbar_demux/                                                          
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cmd_xbar_mux/                                                            
-vmap       first_nios2_system_tb_cmd_xbar_mux                                                             ./libraries/first_nios2_system_tb_cmd_xbar_mux/                                                            
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cmd_xbar_demux_001/                                                      
-vmap       first_nios2_system_tb_cmd_xbar_demux_001                                                       ./libraries/first_nios2_system_tb_cmd_xbar_demux_001/                                                      
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cmd_xbar_demux/                                                          
-vmap       first_nios2_system_tb_cmd_xbar_demux                                                           ./libraries/first_nios2_system_tb_cmd_xbar_demux/                                                          
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_rst_controller/                                                          
-vmap       first_nios2_system_tb_rst_controller                                                           ./libraries/first_nios2_system_tb_rst_controller/                                                          
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_burst_adapter/                                                           
-vmap       first_nios2_system_tb_burst_adapter                                                            ./libraries/first_nios2_system_tb_burst_adapter/                                                           
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_limiter/                                                                 
-vmap       first_nios2_system_tb_limiter                                                                  ./libraries/first_nios2_system_tb_limiter/                                                                 
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_id_router_002/                                                           
-vmap       first_nios2_system_tb_id_router_002                                                            ./libraries/first_nios2_system_tb_id_router_002/                                                           
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_id_router_001/                                                           
-vmap       first_nios2_system_tb_id_router_001                                                            ./libraries/first_nios2_system_tb_id_router_001/                                                           
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_id_router/                                                               
-vmap       first_nios2_system_tb_id_router                                                                ./libraries/first_nios2_system_tb_id_router/                                                               
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_addr_router_001/                                                         
-vmap       first_nios2_system_tb_addr_router_001                                                          ./libraries/first_nios2_system_tb_addr_router_001/                                                         
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_addr_router/                                                             
-vmap       first_nios2_system_tb_addr_router                                                              ./libraries/first_nios2_system_tb_addr_router/                                                             
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
-vmap       first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent/         
-vmap       first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent          ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent/         
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent/       
-vmap       first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent        ./libraries/first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent/       
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator/                                        
-vmap       first_nios2_system_tb_cpu_jtag_debug_module_translator                                         ./libraries/first_nios2_system_tb_cpu_jtag_debug_module_translator/                                        
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu_instruction_master_translator/                                       
-vmap       first_nios2_system_tb_cpu_instruction_master_translator                                        ./libraries/first_nios2_system_tb_cpu_instruction_master_translator/                                       
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_sdram_0/                                                                 
-vmap       first_nios2_system_tb_sdram_0                                                                  ./libraries/first_nios2_system_tb_sdram_0/                                                                 
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_led_pio/                                                                 
-vmap       first_nios2_system_tb_led_pio                                                                  ./libraries/first_nios2_system_tb_led_pio/                                                                 
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_sysid/                                                                   
-vmap       first_nios2_system_tb_sysid                                                                    ./libraries/first_nios2_system_tb_sysid/                                                                   
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_sys_clk_timer/                                                           
-vmap       first_nios2_system_tb_sys_clk_timer                                                            ./libraries/first_nios2_system_tb_sys_clk_timer/                                                           
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_jtag_uart/                                                               
-vmap       first_nios2_system_tb_jtag_uart                                                                ./libraries/first_nios2_system_tb_jtag_uart/                                                               
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_cpu/                                                                     
-vmap       first_nios2_system_tb_cpu                                                                      ./libraries/first_nios2_system_tb_cpu/                                                                     
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_sdram_0_my_partner/                                                      
-vmap       first_nios2_system_tb_sdram_0_my_partner                                                       ./libraries/first_nios2_system_tb_sdram_0_my_partner/                                                      
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm/                 
-vmap       first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm                  ./libraries/first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm/                 
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_first_nios2_system_inst_reset_bfm/                                       
-vmap       first_nios2_system_tb_first_nios2_system_inst_reset_bfm                                        ./libraries/first_nios2_system_tb_first_nios2_system_inst_reset_bfm/                                       
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_first_nios2_system_inst_clk_bfm/                                         
-vmap       first_nios2_system_tb_first_nios2_system_inst_clk_bfm                                          ./libraries/first_nios2_system_tb_first_nios2_system_inst_clk_bfm/                                         
-ensure_lib                                                                                                ./libraries/first_nios2_system_tb_first_nios2_system_inst/                                                 
-vmap       first_nios2_system_tb_first_nios2_system_inst                                                  ./libraries/first_nios2_system_tb_first_nios2_system_inst/                                                 
+ensure_lib                                                                          ./libraries/irq_mapper/                                                              
+vmap       irq_mapper                                                               ./libraries/irq_mapper/                                                              
+ensure_lib                                                                          ./libraries/width_adapter/                                                           
+vmap       width_adapter                                                            ./libraries/width_adapter/                                                           
+ensure_lib                                                                          ./libraries/rsp_xbar_mux_001/                                                        
+vmap       rsp_xbar_mux_001                                                         ./libraries/rsp_xbar_mux_001/                                                        
+ensure_lib                                                                          ./libraries/rsp_xbar_mux/                                                            
+vmap       rsp_xbar_mux                                                             ./libraries/rsp_xbar_mux/                                                            
+ensure_lib                                                                          ./libraries/rsp_xbar_demux_001/                                                      
+vmap       rsp_xbar_demux_001                                                       ./libraries/rsp_xbar_demux_001/                                                      
+ensure_lib                                                                          ./libraries/cmd_xbar_mux_001/                                                        
+vmap       cmd_xbar_mux_001                                                         ./libraries/cmd_xbar_mux_001/                                                        
+ensure_lib                                                                          ./libraries/cmd_xbar_mux/                                                            
+vmap       cmd_xbar_mux                                                             ./libraries/cmd_xbar_mux/                                                            
+ensure_lib                                                                          ./libraries/cmd_xbar_demux_002/                                                      
+vmap       cmd_xbar_demux_002                                                       ./libraries/cmd_xbar_demux_002/                                                      
+ensure_lib                                                                          ./libraries/cmd_xbar_demux_001/                                                      
+vmap       cmd_xbar_demux_001                                                       ./libraries/cmd_xbar_demux_001/                                                      
+ensure_lib                                                                          ./libraries/cmd_xbar_demux/                                                          
+vmap       cmd_xbar_demux                                                           ./libraries/cmd_xbar_demux/                                                          
+ensure_lib                                                                          ./libraries/rst_controller/                                                          
+vmap       rst_controller                                                           ./libraries/rst_controller/                                                          
+ensure_lib                                                                          ./libraries/burst_adapter/                                                           
+vmap       burst_adapter                                                            ./libraries/burst_adapter/                                                           
+ensure_lib                                                                          ./libraries/id_router_002/                                                           
+vmap       id_router_002                                                            ./libraries/id_router_002/                                                           
+ensure_lib                                                                          ./libraries/id_router_001/                                                           
+vmap       id_router_001                                                            ./libraries/id_router_001/                                                           
+ensure_lib                                                                          ./libraries/id_router/                                                               
+vmap       id_router                                                                ./libraries/id_router/                                                               
+ensure_lib                                                                          ./libraries/addr_router_002/                                                         
+vmap       addr_router_002                                                          ./libraries/addr_router_002/                                                         
+ensure_lib                                                                          ./libraries/addr_router_001/                                                         
+vmap       addr_router_001                                                          ./libraries/addr_router_001/                                                         
+ensure_lib                                                                          ./libraries/addr_router/                                                             
+vmap       addr_router                                                              ./libraries/addr_router/                                                             
+ensure_lib                                                                          ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
+vmap       cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
+ensure_lib                                                                          ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent/         
+vmap       cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent          ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent/         
+ensure_lib                                                                          ./libraries/cpu_instruction_master_translator_avalon_universal_master_0_agent/       
+vmap       cpu_instruction_master_translator_avalon_universal_master_0_agent        ./libraries/cpu_instruction_master_translator_avalon_universal_master_0_agent/       
+ensure_lib                                                                          ./libraries/cpu_jtag_debug_module_translator/                                        
+vmap       cpu_jtag_debug_module_translator                                         ./libraries/cpu_jtag_debug_module_translator/                                        
+ensure_lib                                                                          ./libraries/cpu_instruction_master_translator/                                       
+vmap       cpu_instruction_master_translator                                        ./libraries/cpu_instruction_master_translator/                                       
+ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
+vmap       cpu_custom_instruction_master_multi_slave_translator0                    ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
+ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
+vmap       cpu_custom_instruction_master_multi_xconnect                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
+ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_translator/                                
+vmap       cpu_custom_instruction_master_translator                                 ./libraries/cpu_custom_instruction_master_translator/                                
+ensure_lib                                                                          ./libraries/determinant_0/                                                           
+vmap       determinant_0                                                            ./libraries/determinant_0/                                                           
+ensure_lib                                                                          ./libraries/sdram_0/                                                                 
+vmap       sdram_0                                                                  ./libraries/sdram_0/                                                                 
+ensure_lib                                                                          ./libraries/led_pio/                                                                 
+vmap       led_pio                                                                  ./libraries/led_pio/                                                                 
+ensure_lib                                                                          ./libraries/sysid/                                                                   
+vmap       sysid                                                                    ./libraries/sysid/                                                                   
+ensure_lib                                                                          ./libraries/sys_clk_timer/                                                           
+vmap       sys_clk_timer                                                            ./libraries/sys_clk_timer/                                                           
+ensure_lib                                                                          ./libraries/jtag_uart/                                                               
+vmap       jtag_uart                                                                ./libraries/jtag_uart/                                                               
+ensure_lib                                                                          ./libraries/cpu/                                                                     
+vmap       cpu                                                                      ./libraries/cpu/                                                                     
+ensure_lib                                                                          ./libraries/sdram_0_my_partner/                                                      
+vmap       sdram_0_my_partner                                                       ./libraries/sdram_0_my_partner/                                                      
+ensure_lib                                                                          ./libraries/first_nios2_system_inst_led_pio_external_connection_bfm/                 
+vmap       first_nios2_system_inst_led_pio_external_connection_bfm                  ./libraries/first_nios2_system_inst_led_pio_external_connection_bfm/                 
+ensure_lib                                                                          ./libraries/first_nios2_system_inst_reset_bfm/                                       
+vmap       first_nios2_system_inst_reset_bfm                                        ./libraries/first_nios2_system_inst_reset_bfm/                                       
+ensure_lib                                                                          ./libraries/first_nios2_system_inst_clk_bfm/                                         
+vmap       first_nios2_system_inst_clk_bfm                                          ./libraries/first_nios2_system_inst_clk_bfm/                                         
+ensure_lib                                                                          ./libraries/first_nios2_system_inst/                                                 
+vmap       first_nios2_system_inst                                                  ./libraries/first_nios2_system_inst/                                                 
 
 # ----------------------------------------
 # Compile device library files
 alias dev_com {
   echo "\[exec\] dev_com"
   if { ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] } {
-    vlog     "C:/altera/12.0sp2/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
-    vlog     "C:/altera/12.0sp2/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
-    vlog     "C:/altera/12.0sp2/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
-    vlog     "C:/altera/12.0sp2/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
-    vlog -sv "C:/altera/12.0sp2/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
-    vlog     "C:/altera/12.0sp2/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
+    vlog -sv "c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
   }
 }
 
@@ -164,71 +166,77 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_irq_mapper.sv"                   -work first_nios2_system_tb_irq_mapper                                                              
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_width_adapter.sv"                     -work first_nios2_system_tb_width_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                -work first_nios2_system_tb_width_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                        -work first_nios2_system_tb_rsp_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv"             -work first_nios2_system_tb_rsp_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                        -work first_nios2_system_tb_rsp_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv"                 -work first_nios2_system_tb_rsp_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv"           -work first_nios2_system_tb_rsp_xbar_demux_002                                                      
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv"               -work first_nios2_system_tb_rsp_xbar_demux                                                          
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                        -work first_nios2_system_tb_cmd_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv"                 -work first_nios2_system_tb_cmd_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv"           -work first_nios2_system_tb_cmd_xbar_demux_001                                                      
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv"               -work first_nios2_system_tb_cmd_xbar_demux                                                          
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v"                          -work first_nios2_system_tb_rst_controller                                                          
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v"                        -work first_nios2_system_tb_rst_controller                                                          
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv"                     -work first_nios2_system_tb_burst_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv"                   -work first_nios2_system_tb_limiter                                                                 
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"                   -work first_nios2_system_tb_limiter                                                                 
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv"                -work first_nios2_system_tb_id_router_002                                                           
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv"                -work first_nios2_system_tb_id_router_001                                                           
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv"                    -work first_nios2_system_tb_id_router                                                               
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_001.sv"              -work first_nios2_system_tb_addr_router_001                                                         
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router.sv"                  -work first_nios2_system_tb_addr_router                                                             
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                            -work first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_slave_agent.sv"                       -work first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                -work first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_master_agent.sv"                      -work first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent       
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_slave_translator.sv"                  -work first_nios2_system_tb_cpu_jtag_debug_module_translator                                        
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_master_translator.sv"                 -work first_nios2_system_tb_cpu_instruction_master_translator                                       
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v"                       -work first_nios2_system_tb_sdram_0                                                                 
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v"        -work first_nios2_system_tb_sdram_0                                                                 
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v"                       -work first_nios2_system_tb_led_pio                                                                 
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sysid.vo"                        -work first_nios2_system_tb_sysid                                                                   
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v"                 -work first_nios2_system_tb_sys_clk_timer                                                           
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v"                     -work first_nios2_system_tb_jtag_uart                                                               
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo"                          -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"  -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"     -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v" -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v"                 -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v"            -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v"                -work first_nios2_system_tb_cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v"                      -work first_nios2_system_tb_sdram_0_my_partner                                                      
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                   -work first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm                 
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_conduit_bfm.sv"                              -work first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm                 
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                   -work first_nios2_system_tb_first_nios2_system_inst_reset_bfm                                       
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv"                      -work first_nios2_system_tb_first_nios2_system_inst_reset_bfm                                       
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                   -work first_nios2_system_tb_first_nios2_system_inst_clk_bfm                                         
-  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv"                      -work first_nios2_system_tb_first_nios2_system_inst_clk_bfm                                         
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system.v"                               -work first_nios2_system_tb_first_nios2_system_inst                                                 
-  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/first_nios2_system_tb.v"                                                                                                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_irq_mapper.sv"                                   -work irq_mapper                                                              
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_width_adapter.sv"                                     -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_address_alignment.sv"                                 -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv"                             -work rsp_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv"                                 -work rsp_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv"                           -work rsp_xbar_demux_001                                                      
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv"                             -work cmd_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv"                                 -work cmd_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv"                           -work cmd_xbar_demux_002                                                      
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv"                           -work cmd_xbar_demux_001                                                      
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv"                               -work cmd_xbar_demux                                                          
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                                                          
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                                                          
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv"                                     -work burst_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_address_alignment.sv"                                 -work burst_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv"                                -work id_router_002                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv"                                -work id_router_001                                                           
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv"                                    -work id_router                                                               
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_002.sv"                              -work addr_router_002                                                         
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_001.sv"                              -work addr_router_001                                                         
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router.sv"                                  -work addr_router                                                             
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                       -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_master_agent.sv"                                      -work cpu_instruction_master_translator_avalon_universal_master_0_agent       
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                  -work cpu_jtag_debug_module_translator                                        
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_master_translator.sv"                                 -work cpu_instruction_master_translator                                       
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv"                               -work cpu_custom_instruction_master_multi_slave_translator0                   
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv" -work cpu_custom_instruction_master_multi_xconnect                            
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v"                               -work cpu_custom_instruction_master_translator                                
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/determinant.v"                                                      -work determinant_0                                                           
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v"                                       -work sdram_0                                                                 
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v"                        -work sdram_0                                                                 
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v"                                       -work led_pio                                                                 
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sysid.vo"                                        -work sysid                                                                   
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v"                                 -work sys_clk_timer                                                           
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v"                                     -work jtag_uart                                                               
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v"                                           -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"                  -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"                     -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"                 -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v"                            -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v"                                -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v"                                      -work sdram_0_my_partner                                                      
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work first_nios2_system_inst_led_pio_external_connection_bfm                 
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_conduit_bfm.sv"                                              -work first_nios2_system_inst_led_pio_external_connection_bfm                 
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work first_nios2_system_inst_reset_bfm                                       
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work first_nios2_system_inst_reset_bfm                                       
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work first_nios2_system_inst_clk_bfm                                         
+  vlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                      -work first_nios2_system_inst_clk_bfm                                         
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system.v"                                               -work first_nios2_system_inst                                                 
+  vlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/first_nios2_system_tb.v"                                                                                                                                     
 }
 
 # ----------------------------------------
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  vsim -t ps -L work -L first_nios2_system_tb_irq_mapper -L first_nios2_system_tb_width_adapter -L first_nios2_system_tb_rsp_xbar_mux_001 -L first_nios2_system_tb_rsp_xbar_mux -L first_nios2_system_tb_rsp_xbar_demux_002 -L first_nios2_system_tb_rsp_xbar_demux -L first_nios2_system_tb_cmd_xbar_mux -L first_nios2_system_tb_cmd_xbar_demux_001 -L first_nios2_system_tb_cmd_xbar_demux -L first_nios2_system_tb_rst_controller -L first_nios2_system_tb_burst_adapter -L first_nios2_system_tb_limiter -L first_nios2_system_tb_id_router_002 -L first_nios2_system_tb_id_router_001 -L first_nios2_system_tb_id_router -L first_nios2_system_tb_addr_router_001 -L first_nios2_system_tb_addr_router -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent -L first_nios2_system_tb_cpu_jtag_debug_module_translator -L first_nios2_system_tb_cpu_instruction_master_translator -L first_nios2_system_tb_sdram_0 -L first_nios2_system_tb_led_pio -L first_nios2_system_tb_sysid -L first_nios2_system_tb_sys_clk_timer -L first_nios2_system_tb_jtag_uart -L first_nios2_system_tb_cpu -L first_nios2_system_tb_sdram_0_my_partner -L first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_tb_first_nios2_system_inst_reset_bfm -L first_nios2_system_tb_first_nios2_system_inst_clk_bfm -L first_nios2_system_tb_first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L sdram_0_my_partner -L first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_inst_reset_bfm -L first_nios2_system_inst_clk_bfm -L first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  vsim -novopt -t ps -L work -L first_nios2_system_tb_irq_mapper -L first_nios2_system_tb_width_adapter -L first_nios2_system_tb_rsp_xbar_mux_001 -L first_nios2_system_tb_rsp_xbar_mux -L first_nios2_system_tb_rsp_xbar_demux_002 -L first_nios2_system_tb_rsp_xbar_demux -L first_nios2_system_tb_cmd_xbar_mux -L first_nios2_system_tb_cmd_xbar_demux_001 -L first_nios2_system_tb_cmd_xbar_demux -L first_nios2_system_tb_rst_controller -L first_nios2_system_tb_burst_adapter -L first_nios2_system_tb_limiter -L first_nios2_system_tb_id_router_002 -L first_nios2_system_tb_id_router_001 -L first_nios2_system_tb_id_router -L first_nios2_system_tb_addr_router_001 -L first_nios2_system_tb_addr_router -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L first_nios2_system_tb_cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L first_nios2_system_tb_cpu_instruction_master_translator_avalon_universal_master_0_agent -L first_nios2_system_tb_cpu_jtag_debug_module_translator -L first_nios2_system_tb_cpu_instruction_master_translator -L first_nios2_system_tb_sdram_0 -L first_nios2_system_tb_led_pio -L first_nios2_system_tb_sysid -L first_nios2_system_tb_sys_clk_timer -L first_nios2_system_tb_jtag_uart -L first_nios2_system_tb_cpu -L first_nios2_system_tb_sdram_0_my_partner -L first_nios2_system_tb_first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_tb_first_nios2_system_inst_reset_bfm -L first_nios2_system_tb_first_nios2_system_inst_clk_bfm -L first_nios2_system_tb_first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L sdram_0_my_partner -L first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_inst_reset_bfm -L first_nios2_system_inst_clk_bfm -L first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

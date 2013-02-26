@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/sopc/components/verification/lib/verbosity_pkg.sv#1 $
+// $Id: //acds/rel/12.1/ip/sopc/components/verification/lib/verbosity_pkg.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 //-----------------------------------------------------------------------------
 // =head1 NAME
 // verbosity_pkg
@@ -59,6 +59,9 @@
 `define _AVALON_VERBOSITY_PKG_
 
 package verbosity_pkg;
+
+	timeunit 1ps;
+	timeprecision 1ps;
    
    typedef enum int {VERBOSITY_NONE, 
 		     VERBOSITY_FAILURE, 

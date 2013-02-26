@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_width_adapter/altera_merlin_width_adapter.sv#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_width_adapter/altera_merlin_width_adapter.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // -----------------------------------------------------
@@ -66,7 +66,7 @@ module altera_merlin_width_adapter
     parameter OPTIMIZE_FOR_RSP              = 0,
 
     parameter PACKING                       = 1,    // 1: default packing with avalon slave
-    parameter CONSTANT_BURST_SIZE           = 1,    // 1: This is to optimization for Avalon only system as Avalon always send full size transaction
+    parameter CONSTANT_BURST_SIZE           = 1,    // 1: This is to optimize for Avalon only system as Avalon always send full size transaction
     parameter RESPONSE_PATH     = 0     // 0: this is WA on command path or avalon system: response always merged, 1: this WA is on response path
 )
 ( 
@@ -129,7 +129,7 @@ module altera_merlin_width_adapter
     // Utility Functions
     // ------------------------------------------------------------
     function integer clogb2;
-        input [31:0] value;
+        input [63:0] value;
         begin
             for (clogb2=0; value>0; clogb2=clogb2+1)
                 value = value >> 1;
@@ -254,6 +254,7 @@ module altera_merlin_width_adapter
     reg [IN_DATA_W-1:0]         in_data_field; 
     reg [IN_BYTEEN_W-1:0]       in_byteen_field;
     reg [ADDRESS_W-1:0]         in_address_field;
+    reg [ADDRESS_W-1:0]         address_from_packet;
     reg [BYTE_CNT_W-1:0]        in_byte_cnt_field;
     reg [BWRAP_W-1:0]           in_burstwrap_field;
     reg [RESPONSE_STATUS_W-1:0] in_response_status_field;
@@ -321,18 +322,55 @@ module altera_merlin_width_adapter
     // ----------------------------------------
     // Input Field Mapping
     // ----------------------------------------
+    reg [ADDRESS_W-1:0] address_for_adaptation;
     always @* begin
         in_size_field            = in_data[IN_PKT_BURST_SIZE_H :IN_PKT_BURST_SIZE_L ];
         in_data_field            = in_data[IN_PKT_DATA_H       :IN_PKT_DATA_L       ];
         in_byteen_field          = in_data[IN_PKT_BYTEEN_H     :IN_PKT_BYTEEN_L     ];
-        in_address_field         = in_data[IN_PKT_ADDR_H       :IN_PKT_ADDR_L       ];
+        address_from_packet      = in_data[IN_PKT_ADDR_H       :IN_PKT_ADDR_L       ];
+        //in_address_field         = in_data[IN_PKT_ADDR_H       :IN_PKT_ADDR_L       ];
         in_byte_cnt_field        = in_data[IN_PKT_BYTE_CNT_H   :IN_PKT_BYTE_CNT_L   ];
         in_cmpr_read             = in_data[IN_PKT_TRANS_COMPRESSED_READ];
         in_lock_field            = in_data[IN_PKT_TRANS_EXCLUSIVE];
         in_burst_type_field      = in_data[IN_PKT_BURST_TYPE_H :IN_PKT_BURST_TYPE_L ];
         in_response_status_field = in_data[IN_PKT_RESPONSE_STATUS_H :IN_PKT_RESPONSE_STATUS_L];
     end
+    // ----------------------------------------
+    // Process unaligned address for first address of the burst
+    // ----------------------------------------
+generate
+    // ----------------------------------------
+    // Do generate here, in case AVALON system then just bypass this
+    // as the address will be aligned
+    // ----------------------------------------
+if ((!CONSTANT_BURST_SIZE) & (IN_NUMSYMBOLS > OUT_NUMSYMBOLS)) begin // this needs for Wide-Narrow
+    reg [ADDRESS_W + (BWRAP_W-1) + 4:0]         address_for_alignment;
+    reg [ADDRESS_W + clogb2(IN_NUMSYMBOLS)-1:0] address_after_aligned;
 
+    assign address_for_alignment = {address_from_packet, in_size_field};
+    assign address_for_adaptation       = address_after_aligned[ADDRESS_W-1:0];
+    
+    altera_merlin_address_alignment
+        #(
+          .ADDR_W            (ADDRESS_W),
+          .BURSTWRAP_W       (BWRAP_W),
+          .INCREMENT_ADDRESS (0),
+          .NUMSYMBOLS        (IN_NUMSYMBOLS)
+          ) check_and_align_address_to_size
+            (
+             .clk(clk),
+             .reset(reset),
+             .in_data(address_for_alignment),
+             .out_data(address_after_aligned),
+             .in_valid(),
+             .in_sop(),
+             .in_eop(),
+             .out_ready()
+             );
+end else begin // Narrow-Wide: it process base on address, so we dont need do alignment
+    assign address_for_adaptation       = address_from_packet;
+end
+endgenerate
     generate begin
         if (FIRST_EXISTS) begin
             always @* begin
@@ -467,8 +505,6 @@ module altera_merlin_width_adapter
             out_endofpacket           = 0;
                                       
             out_size_field            = (cmd_burst_size < OUT_NUMSYMBOLS) ? in_size_field : log2_out_numsymbols;
-            out_address_field         = in_address_field;
-            int_output_sel            = in_address_field >> log2_out_numsymbols ;
             if (CONSTANT_BURST_SIZE) begin // For Avalon ONlY
                 out_byteen_field   = in_byteen_field[OUT_NUMSYMBOLS-1:0];
                 out_data_field     = in_data_field[OUT_NUMSYMBOLS * SYMBOL_W-1:0];
@@ -484,17 +520,25 @@ module altera_merlin_width_adapter
             out_lock_field            = in_lock_field;
             out_burst_type_field      = in_burst_type_field;
             out_response_status_field = in_response_status_field;
-            
-            if (cmd_burst_size <= OUT_NUMSYMBOLS)
+            // Case when command size <= OUT_NUMSYMBOL: burst untouched and when unalgined, use address from packet
+            // and send this "unligned" address (if happens) to the network
+            if (cmd_burst_size <= OUT_NUMSYMBOLS) begin
                 out_endofpacket = in_endofpacket;
-
-            if (cmd_burst_size > OUT_NUMSYMBOLS) begin
+                in_address_field = address_from_packet;
+            end //(cmd_burst_size <= OUT_NUMSYMBOLS)
+            else begin 
+                // Case when WA need to split data, first address of the burst, the WA need align and send this align address
+                // to the network.
                 out_lock_field     = 0;
                 // Change burst type 'FIXED' to 'Reserved' 
-                if (in_burst_type_field == 2'b00)
+                if (in_burst_type_field == 2'b00) begin
                     out_burst_type_field = 2'b11;
-            end
-            
+                end
+                in_address_field = address_for_adaptation;
+            end // (cmd_burst_size > OUT_NUMSYMBOLS)
+
+            out_address_field         = in_address_field;
+            int_output_sel            = in_address_field >> log2_out_numsymbols ;
             if ( in_cmpr_read )
                 out_endofpacket = 1;
             
@@ -741,7 +785,9 @@ module altera_merlin_width_adapter
             p0_data_field     = in_data_field;  
             p0_bwrap_field    = in_burstwrap_field;
             p0_byteen_field   = in_byteen_field;
-            p0_address_field  = in_address_field;  
+            //p0_address_field  = in_address_field;  
+            p0_address_field  = address_for_adaptation;  // read address from oacket
+            
             p0_byte_cnt_field = in_byte_cnt_field;
             p0_cmpr_read      = in_cmpr_read;     
             p0_first_field    = in_first_field;   

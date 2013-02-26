@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system_led_pio
+!i10b 1
+!s100 IHbKzEX@lM3DAdz2hTL_P0
+I6XS>5;VAjkd?4KA0:hgR11
+VHV`]j51n4O^Qh<S7j5dSd3
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361844175
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v
+L0 21
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848408.388000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v|-work|led_pio|
+!s101 -O0
+o-work led_pio -O0

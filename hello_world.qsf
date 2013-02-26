@@ -547,7 +547,7 @@ set_instance_assignment -name TSU_REQUIREMENT "10 ns" -from * -to *
 
 
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
-set_global_assignment -name LAST_QUARTUS_VERSION "12.0 SP2"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.1
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name SDC_FILE hello_world.out.sdc
 set_global_assignment -name SDC_FILE hw_dev_tutorial.sdc

@@ -1,5 +1,5 @@
 //IP Functional Simulation Model
-//VERSION_BEGIN 12.0SP2 cbx_mgl 2012:08:02:15:20:46:SJ cbx_simgen 2012:08:02:15:18:54:SJ  VERSION_END
+//VERSION_BEGIN 12.1 cbx_mgl 2012:11:07:18:06:30:SJ cbx_simgen 2012:11:07:18:03:51:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
 
@@ -41,7 +41,7 @@ module  first_nios2_system_sysid
 
 
 	assign
-		readdata = {1'b0, address, 1'b0, address, {3{1'b0}}, address, {2{1'b0}}, address, 1'b0, address, {2{1'b0}}, address, 1'b0, address, {2{1'b0}}, address, 1'b0, {2{address}}, {4{1'b0}}, address, 1'b0, {2{address}}};
+		readdata = {1'b0, address, 1'b0, address, {3{1'b0}}, address, {2{1'b0}}, address, 1'b0, {2{address}}, {5{1'b0}}, address, 1'b0, {4{address}}, 1'b0, {4{address}}, {2{1'b0}}};
 endmodule //first_nios2_system_sysid
 //synopsys translate_on
 //VALID FILE

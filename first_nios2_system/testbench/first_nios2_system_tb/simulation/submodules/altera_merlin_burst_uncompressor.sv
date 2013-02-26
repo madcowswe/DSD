@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.0sp2/ip/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/06/21 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // ------------------------------------------
@@ -80,6 +80,29 @@ module altera_merlin_burst_uncompressor
     output source_is_compressed,
     output [BURST_SIZE_W-1 : 0] source_burstsize
 );
+
+//----------------------------------------------------
+// AXSIZE decoding
+//
+// Turns the axsize value into the actual number of bytes
+// being transferred.
+// ---------------------------------------------------
+function reg[63:0] bytes_in_transfer;
+    input [2:0] axsize;
+    case (axsize)
+        3'b000: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000000001;
+        3'b001: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000000010;
+        3'b010: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000000100;
+        3'b011: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000001000;
+        3'b100: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000010000;
+        3'b101: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000100000;
+        3'b110: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000001000000;
+        3'b111: bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000010000000;
+        default:bytes_in_transfer = 64'b0000000000000000000000000000000000000000000000000000000000000001;
+    endcase
+
+endfunction  
+
    // num_symbols is PKT_SYMBOLS, appropriately sized.
    wire [31:0] int_num_symbols = PKT_SYMBOLS;
    wire [BYTE_CNT_W-1:0] num_symbols = int_num_symbols[BYTE_CNT_W-1:0];
@@ -181,7 +204,7 @@ module altera_merlin_burst_uncompressor
    reg [ADDR_W - 1 : 0 ] burst_uncompress_address_base;
    reg [ADDR_W - 1 : 0] burst_uncompress_address_offset;
 
-   wire [31:0] decoded_burstsize_wire;
+   wire [63:0] decoded_burstsize_wire;
    wire [ADDR_W-1:0] decoded_burstsize;
 
    // The input burstwrap value can be used as a mask against address values,
@@ -208,8 +231,8 @@ module altera_merlin_burst_uncompressor
      end
    end
 
-   assign decoded_burstsize_wire = 2**sink_burstsize;
-   assign decoded_burstsize = decoded_burstsize_wire[ADDR_W-1:0];
+   assign decoded_burstsize_wire = bytes_in_transfer(sink_burstsize);  //expand it to 64 bits
+   assign decoded_burstsize = decoded_burstsize_wire[ADDR_W-1:0];      //then take the width that is needed
 
    wire [ADDR_W - 1 : 0] p1_burst_uncompress_address_offset =
    (

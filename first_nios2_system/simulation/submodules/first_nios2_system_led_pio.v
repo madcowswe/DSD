@@ -59,7 +59,7 @@ module first_nios2_system_led_pio (
     end
 
 
-  assign readdata = {{{32- 10}{1'b0}},read_mux_out};
+  assign readdata = {32'b0 | read_mux_out};
   assign out_port = data_out;
 
 endmodule

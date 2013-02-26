@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+vdeterminant
+!i10b 1
+!s100 XUhg9ZMHlYLfME;zMCV;U2
+ISe3NSn97kN=PRniN<90<d1
+VljEcj6KL0ETU6DWf5mVj63
+Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1361844181
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v
+L0 12
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1361848408.130000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v|-work|determinant_0|
+!s101 -O0
+o-work determinant_0 -O0

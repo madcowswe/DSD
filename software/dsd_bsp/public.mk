@@ -78,20 +78,20 @@ ALT_CPPFLAGS += -DSYSTEM_BUS_WIDTH=32 \
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.0sp2
-ACDS_VERSION := 12.0sp2
+# ACDS_VERSION: 12.1
+ACDS_VERSION := 12.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 263
+# BUILD_NUMBER: 177
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
-JDI_FILE := H:/DSD/student_files_v2/de2-70_system_template/hello_world.jdi
+JDI_FILE := C:/Users/Oskar/Documents/DSD/hello_world.jdi
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := H:/DSD/student_files_v2/de2-70_system_template/first_nios2_system.sopcinfo
+SOPCINFO_FILE := C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -121,8 +121,8 @@ ELF_PATCH_FLAG  += --cpu_name $(CPU_NAME)
 ALT_CFLAGS += -mno-hw-div
 
 # Hardware Multiplier present. 
-# setting HARDWARE_MULTIPLY is true
-ALT_CFLAGS += -mhw-mul
+# setting HARDWARE_MULTIPLY is false
+ALT_CFLAGS += -mno-hw-mul
 
 # Hardware Mulx present. 
 # setting HARDWARE_MULX is false
@@ -151,14 +151,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x1001038
-SOPC_SYSID_FLAG += --sidp=0x1001038
-ELF_PATCH_FLAG  += --sidp 0x1001038
+# setting SOPC_SYSID_BASE_ADDRESS is 0x1001030
+SOPC_SYSID_FLAG += --sidp=0x1001030
+ELF_PATCH_FLAG  += --sidp 0x1001030
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1361661571
-SOPC_SYSID_FLAG += --timestamp=1361661571
-ELF_PATCH_FLAG  += --timestamp 1361661571
+# setting SOPC_TIMESTAMP is 1361844183
+SOPC_SYSID_FLAG += --timestamp=1361844183
+ELF_PATCH_FLAG  += --timestamp 1361844183
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
@@ -234,7 +234,8 @@ ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 # loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk. When 
 # this setting is true, the BSP shouldn't be used to build applications that 
 # are expected to run real hardware. 
-# setting hal.enable_sim_optimize is 0
+# setting hal.enable_sim_optimize is true
+ALT_CPPFLAGS += -DALT_SIM_OPTIMIZE
 
 # Causes the small newlib (C library) to be used. This reduces code and data 
 # footprint at the expense of reduced functionality. Several newlib features 

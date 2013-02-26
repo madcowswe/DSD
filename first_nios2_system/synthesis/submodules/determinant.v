@@ -33,8 +33,8 @@ module determinant #(
 
 	// TODO: Auto-generated HDL template
 
-	assign result = 32'b00000000000000000000000000000000;
-
+	assign result = 32'b00000000000000000000000000000000 + n;
+	
 	assign done = 1'b1;
 
 	assign burstcount = 3'b000;

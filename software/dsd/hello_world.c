@@ -84,12 +84,20 @@ float detmat(float matrix[][MXSIZE]){
 int main()
 {
 
-	int i = 0;
-	while(1){
-		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, i++);
-	}
+//	int i = 0;
+//	while(1){
+//		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, init_dma_transfer((void*)1337, 4));
+//		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, i++);
+//	}
 
-	//barrier for old tests
+	float testmat2x2[2][2] = {{0.1, 0.6},{3.4, -2.1}};
+	IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, init_dma_transfer((float*)&testmat2x2, 4) | 0x100);
+//	if (init_dma_transfer((float*)&testmat2x2, 4) == DMA_SUCCESS)
+//		printf("Epic DMA Success!\n");
+//	else
+//		printf("You probably scheduled a DMA transfer too early, or something is broken...\n");
+
+	//barrier for old tests--------------------------------
 	while(1);
 
 	while(1){
