@@ -95,8 +95,8 @@ int main()
 
 	IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, reg_isr());
 
-	float testmat2x2[5][5] = {{0.1, 0.6},{3.4, -2.1}};
-	det_start((float*)&testmat2x2, 5);
+	float testmat2x2[20][20] = {{0.1, 0.6},{3.4, -2.1}};
+	det_start((float*)&testmat2x2, 20);
 
 	while(!irqcommunicationtest);
 	//while (det_status());

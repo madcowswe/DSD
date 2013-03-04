@@ -129,9 +129,7 @@ module determinant #(
 	end
 
 	always @(*) begin : proc_test
-		if (timingtestctr == 0) begin
-			done <= 1;
-		end
+		done <= dma_done;
 	end
 
 	reg [31:0] dma_currptr;
