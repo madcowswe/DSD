@@ -1,4 +1,4 @@
-// (C) 2001-2012 Altera Corporation. All rights reserved.
+// (C) 2001-2013 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files any of the foregoing (including device programming or simulation 
@@ -11,18 +11,18 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.1/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
+// $Id: //acds/rel/12.1sp1/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/08/12 $
+// $Date: 2012/10/10 $
 // $Author: swbranch $
 
 // -------------------------------------------------------
 // Altera IRQ Mapper
 //
 // Parameters
-//   NUM_RCVRS        : 2
+//   NUM_RCVRS        : 3
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:16,1:1
+//   IRQ_MAP          : 0:1,1:16,2:20
 //
 // -------------------------------------------------------
 
@@ -41,6 +41,7 @@ module first_nios2_system_irq_mapper
     // -------------------
     input                receiver0_irq,
     input                receiver1_irq,
+    input                receiver2_irq,
 
     // -------------------
     // Command Source (Output)
@@ -52,8 +53,9 @@ module first_nios2_system_irq_mapper
     always @* begin
 	sender_irq = 0;
 
-        sender_irq[16] = receiver0_irq;
-        sender_irq[1] = receiver1_irq;
+        sender_irq[1] = receiver0_irq;
+        sender_irq[16] = receiver1_irq;
+        sender_irq[20] = receiver2_irq;
     end
 
 endmodule

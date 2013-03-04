@@ -1,4 +1,4 @@
-// (C) 2001-2012 Altera Corporation. All rights reserved.
+// (C) 2001-2013 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files any of the foregoing (including device programming or simulation 
@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
+// $Id: //acds/rel/12.1sp1/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/08/12 $
+// $Date: 2012/10/10 $
 // $Author: swbranch $
 
 // ------------------------------------------
@@ -30,9 +30,9 @@
 //   ARBITRATION_SHARES:  1 1
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
-//   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
-//   ST_DATA_W:           109
-//   ST_CHANNEL_W:        6
+//   PKT_TRANS_LOCK:      70 (arbitration locking enabled)
+//   ST_DATA_W:           107
+//   ST_CHANNEL_W:        7
 // ------------------------------------------
 
 module first_nios2_system_cmd_xbar_mux
@@ -41,15 +41,15 @@ module first_nios2_system_cmd_xbar_mux
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [109-1   : 0]  sink0_data,
-    input [6-1: 0]  sink0_channel,
+    input [107-1   : 0]  sink0_data,
+    input [7-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
-    input [109-1   : 0]  sink1_data,
-    input [6-1: 0]  sink1_channel,
+    input [107-1   : 0]  sink1_data,
+    input [7-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
     output                      sink1_ready,
@@ -59,8 +59,8 @@ module first_nios2_system_cmd_xbar_mux
     // Source
     // ----------------------
     output                      src_valid,
-    output [109-1    : 0] src_data,
-    output [6-1 : 0] src_channel,
+    output [107-1    : 0] src_data,
+    output [7-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -71,13 +71,13 @@ module first_nios2_system_cmd_xbar_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 109 + 6 + 2;
+    localparam PAYLOAD_W        = 107 + 7 + 2;
     localparam NUM_INPUTS       = 2;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 109;
-    localparam ST_CHANNEL_W     = 6;
-    localparam PKT_TRANS_LOCK   = 72;
+    localparam ST_DATA_W        = 107;
+    localparam ST_CHANNEL_W     = 7;
+    localparam PKT_TRANS_LOCK   = 70;
 
     // ------------------------------------------
     // Signals
@@ -109,8 +109,8 @@ module first_nios2_system_cmd_xbar_mux
     // ------------------------------------------
     reg [NUM_INPUTS - 1 : 0] lock;
     always @* begin
-      lock[0] = sink0_data[72];
-      lock[1] = sink1_data[72];
+      lock[0] = sink0_data[70];
+      lock[1] = sink1_data[70];
     end
     reg [NUM_INPUTS - 1 : 0] locked = '0;
     always @(posedge clk or posedge reset) begin

@@ -1,15 +1,47 @@
 #ifndef _DETERMINANT_H
 
 #include "system.h"
+#include <io.h>
+#include <sys/alt_cache.h>
+#include <sys/alt_irq.h>
 
-#define DMA_SUCCESS 0
-#define DMA_BUSY_FAIL 1
-#define DMA_GENERIC_FAIL 2
+#define DET_RESULT_OFFSET 0
+#define DET_STATUS_OFFSET 1
+#define DET_PTR_OFFSET 0
+#define DET_LEN_OFFSET 1
 
-#define DMA_OPCODE 0
+#define DET_STATUS_READY 0
+#define DET_STATUS_BUSY 1
 
-inline int init_dma_transfer(float* ptr, int len){
-	return __builtin_custom_inpi(ALT_CI_DETERMINANT_0_N+(DMA_OPCODE & ALT_CI_DETERMINANT_0_N_MASK),(void*)ptr,len);
+int irqcommunicationtest = 0;
+
+int det_status(){
+	return IORD(DETERMINANT_0_BASE, DET_STATUS_OFFSET);
+}
+
+float det_result(){
+	return IORD(DETERMINANT_0_BASE, DET_RESULT_OFFSET);
+}
+
+void det_done_isr(void* context){
+	det_result();
+	irqcommunicationtest = 1;
+}
+
+int reg_isr(){
+	return alt_ic_isr_register(DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID,
+						DETERMINANT_0_IRQ,
+	                    &det_done_isr,
+	                    NULL,
+	                    NULL);
+}
+
+
+
+void det_start(float* ptr, int N){
+	alt_dcache_flush (ptr, N * N * sizeof(float));
+	IOWR(DETERMINANT_0_BASE, DET_PTR_OFFSET, (int)ptr);
+	IOWR(DETERMINANT_0_BASE, DET_LEN_OFFSET, N);
 }
 
 #endif //_DETERMINANT_H

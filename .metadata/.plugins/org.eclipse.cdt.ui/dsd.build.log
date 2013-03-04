@@ -1,0 +1,12 @@
+
+**** Build of configuration Nios II for project dsd ****
+
+make -j16 all 
+Info: Building ../dsd_bsp
+make --no-print-directory -C ../dsd_bsp
+[BSP build complete]
+Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_dsd.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_dsd.elf >RUN_ON_HDL_SIMULATOR_ONLY_dsd.objdump
+[RUN_ON_HDL_SIMULATOR_ONLY_dsd build complete]
+
+**** Build Finished ****

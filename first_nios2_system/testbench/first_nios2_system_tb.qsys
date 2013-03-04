@@ -72,7 +72,7 @@
  <parameter name="projectName" value="hello_world.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1361844148511" />
+ <parameter name="timeStamp" value="1362428978683" />
  <parameter name="useTestBenchNamingPattern" value="true" />
  <instanceScript></instanceScript>
  <module

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.02.26.02:02:25
+# ACDS 12.1sp1 243 win32 2013.03.04.20:29:32
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -68,9 +68,6 @@ mkdir -p ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_a
 mkdir -p ./libraries/cpu_instruction_master_translator_avalon_universal_master_0_agent/
 mkdir -p ./libraries/cpu_jtag_debug_module_translator/
 mkdir -p ./libraries/cpu_instruction_master_translator/
-mkdir -p ./libraries/cpu_custom_instruction_master_multi_slave_translator0/
-mkdir -p ./libraries/cpu_custom_instruction_master_multi_xconnect/
-mkdir -p ./libraries/cpu_custom_instruction_master_translator/
 mkdir -p ./libraries/determinant_0/
 mkdir -p ./libraries/sdram_0/
 mkdir -p ./libraries/led_pio/
@@ -102,66 +99,63 @@ fi
 # ----------------------------------------
 # compile device library files
 if [ $SKIP_DEV_COM -eq 0 ]; then
-  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
-  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
-  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
-  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
-  vlogan +v2k -sverilog "c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
-  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
+  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
+  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
+  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
+  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
+  vlogan +v2k -sverilog "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
+  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
 fi
 
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_irq_mapper.sv"                                   -work irq_mapper                                                              
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv"                                     -work width_adapter                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work width_adapter                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work width_adapter                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux_001                                                        
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux_001.sv"                             -work rsp_xbar_mux_001                                                        
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux                                                            
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                                 -work rsp_xbar_mux                                                            
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"                           -work rsp_xbar_demux_001                                                      
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux_001                                                        
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"                             -work cmd_xbar_mux_001                                                        
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux                                                            
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux.sv"                                 -work cmd_xbar_mux                                                            
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_002.sv"                           -work cmd_xbar_demux_002                                                      
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_001.sv"                           -work cmd_xbar_demux_001                                                      
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux.sv"                               -work cmd_xbar_demux                                                          
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                                                          
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                                                          
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                                     -work burst_adapter                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work burst_adapter                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                                -work id_router_002                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                                -work id_router_001                                                           
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                                    -work id_router                                                               
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_002.sv"                              -work addr_router_002                                                         
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_001.sv"                              -work addr_router_001                                                         
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router.sv"                                  -work addr_router                                                             
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                                       -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                                      -work cpu_instruction_master_translator_avalon_universal_master_0_agent       
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                                  -work cpu_jtag_debug_module_translator                                        
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                                 -work cpu_instruction_master_translator                                       
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_customins_slave_translator.sv"                               -work cpu_custom_instruction_master_multi_slave_translator0                   
-  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv" -work cpu_custom_instruction_master_multi_xconnect                            
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_customins_master_translator.v"                               -work cpu_custom_instruction_master_translator                                
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/determinant.v"                                                      -work determinant_0                                                           
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v"                                       -work sdram_0                                                                 
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v"                        -work sdram_0                                                                 
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_led_pio.v"                                       -work led_pio                                                                 
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                                        -work sysid                                                                   
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                                 -work sys_clk_timer                                                           
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                                     -work jtag_uart                                                               
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                                           -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"                  -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"                     -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"                 -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"                            -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                                -work cpu                                                                     
-  vlogan +v2k           "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_irq_mapper.sv"                   -work irq_mapper                                                              
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv"                     -work width_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                -work width_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work width_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux_001                                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux_001.sv"             -work rsp_xbar_mux_001                                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux                                                            
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                 -work rsp_xbar_mux                                                            
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"           -work rsp_xbar_demux_001                                                      
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux_001                                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"             -work cmd_xbar_mux_001                                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux                                                            
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux.sv"                 -work cmd_xbar_mux                                                            
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_002.sv"           -work cmd_xbar_demux_002                                                      
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_001.sv"           -work cmd_xbar_demux_001                                                      
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux.sv"               -work cmd_xbar_demux                                                          
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                          -work rst_controller                                                          
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                        -work rst_controller                                                          
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                     -work burst_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work burst_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                -work id_router_002                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                -work id_router_001                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                    -work id_router                                                               
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_002.sv"              -work addr_router_002                                                         
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_001.sv"              -work addr_router_001                                                         
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router.sv"                  -work addr_router                                                             
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                       -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                      -work cpu_instruction_master_translator_avalon_universal_master_0_agent       
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                  -work cpu_jtag_debug_module_translator                                        
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                 -work cpu_instruction_master_translator                                       
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/determinant.v"                                      -work determinant_0                                                           
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v"                       -work sdram_0                                                                 
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v"        -work sdram_0                                                                 
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_led_pio.v"                       -work led_pio                                                                 
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                        -work sysid                                                                   
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                 -work sys_clk_timer                                                           
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                     -work jtag_uart                                                               
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                           -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"  -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"     -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v" -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"            -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                        
 fi
 
 # ----------------------------------------

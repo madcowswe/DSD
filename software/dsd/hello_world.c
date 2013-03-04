@@ -81,6 +81,7 @@ float detmat(float matrix[][MXSIZE]){
 	return det;
 }
 
+
 int main()
 {
 
@@ -90,8 +91,18 @@ int main()
 //		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, i++);
 //	}
 
+	alt_irq_init(NULL);
+
+	IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, reg_isr());
+
 	float testmat2x2[2][2] = {{0.1, 0.6},{3.4, -2.1}};
-	IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, init_dma_transfer((float*)&testmat2x2, 4) | 0x100);
+	det_start((float*)&testmat2x2, 2);
+
+	while(!irqcommunicationtest);
+	//while (det_status());
+	IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, 1);
+
+
 //	if (init_dma_transfer((float*)&testmat2x2, 4) == DMA_SUCCESS)
 //		printf("Epic DMA Success!\n");
 //	else

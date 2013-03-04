@@ -129,18 +129,6 @@
    type="SYSTEM_VERILOG"
    library="cpu_instruction_master_translator" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv"
-   type="SYSTEM_VERILOG"
-   library="cpu_custom_instruction_master_multi_slave_translator0" />
- <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv"
-   type="SYSTEM_VERILOG"
-   library="cpu_custom_instruction_master_multi_xconnect" />
- <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v"
-   type="VERILOG"
-   library="cpu_custom_instruction_master_translator" />
- <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v"
    type="VERILOG"
    library="determinant_0" />
