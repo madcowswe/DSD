@@ -4,23 +4,23 @@ K3
 cModel Technology
 Z0 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
 vfirst_nios2_system_cpu
-I5M55WL;[DRKjk1YF^1zQT2
-VA=ScDd4J=jeJ8BcB9V<n30
+IV8cFTGFC<?4`7R[kj];6o2
+VU7m<YAmTaiMU7]jJK9<Xl2
 Z1 dC:\Users\Oskar\Documents\DSD\software\dsd\obj\default\runtime\sim\mentor
-Z2 w1362429002
-Z3 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v
-Z4 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v
-L0 3164
-Z5 OV;L;10.1b;51
+Z2 w1362456133
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo
+L0 31
+Z3 OV;L;10.1b;51
 r1
 31
-Z6 !s108 1362430202.667000
-Z7 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v|
-Z8 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v|-work|cpu|
-Z9 o-work cpu -O0
+Z4 o-work cpu -O0
 !i10b 1
-!s100 Oo:;k>jR[gYc4;FXmFZoJ3
+!s100 <Af@k@dAj9K7DFMXEe_UL3
 !s85 0
+!s108 1362456221.307000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo|-work|cpu|
 !s101 -O0
 vfirst_nios2_system_cpu_jtag_debug_module_sysclk
 IdX;]z<9BDDoHkTEi5IWH<2
@@ -30,14 +30,14 @@ R2
 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v
 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v
 L0 21
-R5
+R3
 r1
 31
-R9
+R4
 !i10b 1
 !s100 aHgJMkc`DebEOzc1mV^Qd1
 !s85 0
-!s108 1362430203.028000
+!s108 1362456221.602000
 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v|
 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v|-work|cpu|
 !s101 -O0
@@ -49,14 +49,14 @@ R2
 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v
 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v
 L0 21
-R5
+R3
 r1
 31
-R9
+R4
 !i10b 1
 !s100 aB<O9fIT__V9:FT1?T@`^0
 !s85 0
-!s108 1362430203.096000
+!s108 1362456221.665000
 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v|
 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v|-work|cpu|
 !s101 -O0
@@ -68,339 +68,35 @@ R2
 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v
 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v
 L0 21
-R5
+R3
 r1
 31
-R9
+R4
 !i10b 1
 !s100 Xn35]89BzS74J<Qed]CBV3
 !s85 0
-!s108 1362430203.160000
+!s108 1362456221.768000
 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v|
 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v|-work|cpu|
 !s101 -O0
-vfirst_nios2_system_cpu_nios2_avalon_reg
-I3mE:a4OdmYT01Q7]ZbC_h2
-V^28B[V2fUG7iaZ`<6g3U23
+vfirst_nios2_system_cpu_mult_cell
+IUAMe7=;GQl_[Zo9cPP<JR3
+VFDMX5i[`7Lg`lE65@WULk1
 R1
 R2
+8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v
+FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v
+L0 21
 R3
-R4
-L0 514
-R5
 r1
 31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 d;gZz=@KD=kgcMXFJX`=P0
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci
-IT6T2bizRA`>mY05lzj]gL2
-VOTECW<4b=:[gI7nm@lELA0
-R1
-R2
-R3
 R4
-L0 2726
-R5
-r1
-31
-R6
-R7
-R8
-R9
 !i10b 1
-!s100 J?80HzVJFMIR8732DCB5I1
+!s100 `Hz31Vhmoi?l<GPDjFG<10
 !s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_break
-IdZE`gXL_FaW@NeQjanHi23
-VfP1?9bdV8;E6TkESiHmWn3
-R1
-R2
-R3
-R4
-L0 608
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 kYi@z[hGY5A3>BmOB5XZi0
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_compute_tm_count
-IFC>iFcbHjEAJcl>mg:RJG1
-VdDicSJ3`h`UmN9fa5Vkm53
-R1
-R2
-R3
-R4
-L0 1752
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 65B[^9U@j=lGDG<e3=hzE2
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_dbrk
-IX20m104=1E6Q2Iz@zVzBj1
-V79lQnz@L[Tm:V?R4O3UmF3
-R1
-R2
-R3
-R4
-L0 1108
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 T_e;>9F6gUI0Y^B>j?YNQ3
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_debug
-Im5cKDO?Ac87Ia93Z95[mJ3
-V>2e2O=GXEA6W6aiW1Fi@P2
-R1
-R2
-R3
-R4
-L0 147
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 fhde?9E[lhQhc?7FmeZV:1
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_dtrace
-IAb:>cCol0kT9m0eGY9;]E2
-ViM_4RzKmU4S_cRW^S4nDM0
-R1
-R2
-R3
-R4
-L0 1658
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 Pac8oZ;omg5Y^76XLhAPG2
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_fifo
-IglcOY0FYhD4Q::=0b?0JA3
-VAR7Gb<Yid6Xd2<@Tz6ncJ2
-R1
-R2
-R3
-R4
-L0 1911
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 O5?ELKg4RQB3?m1iNCVI`1
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_fifocount_inc
-I:]?2M^?ca^Rf^oOlb=g0h0
-VQbmVOo0=J]M<Y>LlXO9k@3
-R1
-R2
-R3
-R4
-L0 1865
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 n2eeQFMgo0;mQfoB:<HCn2
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_fifowp_inc
-IX5O6elgkPS@lSoFKHN[h]0
-V19h8DI@jP^nSnjPRV8OJF1
-R1
-R2
-R3
-R4
-L0 1823
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 FVnj1<mkXeiM29fjm2h371
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_im
-IS7cnAYI3ilWV@J2ScgzW70
-VzIVdh9l5GLKLzm:ZVnQJZ0
-R1
-R2
-R3
-R4
-L0 2573
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 AD_]gIHeGg35W_;oOoc=H2
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_itrace
-IzUPR[Y>_Uc9k4b=]XCi0g3
-Ve_?zWknX_3dkA6ko@h6aD2
-R1
-R2
-R3
-R4
-L0 1294
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 =6O5ZTABgDSX=bE`4TACj3
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_pib
-I^]9cF>kKDb<`]FmP<z2h:2
-V2dl=iS3]>HIm1SFGj<[_a3
-R1
-R2
-R3
-R4
-L0 2416
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 2RCWh048c8Y4<lA3_<DAn1
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_td_mode
-I3ke1_PM><ZeZRU9jm_0Pk2
-V7T]dcEgWL_<;_NPj5G:^a0
-R1
-R2
-R3
-R4
-L0 1591
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 cUbNJXCIj?iTe@m89_Jb:2
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_oci_xbrk
-IcHlI2AO_jz=_CCTXNkaPD3
-VObm288Z3Zb:H^QI4SQooZ0
-R1
-R2
-R3
-R4
-L0 902
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 c_d_R48WX_EnEB:oY>Oh:1
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_ocimem
-Iz=7X6[KMYBGE=1Fonb2>B0
-V6d_mh5S^iUg>9@8282O1@3
-R1
-R2
-R3
-R4
-L0 368
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 T]oS8b`N;kVS^PNiAa8@V1
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_nios2_performance_monitors
-I2WeLh@Q27_2]nCzM7@0NZ0
-VN`1aY?FkJ93GIGZK:gQY00
-R1
-R2
-R3
-R4
-L0 2710
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 DTPJ8]eWF]G[cm0]C3?_X3
-!s85 0
+!s108 1362456221.844000
+!s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v|
+!s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v|-work|cpu|
 !s101 -O0
 vfirst_nios2_system_cpu_oci_test_bench
 IaY><41M>lRNH7GoBTd7Lo3
@@ -410,109 +106,33 @@ R2
 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v
 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v
 L0 21
-R5
+R3
 r1
 31
-R9
+R4
 !i10b 1
 !s100 ;8`fXhK6hQcf_zDEX[4_]2
 !s85 0
-!s108 1362430203.223000
+!s108 1362456221.921000
 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v|
 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v|-work|cpu|
 !s101 -O0
-vfirst_nios2_system_cpu_ociram_lpm_dram_bdp_component_module
-IA53Q]L44<kd:a[c6e3YJW3
-VkmV<<iQ9@o2?4BEEd_m?G0
-R1
-R2
-R3
-R4
-L0 275
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 7;kz`RJ`a4QKR89Q9@Fg_0
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_register_bank_a_module
-I;iQeJB5]f0o1VQK=12Q7o2
-VBBReJ7_69Y9>>d8L98XcO0
-R1
-R2
-R3
-R4
-L0 21
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 mQ8<PM@`?PP8X[ljkUzX31
-!s85 0
-!s101 -O0
-vfirst_nios2_system_cpu_register_bank_b_module
-I>n>[aYNQ6Hc?G=Ufn0aHh0
-Vn1fCZAl9dM6=_aD146GU51
-R1
-R2
-R3
-R4
-L0 84
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 c1@C^<XL1QK5]12f?glQ83
-!s85 0
-!s101 -O0
 vfirst_nios2_system_cpu_test_bench
 !i10b 1
-!s100 9[?H6F^a3l2N7RmdlMz9g1
-IoDeg40zJ[hDWAk1XMDW6o1
-Vb]mzY<6C>04n_PCS[?_D^2
+!s100 h[79Cgn=12je1n:m;EcGB0
+IBH>>ZH2egPB99bZajV@]Q2
+V3EiQVaAKQG4TBoJF5:MCK3
 R1
 R2
 8C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v
 FC:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v
 L0 21
-R5
+R3
 r1
 !s85 0
 31
-!s108 1362430203.284000
+!s108 1362456221.978000
 !s107 C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v|
 !s90 -reportprogress|300|C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v|-work|cpu|
 !s101 -O0
-R9
-vfirst_nios2_system_cpu_traceram_lpm_dram_bdp_component_module
-I5A9ThU>fW6d]SPNb=FYIk0
-V_dTG1cCICSR;@6;Ol>CBK2
-R1
-R2
-R3
 R4
-L0 2484
-R5
-r1
-31
-R6
-R7
-R8
-R9
-!i10b 1
-!s100 mQbI6O5P@EckEkF;1@3aX3
-!s85 0
-!s101 -O0

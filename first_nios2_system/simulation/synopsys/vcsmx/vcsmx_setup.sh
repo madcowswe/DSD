@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1sp1 243 win32 2013.03.04.20:29:32
+# ACDS 12.1 177 win32 2013.03.05.04:01:44
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -50,6 +50,7 @@ mkdir -p ./libraries/width_adapter/
 mkdir -p ./libraries/rsp_xbar_mux_001/
 mkdir -p ./libraries/rsp_xbar_mux/
 mkdir -p ./libraries/rsp_xbar_demux_001/
+mkdir -p ./libraries/rsp_xbar_demux/
 mkdir -p ./libraries/cmd_xbar_mux_001/
 mkdir -p ./libraries/cmd_xbar_mux/
 mkdir -p ./libraries/cmd_xbar_demux_002/
@@ -57,6 +58,7 @@ mkdir -p ./libraries/cmd_xbar_demux_001/
 mkdir -p ./libraries/cmd_xbar_demux/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/burst_adapter/
+mkdir -p ./libraries/limiter/
 mkdir -p ./libraries/id_router_002/
 mkdir -p ./libraries/id_router_001/
 mkdir -p ./libraries/id_router/
@@ -85,6 +87,15 @@ mkdir -p ./libraries/cycloneiii_ver/
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
 if [ $SKIP_FILE_COPY -eq 0 ]; then
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.dat ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.hex ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.mif ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.dat ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.hex ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.mif ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.dat ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.hex ./
+  cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.mif ./
   cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.dat ./
   cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.hex ./
   cp -f $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.mif ./
@@ -99,12 +110,12 @@ fi
 # ----------------------------------------
 # compile device library files
 if [ $SKIP_DEV_COM -eq 0 ]; then
-  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
-  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
-  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
-  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
-  vlogan +v2k -sverilog "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
-  vlogan +v2k           "c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
+  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
+  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
+  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
+  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
+  vlogan +v2k -sverilog "c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
+  vlogan +v2k           "c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
 fi
 
 # ----------------------------------------
@@ -119,6 +130,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux                                                            
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                 -work rsp_xbar_mux                                                            
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"           -work rsp_xbar_demux_001                                                      
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux.sv"               -work rsp_xbar_demux                                                          
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux_001                                                        
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"             -work cmd_xbar_mux_001                                                        
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux                                                            
@@ -130,6 +142,8 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                        -work rst_controller                                                          
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                     -work burst_adapter                                                           
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work burst_adapter                                                           
+  vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv"                   -work limiter                                                                 
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                   -work limiter                                                                 
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                -work id_router_002                                                           
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                -work id_router_001                                                           
   vlogan +v2k -sverilog "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                    -work id_router                                                               
@@ -149,10 +163,11 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                        -work sysid                                                                   
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                 -work sys_clk_timer                                                           
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                     -work jtag_uart                                                               
-  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                           -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.vo"                          -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"  -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"     -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v" -work cpu                                                                     
+  vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_mult_cell.v"                 -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"            -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                -work cpu                                                                     
   vlogan +v2k           "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                        

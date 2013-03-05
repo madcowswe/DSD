@@ -8,7 +8,7 @@ module determinant #(
 		input  wire [31:0] readdata,          //                 .readdata
 		input  wire        readdatavalid,     //                 .readdatavalid
 		input  wire        waitrequest,       //                 .waitrequest
-		output wire [2:0]  burstcount,        //                 .burstcount
+		//output wire [2:0]  burstcount,        //                 .burstcount
 		output reg         read = 0,              //                 .read
 		input  wire        clk,               //       clock_sink.clk
 		input  wire        reset,             // clock_sink_reset.reset
@@ -28,7 +28,7 @@ module determinant #(
 	endfunction
 
 	//we always want to fetch things in 4 word packets. But is 1 for now
-	assign burstcount = 1;
+	//assign burstcount = 1;
 
 	localparam DET_RESULT_OFFSET = 0;
 	localparam DET_STATUS_OFFSET = 1;

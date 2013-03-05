@@ -8,7 +8,7 @@ module determinant #(
 		input  wire [31:0] readdata,          //                 .readdata
 		input  wire        readdatavalid,     //                 .readdatavalid
 		input  wire        waitrequest,       //                 .waitrequest
-		output wire [2:0]  burstcount,        //                 .burstcount
+		//output wire [2:0]  burstcount,        //                 .burstcount
 		output reg         read = 0,              //                 .read
 		input  wire        clk,               //       clock_sink.clk
 		input  wire        reset,             // clock_sink_reset.reset
@@ -22,13 +22,13 @@ module determinant #(
 	);
 
 	function [9:0] rowcol2addr;
-	    input [4:0] row;
-	    input [4:0] col;
-	    rowcol2addr = row * 32 + col;
+		input [4:0] row;
+		input [4:0] col;
+		rowcol2addr = row * 32 + col;
 	endfunction
 
 	//we always want to fetch things in 4 word packets. But is 1 for now
-	assign burstcount = 1;
+	//assign burstcount = 1;
 
 	localparam DET_RESULT_OFFSET = 0;
 	localparam DET_STATUS_OFFSET = 1;
@@ -129,50 +129,51 @@ module determinant #(
 	end
 
 	always @(*) begin : proc_test
-		if (timingtestctr == 0) begin
-			done <= 1;
-		end
+		done <= dma_done;
 	end
 
 	reg [31:0] dma_currptr;
-	reg [4:0] dma_req_row;
-	reg [4:0] dma_req_col;
-	reg [4:0] dma_put_row;
-	reg [4:0] dma_put_col;
+	reg [4:0] dma_currrow;
+	reg [4:0] dma_currcol;
 	always @(posedge clk) begin : proc_dma
-
-		dma_matrix_we <= 0;
 
 		if (start_dma_pulse) begin
 			dma_currptr = ptr;
-			dma_req_row <= 0;
-			dma_req_col <= 0;
-			dma_put_row <= 0;
-			dma_put_col <= 0;
+			dma_currrow <= 0;
+			dma_currcol <= 0;
 			read <= 1;
 			dma_done <= 0;
 			address <= dma_currptr;
 		end
 
-		if (isrunning & !waitrequest & !dma_done) begin
+		//request pipeline
+		if (!waitrequest && read) begin
+			dma_currptr = dma_currptr + 4;
 			address <= dma_currptr;
-			dma_currptr <= dma_currptr + 4;
+			if (dma_currptr == ptr + nummxentries * 4) begin
+				read <= 0;
+			end
+		end
 
+		dma_matrix_we <= 0;
+
+		//recieve pipeline
+		if (readdatavalid && !dma_done) begin
 			dma_matrix_addr <= rowcol2addr(dma_currrow, dma_currcol);
 			dma_matrix_data <= readdata;
 			dma_matrix_we <= 1;
 
 			dma_currcol <= dma_currcol + 1;
-			if (dma_currcol == 31) begin
+			if (dma_currcol == mxsize-1) begin
 				dma_currcol <= 0;
 				dma_currrow <= dma_currrow + 1;
 			end
 
-			if (dma_currrow == 31 && dma_currcol == 31) begin
+			if (dma_currrow == mxsize-1 && dma_currcol == mxsize-1) begin
 				dma_done <= 1;
-				read <= 0;
 			end
 		end
+
 
 
 	end

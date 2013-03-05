@@ -15,11 +15,11 @@
 
 int irqcommunicationtest = 0;
 
-int det_status(){
+inline int det_status(){
 	return IORD(DETERMINANT_0_BASE, DET_STATUS_OFFSET);
 }
 
-float det_result(){
+inline float det_result(){
 	return IORD(DETERMINANT_0_BASE, DET_RESULT_OFFSET);
 }
 
@@ -28,7 +28,7 @@ void det_done_isr(void* context){
 	irqcommunicationtest = 1;
 }
 
-int reg_isr(){
+inline int reg_isr(){
 	return alt_ic_isr_register(DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID,
 						DETERMINANT_0_IRQ,
 	                    &det_done_isr,
@@ -38,7 +38,7 @@ int reg_isr(){
 
 
 
-void det_start(float* ptr, int N){
+inline void det_start(float* ptr, int N){
 	alt_dcache_flush (ptr, N * N * sizeof(float));
 	IOWR(DETERMINANT_0_BASE, DET_PTR_OFFSET, (int)ptr);
 	IOWR(DETERMINANT_0_BASE, DET_LEN_OFFSET, N);

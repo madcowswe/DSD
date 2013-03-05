@@ -9,7 +9,6 @@ entity determinant is
         readdata        : in     vl_logic_vector(31 downto 0);
         readdatavalid   : in     vl_logic;
         waitrequest     : in     vl_logic;
-        burstcount      : out    vl_logic_vector(2 downto 0);
         read            : out    vl_logic;
         clk             : in     vl_logic;
         reset           : in     vl_logic;

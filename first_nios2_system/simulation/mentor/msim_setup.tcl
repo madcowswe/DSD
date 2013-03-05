@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1sp1 243 win32 2013.03.04.20:29:31
+# ACDS 12.1 177 win32 2013.03.05.04:01:43
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -40,6 +40,15 @@ if ![info exists QSYS_SIMDIR] {
 
 # ----------------------------------------
 # Copy ROM/RAM files to simulation directory
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.dat ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.hex ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_bht_ram.mif ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.dat ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.hex ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_dc_tag_ram.mif ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.dat ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.hex ./
+file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ic_tag_ram.mif ./
 file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.dat ./
 file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.hex ./
 file copy -force $QSYS_SIMDIR/submodules/first_nios2_system_cpu_ociram_default_contents.mif ./
@@ -81,6 +90,8 @@ ensure_lib                                                                      
 vmap       rsp_xbar_mux                                                             ./libraries/rsp_xbar_mux/                                                            
 ensure_lib                                                                          ./libraries/rsp_xbar_demux_001/                                                      
 vmap       rsp_xbar_demux_001                                                       ./libraries/rsp_xbar_demux_001/                                                      
+ensure_lib                                                                          ./libraries/rsp_xbar_demux/                                                          
+vmap       rsp_xbar_demux                                                           ./libraries/rsp_xbar_demux/                                                          
 ensure_lib                                                                          ./libraries/cmd_xbar_mux_001/                                                        
 vmap       cmd_xbar_mux_001                                                         ./libraries/cmd_xbar_mux_001/                                                        
 ensure_lib                                                                          ./libraries/cmd_xbar_mux/                                                            
@@ -95,6 +106,8 @@ ensure_lib                                                                      
 vmap       rst_controller                                                           ./libraries/rst_controller/                                                          
 ensure_lib                                                                          ./libraries/burst_adapter/                                                           
 vmap       burst_adapter                                                            ./libraries/burst_adapter/                                                           
+ensure_lib                                                                          ./libraries/limiter/                                                                 
+vmap       limiter                                                                  ./libraries/limiter/                                                                 
 ensure_lib                                                                          ./libraries/id_router_002/                                                           
 vmap       id_router_002                                                            ./libraries/id_router_002/                                                           
 ensure_lib                                                                          ./libraries/id_router_001/                                                           
@@ -137,12 +150,12 @@ vmap       cpu                                                                  
 alias dev_com {
   echo "\[exec\] dev_com"
   if { ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] } {
-    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
-    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
-    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
-    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
-    vlog -sv "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
-    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
+    vlog -sv "c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
+    vlog     "c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
   }
 }
 
@@ -159,6 +172,7 @@ alias com {
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux                                                            
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                 -work rsp_xbar_mux                                                            
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"           -work rsp_xbar_demux_001                                                      
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux.sv"               -work rsp_xbar_demux                                                          
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux_001                                                        
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"             -work cmd_xbar_mux_001                                                        
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux                                                            
@@ -170,6 +184,8 @@ alias com {
   vlog     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                        -work rst_controller                                                          
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                     -work burst_adapter                                                           
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work burst_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv"                   -work limiter                                                                 
+  vlog     "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                   -work limiter                                                                 
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                -work id_router_002                                                           
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                -work id_router_001                                                           
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                    -work id_router                                                               
@@ -189,10 +205,11 @@ alias com {
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                        -work sysid                                                                   
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                 -work sys_clk_timer                                                           
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                     -work jtag_uart                                                               
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                           -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.vo"                          -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"  -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"     -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v" -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_mult_cell.v"                 -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"            -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                -work cpu                                                                     
   vlog     "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                        
@@ -202,14 +219,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L rsp_xbar_demux -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L rsp_xbar_demux -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
