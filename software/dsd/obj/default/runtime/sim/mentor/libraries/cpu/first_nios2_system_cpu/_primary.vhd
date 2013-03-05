@@ -2,8 +2,6 @@ library verilog;
 use verilog.vl_types.all;
 entity first_nios2_system_cpu is
     port(
-        E_ci_multi_done : in     vl_logic;
-        E_ci_result     : in     vl_logic_vector(31 downto 0);
         clk             : in     vl_logic;
         d_irq           : in     vl_logic_vector(31 downto 0);
         d_readdata      : in     vl_logic_vector(31 downto 0);
@@ -18,22 +16,6 @@ entity first_nios2_system_cpu is
         jtag_debug_module_write: in     vl_logic;
         jtag_debug_module_writedata: in     vl_logic_vector(31 downto 0);
         reset_n         : in     vl_logic;
-        D_ci_a          : out    vl_logic_vector(4 downto 0);
-        D_ci_b          : out    vl_logic_vector(4 downto 0);
-        D_ci_c          : out    vl_logic_vector(4 downto 0);
-        D_ci_n          : out    vl_logic_vector(7 downto 0);
-        D_ci_readra     : out    vl_logic;
-        D_ci_readrb     : out    vl_logic;
-        D_ci_writerc    : out    vl_logic;
-        E_ci_dataa      : out    vl_logic_vector(31 downto 0);
-        E_ci_datab      : out    vl_logic_vector(31 downto 0);
-        E_ci_multi_clk_en: out    vl_logic;
-        E_ci_multi_clock: out    vl_logic;
-        E_ci_multi_reset: out    vl_logic;
-        E_ci_multi_start: out    vl_logic;
-        W_ci_estatus    : out    vl_logic;
-        W_ci_ipending   : out    vl_logic_vector(31 downto 0);
-        W_ci_status     : out    vl_logic;
         d_address       : out    vl_logic_vector(24 downto 0);
         d_byteenable    : out    vl_logic_vector(3 downto 0);
         d_read          : out    vl_logic;
@@ -43,6 +25,7 @@ entity first_nios2_system_cpu is
         i_read          : out    vl_logic;
         jtag_debug_module_debugaccess_to_roms: out    vl_logic;
         jtag_debug_module_readdata: out    vl_logic_vector(31 downto 0);
-        jtag_debug_module_resetrequest: out    vl_logic
+        jtag_debug_module_resetrequest: out    vl_logic;
+        no_ci_readra    : out    vl_logic
     );
 end first_nios2_system_cpu;

@@ -1,8 +1,8 @@
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_NAME "qsys"
-set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1sp1"
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
 set_global_assignment -library "first_nios2_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../first_nios2_system.sopcinfo"]
-set_instance_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1361844183"
+set_instance_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1362429039"
 set_global_assignment -library "first_nios2_system" -name MISC_FILE [file join $::quartus(qip_path) "../../first_nios2_system.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "first_nios2_system" -name MISC_FILE [file join $::quartus(qip_path) "../../first_nios2_system.qsys"]
@@ -36,9 +36,6 @@ set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [fi
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
-set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_slave_translator.sv"]
-set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv"]
-set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_master_translator.v"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/determinant.v"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_sdram_0.v"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_sdram_0_test_component.v"]
@@ -129,15 +126,6 @@ set_global_assignment -entity "altera_merlin_slave_translator" -library "first_n
 set_global_assignment -entity "altera_merlin_master_translator" -library "first_nios2_system" -name IP_TOOL_NAME "altera_merlin_master_translator"
 set_global_assignment -entity "altera_merlin_master_translator" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "altera_merlin_master_translator" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
-set_global_assignment -entity "altera_customins_slave_translator" -library "first_nios2_system" -name IP_TOOL_NAME "altera_customins_slave_translator"
-set_global_assignment -entity "altera_customins_slave_translator" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
-set_global_assignment -entity "altera_customins_slave_translator" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
-set_global_assignment -entity "first_nios2_system_cpu_custom_instruction_master_multi_xconnect" -library "first_nios2_system" -name IP_TOOL_NAME "altera_customins_xconnect"
-set_global_assignment -entity "first_nios2_system_cpu_custom_instruction_master_multi_xconnect" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
-set_global_assignment -entity "first_nios2_system_cpu_custom_instruction_master_multi_xconnect" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
-set_global_assignment -entity "altera_customins_master_translator" -library "first_nios2_system" -name IP_TOOL_NAME "altera_customins_master_translator"
-set_global_assignment -entity "altera_customins_master_translator" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
-set_global_assignment -entity "altera_customins_master_translator" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
 set_global_assignment -entity "first_nios2_system_sdram_0" -library "first_nios2_system" -name IP_TOOL_NAME "altera_avalon_new_sdram_controller"
 set_global_assignment -entity "first_nios2_system_sdram_0" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "first_nios2_system_sdram_0" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"

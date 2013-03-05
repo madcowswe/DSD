@@ -26,7 +26,7 @@ entity first_nios2_system_cpu_test_bench is
         W_rf_wr_data    : in     vl_logic_vector(31 downto 0);
         W_status_reg    : in     vl_logic;
         W_valid         : in     vl_logic;
-        W_vinst         : in     vl_logic_vector(103 downto 0);
+        W_vinst         : in     vl_logic_vector(55 downto 0);
         W_wr_data       : in     vl_logic_vector(31 downto 0);
         av_ld_data_aligned_unfiltered: in     vl_logic_vector(31 downto 0);
         clk             : in     vl_logic;

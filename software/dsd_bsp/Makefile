@@ -93,12 +93,12 @@ OBJ_DIR := ./obj
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.1
-ACDS_VERSION := 12.1
+# ACDS_VERSION: 12.1sp1
+ACDS_VERSION := 12.1sp1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 177
+# BUILD_NUMBER: 243
 
 SETTINGS_FILE := settings.bsp
 SOPC_FILE := C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
@@ -132,7 +132,7 @@ BSP_ASFLAGS = -Wa,-gdwarf2
 # compiler optimization can remove variables and produce non-sequential 
 # execution of code while debugging. This setting defines the value of 
 # BSP_CFLAGS_OPTIMIZATION in Makefile. 
-BSP_CFLAGS_OPTIMIZATION = -O2
+BSP_CFLAGS_OPTIMIZATION = -O3
 
 # C/C++ compiler warning level. "-Wall" is commonly used.This setting defines 
 # the value of BSP_CFLAGS_WARNINGS in Makefile. 

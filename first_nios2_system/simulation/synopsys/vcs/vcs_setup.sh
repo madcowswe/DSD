@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.02.26.02:02:25
+# ACDS 12.1sp1 243 win32 2013.03.04.20:29:32
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -54,12 +54,12 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEFINED_ELAB_OPTIONS \
-  -v c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v \
-  -v c:/altera/12.1/quartus/eda/sim_lib/220model.v \
-  -v c:/altera/12.1/quartus/eda/sim_lib/sgate.v \
-  -v c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v \
-  c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv \
-  -v c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v \
+  -v c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v \
+  -v c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v \
+  -v c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v \
+  -v c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v \
+  c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv \
+  -v c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v \
   $QSYS_SIMDIR/submodules/first_nios2_system_irq_mapper.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv \
@@ -87,9 +87,6 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv \
-  $QSYS_SIMDIR/submodules/altera_customins_slave_translator.sv \
-  $QSYS_SIMDIR/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv \
-  $QSYS_SIMDIR/submodules/altera_customins_master_translator.v \
   $QSYS_SIMDIR/submodules/determinant.v \
   $QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v \
   $QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v \

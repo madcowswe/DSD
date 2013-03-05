@@ -1,0 +1,47 @@
+#ifndef _DETERMINANT_H
+
+#include "system.h"
+#include <io.h>
+#include <sys/alt_cache.h>
+
+#define DET_RESULT_OFFSET 0
+#define DET_STATUS_OFFSET 1
+#define DET_PTR_OFFSET 0
+#define DET_LEN_OFFSET 1
+
+#define DET_STATUS_READY 0
+#define DET_STATUS_BUSY 1
+
+int irqcommunicationtest = 0;
+
+void det_done_isr(void* context){
+
+}
+
+void reg_isr(){
+	alt_ic_isr_register(DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID,
+						DETERMINANT_0_IRQ,
+	                        &det_done_isr,
+	                        NULL,
+	                        NULL);
+}
+
+
+
+void det_start(float* ptr, int len){
+	alt_dcache_flush (ptr, len * sizeof(float));
+	IOWR(DETERMINANT_0_BASE, DET_PTR_OFFSET, (int)ptr);
+	IOWR(DETERMINANT_0_BASE, DET_LEN_OFFSET, len);
+}
+
+int det_status(){
+	return IORD(DETERMINANT_0_BASE, DET_STATUS_OFFSET);
+}
+
+float det_result(){
+	return IORD(DETERMINANT_0_BASE, DET_RESULT_OFFSET);
+}
+
+
+
+#endif //_DETERMINANT_H

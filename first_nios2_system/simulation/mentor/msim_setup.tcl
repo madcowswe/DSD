@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.02.26.02:02:24
+# ACDS 12.1sp1 243 win32 2013.03.04.20:29:31
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -117,12 +117,6 @@ ensure_lib                                                                      
 vmap       cpu_jtag_debug_module_translator                                         ./libraries/cpu_jtag_debug_module_translator/                                        
 ensure_lib                                                                          ./libraries/cpu_instruction_master_translator/                                       
 vmap       cpu_instruction_master_translator                                        ./libraries/cpu_instruction_master_translator/                                       
-ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
-vmap       cpu_custom_instruction_master_multi_slave_translator0                    ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
-ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
-vmap       cpu_custom_instruction_master_multi_xconnect                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
-ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_translator/                                
-vmap       cpu_custom_instruction_master_translator                                 ./libraries/cpu_custom_instruction_master_translator/                                
 ensure_lib                                                                          ./libraries/determinant_0/                                                           
 vmap       determinant_0                                                            ./libraries/determinant_0/                                                           
 ensure_lib                                                                          ./libraries/sdram_0/                                                                 
@@ -143,12 +137,12 @@ vmap       cpu                                                                  
 alias dev_com {
   echo "\[exec\] dev_com"
   if { ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] } {
-    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
-    vlog     "c:/altera/12.1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
-    vlog     "c:/altera/12.1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
-    vlog     "c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
-    vlog -sv "c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
-    vlog     "c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
+    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v" -work altera_ver      
+    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v"          -work lpm_ver         
+    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v"             -work sgate_ver       
+    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v"         -work altera_mf_ver   
+    vlog -sv "c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv"     -work altera_lnsim_ver
+    vlog     "c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v"  -work cycloneiii_ver  
   }
 }
 
@@ -156,69 +150,66 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_irq_mapper.sv"                                   -work irq_mapper                                                              
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv"                                     -work width_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work width_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work width_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux_001.sv"                             -work rsp_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                                 -work rsp_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"                           -work rsp_xbar_demux_001                                                      
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"                             -work cmd_xbar_mux_001                                                        
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux.sv"                                 -work cmd_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_002.sv"                           -work cmd_xbar_demux_002                                                      
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_001.sv"                           -work cmd_xbar_demux_001                                                      
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux.sv"                               -work cmd_xbar_demux                                                          
-  vlog     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                                                          
-  vlog     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                                                          
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                                     -work burst_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work burst_adapter                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                                -work id_router_002                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                                -work id_router_001                                                           
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                                    -work id_router                                                               
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_002.sv"                              -work addr_router_002                                                         
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_001.sv"                              -work addr_router_001                                                         
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router.sv"                                  -work addr_router                                                             
-  vlog     "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                                       -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                                      -work cpu_instruction_master_translator_avalon_universal_master_0_agent       
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                                  -work cpu_jtag_debug_module_translator                                        
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                                 -work cpu_instruction_master_translator                                       
-  vlog -sv "$QSYS_SIMDIR/submodules/altera_customins_slave_translator.sv"                               -work cpu_custom_instruction_master_multi_slave_translator0                   
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv" -work cpu_custom_instruction_master_multi_xconnect                            
-  vlog     "$QSYS_SIMDIR/submodules/altera_customins_master_translator.v"                               -work cpu_custom_instruction_master_translator                                
-  vlog     "$QSYS_SIMDIR/submodules/determinant.v"                                                      -work determinant_0                                                           
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v"                                       -work sdram_0                                                                 
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v"                        -work sdram_0                                                                 
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_led_pio.v"                                       -work led_pio                                                                 
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                                        -work sysid                                                                   
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                                 -work sys_clk_timer                                                           
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                                     -work jtag_uart                                                               
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                                           -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"                  -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"                     -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"                 -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"                            -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                                -work cpu                                                                     
-  vlog     "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_irq_mapper.sv"                   -work irq_mapper                                                              
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv"                     -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work width_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux_001.sv"             -work rsp_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work rsp_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                 -work rsp_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"           -work rsp_xbar_demux_001                                                      
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"             -work cmd_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                        -work cmd_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux.sv"                 -work cmd_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_002.sv"           -work cmd_xbar_demux_002                                                      
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_001.sv"           -work cmd_xbar_demux_001                                                      
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux.sv"               -work cmd_xbar_demux                                                          
+  vlog     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                          -work rst_controller                                                          
+  vlog     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                        -work rst_controller                                                          
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv"                     -work burst_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                 -work burst_adapter                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                -work id_router_002                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                -work id_router_001                                                           
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                    -work id_router                                                               
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_002.sv"              -work addr_router_002                                                         
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_001.sv"              -work addr_router_001                                                         
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router.sv"                  -work addr_router                                                             
+  vlog     "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                       -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent         
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                      -work cpu_instruction_master_translator_avalon_universal_master_0_agent       
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                  -work cpu_jtag_debug_module_translator                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                 -work cpu_instruction_master_translator                                       
+  vlog     "$QSYS_SIMDIR/submodules/determinant.v"                                      -work determinant_0                                                           
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v"                       -work sdram_0                                                                 
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v"        -work sdram_0                                                                 
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_led_pio.v"                       -work led_pio                                                                 
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sysid.vo"                        -work sysid                                                                   
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sys_clk_timer.v"                 -work sys_clk_timer                                                           
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_jtag_uart.v"                     -work jtag_uart                                                               
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu.v"                           -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"  -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v"     -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v" -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_oci_test_bench.v"            -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_test_bench.v"                -work cpu                                                                     
+  vlog     "$QSYS_SIMDIR/first_nios2_system.v"                                                                                                                        
 }
 
 # ----------------------------------------
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

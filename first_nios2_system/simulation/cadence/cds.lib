@@ -32,9 +32,6 @@ DEFINE cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent          
 DEFINE cpu_instruction_master_translator_avalon_universal_master_0_agent        ./libraries/cpu_instruction_master_translator_avalon_universal_master_0_agent/       
 DEFINE cpu_jtag_debug_module_translator                                         ./libraries/cpu_jtag_debug_module_translator/                                        
 DEFINE cpu_instruction_master_translator                                        ./libraries/cpu_instruction_master_translator/                                       
-DEFINE cpu_custom_instruction_master_multi_slave_translator0                    ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
-DEFINE cpu_custom_instruction_master_multi_xconnect                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
-DEFINE cpu_custom_instruction_master_translator                                 ./libraries/cpu_custom_instruction_master_translator/                                
 DEFINE determinant_0                                                            ./libraries/determinant_0/                                                           
 DEFINE sdram_0                                                                  ./libraries/sdram_0/                                                                 
 DEFINE led_pio                                                                  ./libraries/led_pio/                                                                 

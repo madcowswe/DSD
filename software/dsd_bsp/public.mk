@@ -78,12 +78,12 @@ ALT_CPPFLAGS += -DSYSTEM_BUS_WIDTH=32 \
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.1
-ACDS_VERSION := 12.1
+# ACDS_VERSION: 12.1sp1
+ACDS_VERSION := 12.1sp1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 177
+# BUILD_NUMBER: 243
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
@@ -156,9 +156,9 @@ SOPC_SYSID_FLAG += --sidp=0x1001030
 ELF_PATCH_FLAG  += --sidp 0x1001030
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1361844183
-SOPC_SYSID_FLAG += --timestamp=1361844183
-ELF_PATCH_FLAG  += --timestamp 1361844183
+# setting SOPC_TIMESTAMP is 1362429039
+SOPC_SYSID_FLAG += --timestamp=1362429039
+ELF_PATCH_FLAG  += --timestamp 1362429039
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
@@ -234,7 +234,7 @@ ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 # loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk. When 
 # this setting is true, the BSP shouldn't be used to build applications that 
 # are expected to run real hardware. 
-# setting hal.enable_sim_optimize is true
+# setting hal.enable_sim_optimize is 1
 ALT_CPPFLAGS += -DALT_SIM_OPTIMIZE
 
 # Causes the small newlib (C library) to be used. This reduces code and data 

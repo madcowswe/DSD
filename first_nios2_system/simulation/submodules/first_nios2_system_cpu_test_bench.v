@@ -92,7 +92,7 @@ module first_nios2_system_cpu_test_bench (
   input   [ 31: 0] W_rf_wr_data;
   input            W_status_reg;
   input            W_valid;
-  input   [103: 0] W_vinst;
+  input   [ 55: 0] W_vinst;
   input   [ 31: 0] W_wr_data;
   input   [ 31: 0] av_ld_data_aligned_unfiltered;
   input            clk;
@@ -136,7 +136,6 @@ module first_nios2_system_cpu_test_bench (
   wire             D_op_cmpnei;
   wire             D_op_crst;
   wire             D_op_custom;
-  wire             D_op_determinant_0;
   wire             D_op_div;
   wire             D_op_divu;
   wire             D_op_eret;
@@ -396,7 +395,6 @@ module first_nios2_system_cpu_test_bench (
   assign D_op_rsvx56 = D_op_opx & (D_iw_opx == 56);
   assign D_op_rsvx60 = D_op_opx & (D_iw_opx == 60);
   assign D_op_rsvx63 = D_op_opx & (D_iw_opx == 63);
-  assign D_op_determinant_0 = D_op_custom & 1'b1;
   assign D_op_opx = D_iw_op == 58;
   assign D_op_custom = D_iw_op == 50;
   always @(posedge clk or negedge reset_n)

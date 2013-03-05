@@ -1,11 +1,7 @@
 # Reading C:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
-# ERROR: No extended dataflow license exists
 # do msim_setup.tcl 
 # first_nios2_system_tb
 # ./../
-# Modifying modelsim.ini
-# Modifying modelsim.ini
-# Modifying modelsim.ini
 # Modifying modelsim.ini
 # Modifying modelsim.ini
 # Modifying modelsim.ini
@@ -246,21 +242,6 @@
 # Top level modules:
 # 	altera_merlin_master_translator
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module altera_customins_slave_translator
-# 
-# Top level modules:
-# 	altera_customins_slave_translator
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# 
-# Top level modules:
-# 	first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module altera_customins_master_translator
-# 
-# Top level modules:
-# 	altera_customins_master_translator
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module determinant
 # 
 # Top level modules:
@@ -404,7 +385,7 @@
 # Top level modules:
 # 	first_nios2_system_tb
 # [exec] elab 
-# vsim -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L sdram_0_my_partner -L first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_inst_reset_bfm -L first_nios2_system_inst_clk_bfm -L first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -t ps -G/first_nios2_system_tb/sdram_0_my_partner/INIT_FILE=\"C:/Users/Oskar/Documents/DSD/software/dsd/mem_init/hdl_sim/sdram_0.dat\" first_nios2_system_tb 
+# vsim -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L determinant_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L sdram_0_my_partner -L first_nios2_system_inst_led_pio_external_connection_bfm -L first_nios2_system_inst_reset_bfm -L first_nios2_system_inst_clk_bfm -L first_nios2_system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -t ps -G/first_nios2_system_tb/sdram_0_my_partner/INIT_FILE=\"C:/Users/Oskar/Documents/DSD/software/dsd/mem_init/hdl_sim/sdram_0.dat\" first_nios2_system_tb 
 # Loading work.first_nios2_system_tb
 # Loading first_nios2_system_inst.first_nios2_system
 # Loading cpu.first_nios2_system_cpu
@@ -450,10 +431,8 @@
 # Loading sdram_0.first_nios2_system_sdram_0
 # Loading sdram_0.first_nios2_system_sdram_0_input_efifo_module
 # Loading work.determinant
-# Loading cpu_custom_instruction_master_translator.altera_customins_master_translator
+# Loading work.matrixram
 # Loading sv_std.std
-# Loading cpu_custom_instruction_master_multi_xconnect.first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Loading cpu_custom_instruction_master_multi_slave_translator0.altera_customins_slave_translator
 # Loading cpu_instruction_master_translator.altera_merlin_master_translator
 # Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
 # Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
@@ -507,11 +486,6 @@
 # Loading burst_adapter.altera_merlin_burst_adapter_adder
 # Loading rst_controller.altera_reset_synchronizer
 # Loading width_adapter.altera_merlin_burst_uncompressor
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Too few port connections. Expected 42, found 41.
-# 
-#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Missing connection for port 'W_ci_status'.
-# 
 # ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
@@ -640,26 +614,23 @@
 # 
 # ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Too few port connections. Expected 12, found 10.
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
 # 
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
 # 
-# ** Warning: Design size of 97 instances exceeds ModelSim ALTERA recommended capacity.
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
 #   
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dataa
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/datab
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/result
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/cstm_reset
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/cstm_clk
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/clk_en
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/start
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/done
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/n
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/address
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/readdata
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/readdatavalid
@@ -668,62 +639,59 @@ add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/deter
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/read
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/clk
 add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/reset
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_active
-add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/led_pio/out_port
-run 200us
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/08/12 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
-#                    0: INFO: ------------------------------------------------------------
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/08/12 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
-#                    0: INFO: ------------------------------------------------------------
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_assert: Reset asserted
-# 
-# ************************************************************
-# This testbench includes an SOPC Builder Generated Altera model:
-# 'altera_sdram_partner_module.v', to simulate accesses to SDRAM.
-# Initial contents are loaded from the file: 'altera_sdram_partner_module.dat'.
-# ************************************************************
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/08/12 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
-#                    0: INFO: ------------------------------------------------------------
-#               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_address
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_waitrequest
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_writedata
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_write
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_read
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/slave_readdata
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/irq
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/ptr
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/isrunning
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/mxsize
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/nummxentries
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/done
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/result
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/status
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/timingtestctr
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_matrix_addr
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_matrix_data
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_matrix_we
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/start_dma_pulse
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_done
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_currptr
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_currrow
+add wave -position end  sim:/first_nios2_system_tb/first_nios2_system_inst/determinant_0/dma_currcol
 run 500us
-vlog ../../../../../../../determinant.v; restart -f; run 600us
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module determinant
-# ** Error: ../../../../../../../determinant.v(57): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(67): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(72): near "else": syntax error, unexpected else
-# C:/altera/12.1/modelsim_ase/win32aloem/vlog failed.
-vlog ../../../../../../../determinant.v; restart -f; run 600us
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module determinant
-# ** Error: ../../../../../../../determinant.v(50): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(60): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(65): near "else": syntax error, unexpected else
-# C:/altera/12.1/modelsim_ase/win32aloem/vlog failed.
-vlog ../../../../../../../determinant.v; restart -f; run 600us
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module determinant
-# ** Error: ../../../../../../../determinant.v(50): near "and": syntax error, unexpected and
-# ** Error: ../../../../../../../determinant.v(60): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(65): near "else": syntax error, unexpected else
-# C:/altera/12.1/modelsim_ase/win32aloem/vlog failed.
-vlog ../../../../../../../determinant.v; restart -f; run 600us
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module determinant
-# ** Error: ../../../../../../../determinant.v(60): near "=": syntax error, unexpected '=', expecting ++ or --
-# ** Error: ../../../../../../../determinant.v(65): near "else": syntax error, unexpected else
-# C:/altera/12.1/modelsim_ase/win32aloem/vlog failed.
-vlog ../../../../../../../determinant.v; restart -f; run 600us
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_assert: Reset asserted
+# 
+# ************************************************************
+# This testbench includes an SOPC Builder Generated Altera model:
+# 'altera_sdram_partner_module.v', to simulate accesses to SDRAM.
+# Initial contents are loaded from the file: 'altera_sdram_partner_module.dat'.
+# ************************************************************
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+# 420450 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 450770 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+vlog ../../../../../../../determinant.v; restart -f; run 500us
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module determinant
 # 
@@ -731,8 +699,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 	determinant
 # Loading work.determinant
 # Loading sv_std.std
-# Loading cpu_custom_instruction_master_multi_xconnect.first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Loading cpu_custom_instruction_master_multi_slave_translator0.altera_customins_slave_translator
 # Loading cpu_instruction_master_translator.altera_merlin_master_translator
 # Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
 # Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
@@ -782,11 +748,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # Loading burst_adapter.altera_merlin_burst_adapter_subtractor
 # Loading burst_adapter.altera_merlin_burst_adapter_adder
 # Loading width_adapter.altera_merlin_burst_uncompressor
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Too few port connections. Expected 42, found 41.
-# 
-#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Missing connection for port 'W_ci_status'.
-# 
 # ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
@@ -915,24 +876,32 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 
 # ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Too few port connections. Expected 12, found 10.
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
 # 
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
 # 
-# ** Warning: Design size of 97 instances exceeds ModelSim ALTERA recommended capacity.
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
 #                    0: INFO: ------------------------------------------------------------
@@ -945,11 +914,13 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # ************************************************************
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
-vlog ../../../../../../../determinant.v; restart -f; run 600us
+# 420450 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 450730 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+vlog ../../../../../../../determinant.v; restart -f; run 500us
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module determinant
 # 
@@ -957,8 +928,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 	determinant
 # Loading work.determinant
 # Loading sv_std.std
-# Loading cpu_custom_instruction_master_multi_xconnect.first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Loading cpu_custom_instruction_master_multi_slave_translator0.altera_customins_slave_translator
 # Loading cpu_instruction_master_translator.altera_merlin_master_translator
 # Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
 # Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
@@ -1008,11 +977,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # Loading burst_adapter.altera_merlin_burst_adapter_subtractor
 # Loading burst_adapter.altera_merlin_burst_adapter_adder
 # Loading width_adapter.altera_merlin_burst_uncompressor
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Too few port connections. Expected 42, found 41.
-# 
-#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Missing connection for port 'W_ci_status'.
-# 
 # ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
@@ -1141,24 +1105,32 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 
 # ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Too few port connections. Expected 12, found 10.
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
 # 
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
 # 
-# ** Warning: Design size of 97 instances exceeds ModelSim ALTERA recommended capacity.
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
 #                    0: INFO: ------------------------------------------------------------
@@ -1171,11 +1143,13 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # ************************************************************
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
-vlog ../../../../../../../determinant.v; restart -f; run 600us
+# 420450 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 450770 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+vlog ../../../../../../../determinant.v; restart -f; run 500us
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module determinant
 # 
@@ -1183,8 +1157,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 	determinant
 # Loading work.determinant
 # Loading sv_std.std
-# Loading cpu_custom_instruction_master_multi_xconnect.first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Loading cpu_custom_instruction_master_multi_slave_translator0.altera_customins_slave_translator
 # Loading cpu_instruction_master_translator.altera_merlin_master_translator
 # Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
 # Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
@@ -1234,11 +1206,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # Loading burst_adapter.altera_merlin_burst_adapter_subtractor
 # Loading burst_adapter.altera_merlin_burst_adapter_adder
 # Loading width_adapter.altera_merlin_burst_uncompressor
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Too few port connections. Expected 42, found 41.
-# 
-#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Missing connection for port 'W_ci_status'.
-# 
 # ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
@@ -1367,24 +1334,32 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # 
 # ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Too few port connections. Expected 12, found 10.
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
 # 
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
 # 
-# ** Warning: Design size of 97 instances exceeds ModelSim ALTERA recommended capacity.
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
 #                    0: INFO: ------------------------------------------------------------
@@ -1397,11 +1372,16 @@ vlog ../../../../../../../determinant.v; restart -f; run 600us
 # ************************************************************
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
-vlog ../../../../../../../determinant.v; restart -f; run 200us
+# 420450 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+run 400us
+run 2ms
+# 2337210 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 2438870 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+vlog ../../../../../../../determinant.v; restart -f; run 500us
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module determinant
 # 
@@ -1409,8 +1389,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 200us
 # 	determinant
 # Loading work.determinant
 # Loading sv_std.std
-# Loading cpu_custom_instruction_master_multi_xconnect.first_nios2_system_cpu_custom_instruction_master_multi_xconnect
-# Loading cpu_custom_instruction_master_multi_slave_translator0.altera_customins_slave_translator
 # Loading cpu_instruction_master_translator.altera_merlin_master_translator
 # Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
 # Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
@@ -1460,11 +1438,6 @@ vlog ../../../../../../../determinant.v; restart -f; run 200us
 # Loading burst_adapter.altera_merlin_burst_adapter_subtractor
 # Loading burst_adapter.altera_merlin_burst_adapter_adder
 # Loading width_adapter.altera_merlin_burst_uncompressor
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Too few port connections. Expected 42, found 41.
-# 
-#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(607): [TFMPC] - Missing connection for port 'W_ci_status'.
-# 
 # ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
@@ -1593,24 +1566,32 @@ vlog ../../../../../../../determinant.v; restart -f; run 200us
 # 
 # ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
-# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Too few port connections. Expected 12, found 10.
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
 # 
 #         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
 # 
-# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(620): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
 # 
-# ** Warning: Design size of 97 instances exceeds ModelSim ALTERA recommended capacity.
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
 #                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
 #                    0: INFO: ------------------------------------------------------------
@@ -1623,7 +1604,470 @@ vlog ../../../../../../../determinant.v; restart -f; run 200us
 # ************************************************************
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
-#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/08/12 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
 #                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
 #                    0: INFO: ------------------------------------------------------------
 #               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+# 420450 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+run 500us
+# 577750 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 679650 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+run 1ms
+vlog ../../../../../../../determinant.v; restart -f; run 1ms
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module determinant
+# 
+# Top level modules:
+# 	determinant
+# Loading work.determinant
+# Loading sv_std.std
+# Loading cpu_instruction_master_translator.altera_merlin_master_translator
+# Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
+# Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
+# Loading cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_slave_agent
+# Loading cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_burst_uncompressor
+# Loading addr_router.first_nios2_system_addr_router
+# Loading addr_router.first_nios2_system_addr_router_default_decode
+# Loading addr_router_001.first_nios2_system_addr_router_001
+# Loading addr_router_001.first_nios2_system_addr_router_001_default_decode
+# Loading addr_router_002.first_nios2_system_addr_router_002
+# Loading addr_router_002.first_nios2_system_addr_router_002_default_decode
+# Loading id_router.first_nios2_system_id_router
+# Loading id_router.first_nios2_system_id_router_default_decode
+# Loading id_router_001.first_nios2_system_id_router_001
+# Loading id_router_001.first_nios2_system_id_router_001_default_decode
+# Loading id_router_002.first_nios2_system_id_router_002
+# Loading id_router_002.first_nios2_system_id_router_002_default_decode
+# Loading burst_adapter.altera_merlin_burst_adapter
+# Loading cmd_xbar_demux.first_nios2_system_cmd_xbar_demux
+# Loading cmd_xbar_demux_001.first_nios2_system_cmd_xbar_demux_001
+# Loading cmd_xbar_demux_002.first_nios2_system_cmd_xbar_demux_002
+# Loading cmd_xbar_mux.first_nios2_system_cmd_xbar_mux
+# Loading cmd_xbar_mux.altera_merlin_arbitrator
+# Loading cmd_xbar_mux.altera_merlin_arb_adder
+# Loading cmd_xbar_mux_001.first_nios2_system_cmd_xbar_mux_001
+# Loading cmd_xbar_mux_001.altera_merlin_arbitrator
+# Loading cmd_xbar_mux_001.altera_merlin_arb_adder
+# Loading rsp_xbar_demux_001.first_nios2_system_rsp_xbar_demux_001
+# Loading rsp_xbar_mux.first_nios2_system_rsp_xbar_mux
+# Loading rsp_xbar_mux.altera_merlin_arbitrator
+# Loading rsp_xbar_mux.altera_merlin_arb_adder
+# Loading rsp_xbar_mux_001.first_nios2_system_rsp_xbar_mux_001
+# Loading rsp_xbar_mux_001.altera_merlin_arbitrator
+# Loading rsp_xbar_mux_001.altera_merlin_arb_adder
+# Loading width_adapter.altera_merlin_width_adapter
+# Loading irq_mapper.first_nios2_system_irq_mapper
+# Loading first_nios2_system_inst_clk_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_clk_bfm.altera_avalon_clock_source
+# Loading first_nios2_system_inst_reset_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_reset_bfm.altera_avalon_reset_source
+# Loading first_nios2_system_inst_led_pio_external_connection_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_led_pio_external_connection_bfm.altera_conduit_bfm
+# Loading burst_adapter.altera_merlin_burst_adapter_full
+# Loading burst_adapter.altera_merlin_address_alignment
+# Loading burst_adapter.altera_merlin_burst_adapter_burstwrap_increment
+# Loading burst_adapter.altera_merlin_burst_adapter_min
+# Loading burst_adapter.altera_merlin_burst_adapter_subtractor
+# Loading burst_adapter.altera_merlin_burst_adapter_adder
+# Loading width_adapter.altera_merlin_burst_uncompressor
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'wren_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'data_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clock1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'q_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Too few port connections. Expected 23, found 6.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_b/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'wren_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'data_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clock1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'q_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Too few port connections. Expected 23, found 13.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_ocimem/first_nios2_system_cpu_ociram_lpm_dram_bdp_component/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3015) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(3034): [PCDPC] - Port size (16 or 16) does not match connection size (38) for port 'jdo'. The port definition is at: C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(1299).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_itrace
+# ** Warning: (vsim-3015) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2696): [PCDPC] - Port size (7 or 7) does not match connection size (17) for port 'address_b'. The port definition is at: C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2487).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_im/first_nios2_system_cpu_traceram_lpm_dram_bdp_component
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Too few port connections. Expected 23, found 12.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_im/first_nios2_system_cpu_traceram_lpm_dram_bdp_component/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
+# 
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_assert: Reset asserted
+# 
+# ************************************************************
+# This testbench includes an SOPC Builder Generated Altera model:
+# 'altera_sdram_partner_module.v', to simulate accesses to SDRAM.
+# Initial contents are loaded from the file: 'altera_sdram_partner_module.dat'.
+# ************************************************************
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+# 421470 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 558210 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+vlog ../../../../../../../determinant.v; restart -f; run 1ms
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module determinant
+# 
+# Top level modules:
+# 	determinant
+# Loading work.determinant
+# Loading sv_std.std
+# Loading cpu_instruction_master_translator.altera_merlin_master_translator
+# Loading cpu_jtag_debug_module_translator.altera_merlin_slave_translator
+# Loading cpu_instruction_master_translator_avalon_universal_master_0_agent.altera_merlin_master_agent
+# Loading cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_slave_agent
+# Loading cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent.altera_merlin_burst_uncompressor
+# Loading addr_router.first_nios2_system_addr_router
+# Loading addr_router.first_nios2_system_addr_router_default_decode
+# Loading addr_router_001.first_nios2_system_addr_router_001
+# Loading addr_router_001.first_nios2_system_addr_router_001_default_decode
+# Loading addr_router_002.first_nios2_system_addr_router_002
+# Loading addr_router_002.first_nios2_system_addr_router_002_default_decode
+# Loading id_router.first_nios2_system_id_router
+# Loading id_router.first_nios2_system_id_router_default_decode
+# Loading id_router_001.first_nios2_system_id_router_001
+# Loading id_router_001.first_nios2_system_id_router_001_default_decode
+# Loading id_router_002.first_nios2_system_id_router_002
+# Loading id_router_002.first_nios2_system_id_router_002_default_decode
+# Loading burst_adapter.altera_merlin_burst_adapter
+# Loading cmd_xbar_demux.first_nios2_system_cmd_xbar_demux
+# Loading cmd_xbar_demux_001.first_nios2_system_cmd_xbar_demux_001
+# Loading cmd_xbar_demux_002.first_nios2_system_cmd_xbar_demux_002
+# Loading cmd_xbar_mux.first_nios2_system_cmd_xbar_mux
+# Loading cmd_xbar_mux.altera_merlin_arbitrator
+# Loading cmd_xbar_mux.altera_merlin_arb_adder
+# Loading cmd_xbar_mux_001.first_nios2_system_cmd_xbar_mux_001
+# Loading cmd_xbar_mux_001.altera_merlin_arbitrator
+# Loading cmd_xbar_mux_001.altera_merlin_arb_adder
+# Loading rsp_xbar_demux_001.first_nios2_system_rsp_xbar_demux_001
+# Loading rsp_xbar_mux.first_nios2_system_rsp_xbar_mux
+# Loading rsp_xbar_mux.altera_merlin_arbitrator
+# Loading rsp_xbar_mux.altera_merlin_arb_adder
+# Loading rsp_xbar_mux_001.first_nios2_system_rsp_xbar_mux_001
+# Loading rsp_xbar_mux_001.altera_merlin_arbitrator
+# Loading rsp_xbar_mux_001.altera_merlin_arb_adder
+# Loading width_adapter.altera_merlin_width_adapter
+# Loading irq_mapper.first_nios2_system_irq_mapper
+# Loading first_nios2_system_inst_clk_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_clk_bfm.altera_avalon_clock_source
+# Loading first_nios2_system_inst_reset_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_reset_bfm.altera_avalon_reset_source
+# Loading first_nios2_system_inst_led_pio_external_connection_bfm.verbosity_pkg
+# Loading first_nios2_system_inst_led_pio_external_connection_bfm.altera_conduit_bfm
+# Loading burst_adapter.altera_merlin_burst_adapter_full
+# Loading burst_adapter.altera_merlin_address_alignment
+# Loading burst_adapter.altera_merlin_burst_adapter_burstwrap_increment
+# Loading burst_adapter.altera_merlin_burst_adapter_min
+# Loading burst_adapter.altera_merlin_burst_adapter_subtractor
+# Loading burst_adapter.altera_merlin_burst_adapter_adder
+# Loading width_adapter.altera_merlin_burst_uncompressor
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Too few port connections. Expected 23, found 6.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_a/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'wren_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'data_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clock1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'q_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(55): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Too few port connections. Expected 23, found 6.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/first_nios2_system_cpu_register_bank_b/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'wren_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'data_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clock1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'q_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(118): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Too few port connections. Expected 23, found 13.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_ocimem/first_nios2_system_cpu_ociram_lpm_dram_bdp_component/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(329): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3015) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(3034): [PCDPC] - Port size (16 or 16) does not match connection size (38) for port 'jdo'. The port definition is at: C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(1299).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_itrace
+# ** Warning: (vsim-3015) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2696): [PCDPC] - Port size (7 or 7) does not match connection size (17) for port 'address_b'. The port definition is at: C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2487).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_im/first_nios2_system_cpu_traceram_lpm_dram_bdp_component
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Too few port connections. Expected 23, found 12.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/cpu/the_first_nios2_system_cpu_nios2_oci/the_first_nios2_system_cpu_nios2_oci_im/first_nios2_system_cpu_traceram_lpm_dram_bdp_component/the_altsyncram
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'rden_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'rden_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'clocken2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'clocken3'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'aclr0'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'aclr1'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'byteena_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'byteena_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'addressstall_a'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'addressstall_b'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v(2535): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/jtag_uart
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'dataavailable'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system.v(600): [TFMPC] - Missing connection for port 'readyfordata'.
+# 
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'address_b'. The port definition is at: ../../../../../../../matrixram.v(41).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: (vsim-3015) ../../../../../../../determinant.v(70): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'wren_b'. The port definition is at: ../../../../../../../matrixram.v(46).
+# 
+#         Region: /first_nios2_system_tb/first_nios2_system_inst/determinant_0/matrixram_inst
+# ** Warning: Design size of 95 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: first_nios2_system_tb.first_nios2_system_inst.determinant_0.matrixram_inst.altsyncram_component
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: - Hello from altera_reset_source
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_assert: Reset asserted
+# 
+# ************************************************************
+# This testbench includes an SOPC Builder Generated Altera model:
+# 'altera_sdram_partner_module.v', to simulate accesses to SDRAM.
+# Initial contents are loaded from the file: 'altera_sdram_partner_module.dat'.
+# ************************************************************
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   $Date: 2012/10/10 $
+#                    0: INFO: first_nios2_system_tb.sdram_0_my_partner_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#               990000: INFO: first_nios2_system_tb.first_nios2_system_inst_reset_bfm.reset_deassert: Reset deasserted
+# 420570 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'
+# 557710 ns: WARNING: first_nios2_system_cpu_test_bench/av_ld_data_aligned_unfiltered is 'x'

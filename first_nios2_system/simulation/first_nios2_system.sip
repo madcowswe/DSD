@@ -1,5 +1,5 @@
 set_global_assignment -entity "first_nios2_system" -library "lib_first_nios2_system" -name IP_TOOL_NAME "qsys"
-set_global_assignment -entity "first_nios2_system" -library "lib_first_nios2_system" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "first_nios2_system" -library "lib_first_nios2_system" -name IP_TOOL_VERSION "12.1sp1"
 set_global_assignment -entity "first_nios2_system" -library "lib_first_nios2_system" -name IP_TOOL_ENV "qsys"
 set_global_assignment -library "lib_first_nios2_system" -name SPD_FILE [file join $::quartus(sip_path) "../../first_nios2_system.spd"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "../../first_nios2_system.qsys"]
@@ -32,9 +32,6 @@ set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file jo
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_master_translator.sv"]
-set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_customins_slave_translator.sv"]
-set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv"]
-set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_customins_master_translator.v"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/determinant.v"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/first_nios2_system_sdram_0.v"]
 set_global_assignment -library "lib_first_nios2_system" -name MISC_FILE [file join $::quartus(sip_path) "submodules/first_nios2_system_sdram_0_test_component.v"]

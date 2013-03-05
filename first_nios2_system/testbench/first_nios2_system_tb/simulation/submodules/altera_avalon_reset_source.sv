@@ -1,4 +1,4 @@
-// (C) 2001-2012 Altera Corporation. All rights reserved.
+// (C) 2001-2013 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files any of the foregoing (including device programming or simulation 
@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $File: //acds/rel/12.1/ip/sopc/components/verification/altera_avalon_reset_source/altera_avalon_reset_source.sv $
+// $File: //acds/rel/12.1sp1/ip/sopc/components/verification/altera_avalon_reset_source/altera_avalon_reset_source.sv $
 // $Revision: #1 $
-// $Date: 2012/08/12 $
+// $Date: 2012/10/10 $
 // $Author: swbranch $
 //------------------------------------------------------------------------------
 // Reset generator
@@ -53,7 +53,7 @@ module altera_avalon_reset_source (
       print(VERBOSITY_INFO, message);            
       $sformat(message, "%m: -   $Revision: #1 $");
       print(VERBOSITY_INFO, message);            
-      $sformat(message, "%m: -   $Date: 2012/08/12 $");
+      $sformat(message, "%m: -   $Date: 2012/10/10 $");
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   ASSERT_HIGH_RESET = %0d", ASSERT_HIGH_RESET);      
       print(VERBOSITY_INFO, message);

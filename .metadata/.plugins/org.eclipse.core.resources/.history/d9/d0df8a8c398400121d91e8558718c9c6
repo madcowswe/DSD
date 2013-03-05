@@ -1,0 +1,27 @@
+#ifndef _DETERMINANT_H
+
+#include "system.h"
+#include <io.h>
+#include <sys/alt_cache.h>
+
+#define DET_RESULT_OFFSET 0
+#define DET_STATUS_OFFSET 1
+#define DET_PTR_OFFSET 0
+#define DET_LEN_OFFSET 1
+
+#define DET_STATUS_READY 0
+#define DET_STATUS_BUSY 1
+
+void det_start(float* ptr, int len){
+	alt_dcache_flush (ptr, len * sizeof(float));
+	IOWR(DETERMINANT_0_BASE, DET_PTR_OFFSET, (int)ptr);
+	IOWR(DETERMINANT_0_BASE, DET_LEN_OFFSET, len);
+}
+
+float det_result(){
+	return IORD(DETERMINANT_0_BASE, DET_RESULT_OFFSET);
+}
+
+
+
+#endif //_DETERMINANT_H

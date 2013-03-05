@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Tue Feb 26 02:04:26 GMT 2013
+ * Generated: Mon Mar 04 20:43:38 GMT 2013
  */
 
 /*
@@ -119,16 +119,6 @@
 
 
 /*
- * Custom instruction macros
- *
- */
-
-#define ALT_CI_DETERMINANT_0(n,A,B) __builtin_custom_inii(ALT_CI_DETERMINANT_0_N+(n&ALT_CI_DETERMINANT_0_N_MASK),(A),(B))
-#define ALT_CI_DETERMINANT_0_N 0x0
-#define ALT_CI_DETERMINANT_0_N_MASK ((1<<2)-1)
-
-
-/*
  * Define for each module class mastered by the CPU
  *
  */
@@ -179,6 +169,20 @@
 
 
 /*
+ * determinant_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_determinant_0 determinant
+#define DETERMINANT_0_BASE 0x0
+#define DETERMINANT_0_IRQ 20
+#define DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define DETERMINANT_0_NAME "/dev/determinant_0"
+#define DETERMINANT_0_SPAN 8
+#define DETERMINANT_0_TYPE "determinant"
+
+
+/*
  * hal configuration
  *
  */
@@ -195,7 +199,7 @@
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
 #define JTAG_UART_BASE 0x1001038
-#define JTAG_UART_IRQ 16
+#define JTAG_UART_IRQ 1
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
 #define JTAG_UART_READ_DEPTH 64
@@ -283,7 +287,7 @@
 #define SYS_CLK_TIMER_COUNTER_SIZE 32
 #define SYS_CLK_TIMER_FIXED_PERIOD 0
 #define SYS_CLK_TIMER_FREQ 50000000u
-#define SYS_CLK_TIMER_IRQ 1
+#define SYS_CLK_TIMER_IRQ 16
 #define SYS_CLK_TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define SYS_CLK_TIMER_LOAD_VALUE 49999ull
 #define SYS_CLK_TIMER_MULT 0.0010
@@ -310,7 +314,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1361844183
+#define SYSID_TIMESTAMP 1362429039
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

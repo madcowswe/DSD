@@ -11,24 +11,6 @@ add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_ni
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/i_address
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/i_read
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/i_readdata
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_dataa
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_datab
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_ci_ipending
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_ci_status
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_ci_estatus
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_n
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_a
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_b
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_c
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_readra
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_readrb
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_writerc
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_result
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_clk_en
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_clock
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_reset
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_start
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_done
 add wave -noupdate -divider {first_nios2_system_cpu: common}
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/clk
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/reset_n
@@ -54,23 +36,6 @@ add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_ni
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/oci_hbreak_req
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/hbreak_enabled
 add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/wait_for_one_post_bret_inst
-add wave -noupdate -divider {first_nios2_system_cpu: custom_instruction}
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/R_ctrl_custom
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/R_ctrl_custom_multi
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_dataa
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_datab
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_ipending_reg
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_status_reg
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/W_estatus_reg
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_n
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_readra
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_readrb
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/D_ci_writerc
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_result
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_clk_en
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_start
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_done
-add wave -noupdate -format Logic -radix hexadecimal /test_bench/DUT/the_first_nios2_system_cpu/E_ci_multi_stall
 
 configure wave -justifyvalue right
 configure wave -signalnamewidth 1
