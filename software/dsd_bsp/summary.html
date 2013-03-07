@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>05-Mar-2013 04:03:24</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>2013-mar-07 22:28:10</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1362456204527</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1362695290782</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</td>
@@ -63,6 +63,15 @@
 <tr bgcolor="#77BBFF" mode="wrap">
 <th align="left" width="15%">Region</th><th align="left" width="40%">Address Range</th><th align="left" width="15%">Size</th><th align="left" width="15%">Memory</th><th align="left" width="15%">Offset</th>
 </tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>beeth</td><td>0x00E00000 - 0x00FFFFFF</td><td>2097152</td><td>sdram_0</td><td>6291456</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>sdram_code</td><td>0x00800020 - 0x00DFFFFF</td><td>6291424</td><td>sdram_0</td><td>32</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>reset</td><td>0x00800000 - 0x0080001F</td><td>32</td><td>sdram_0</td><td>0</td>
+</tr>
 </table>
 <br>
 <br>
@@ -72,22 +81,25 @@
 <th align="left" width="50%">Section</th><th align="left" width="50%">Region</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.text</td><td>sdram_0</td>
+<td>.text</td><td>sdram_code</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rodata</td><td>sdram_0</td>
+<td>.rodata</td><td>sdram_code</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rwdata</td><td>sdram_0</td>
+<td>.rwdata</td><td>sdram_code</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.bss</td><td>sdram_0</td>
+<td>.bss</td><td>sdram_code</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.heap</td><td>sdram_0</td>
+<td>.heap</td><td>sdram_code</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.stack</td><td>sdram_0</td>
+<td>.stack</td><td>sdram_code</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>.beeth</td><td>beeth</td>
 </tr>
 </table>
 <h3>Settings</h3>
@@ -669,7 +681,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_mem</td>
+<td width="20%">Value:</td><td>none</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -723,7 +735,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_mem</td>
+<td width="20%">Value:</td><td>none</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

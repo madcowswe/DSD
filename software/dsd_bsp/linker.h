@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Sat Mar 02 18:37:04 GMT 2013
+ * Generated: Thu Mar 07 22:23:16 GMT 2013
  */
 
 /*
@@ -65,10 +65,12 @@
  *
  */
 
+#define BEETH_REGION_BASE 0xe00000
+#define BEETH_REGION_SPAN 2097152
 #define RESET_REGION_BASE 0x800000
 #define RESET_REGION_SPAN 32
-#define SDRAM_0_REGION_BASE 0x800020
-#define SDRAM_0_REGION_SPAN 8388576
+#define SDRAM_CODE_REGION_BASE 0x800020
+#define SDRAM_CODE_REGION_SPAN 6291424
 
 
 /*
