@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1sp1 243 win32 2013.03.03.18:56:32
+# ACDS 12.1 177 win32 2013.03.05.03:15:34
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -42,6 +42,15 @@ done
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
 if [ $SKIP_FILE_COPY -eq 0 ]; then
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.dat ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.hex ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_bht_ram.mif ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.dat ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.hex ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.mif ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.dat ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.hex ./
+  cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.mif ./
   cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.dat ./
   cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.hex ./
   cp -f C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.mif ./
@@ -55,12 +64,12 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEFINED_ELAB_OPTIONS \
-  -v c:/altera/12.1sp1/quartus/eda/sim_lib/altera_primitives.v \
-  -v c:/altera/12.1sp1/quartus/eda/sim_lib/220model.v \
-  -v c:/altera/12.1sp1/quartus/eda/sim_lib/sgate.v \
-  -v c:/altera/12.1sp1/quartus/eda/sim_lib/altera_mf.v \
-  c:/altera/12.1sp1/quartus/eda/sim_lib/altera_lnsim.sv \
-  -v c:/altera/12.1sp1/quartus/eda/sim_lib/cycloneiii_atoms.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/220model.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/sgate.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v \
+  c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv \
+  -v c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_irq_mapper.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_width_adapter.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
@@ -69,6 +78,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv \
+  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv \
@@ -77,6 +87,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv \
+  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv \
+  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv \
@@ -95,10 +107,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sysid.vo \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v \
-  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.v \
+  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu.vo \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v \
+  C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v \
   C:/Users/Oskar/Documents/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v \

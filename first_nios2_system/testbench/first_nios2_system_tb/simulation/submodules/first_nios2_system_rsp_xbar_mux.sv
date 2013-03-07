@@ -1,4 +1,4 @@
-// (C) 2001-2013 Altera Corporation. All rights reserved.
+// (C) 2001-2012 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files any of the foregoing (including device programming or simulation 
@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/12.1sp1/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2012/10/10 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // ------------------------------------------
@@ -31,7 +31,7 @@
 //   ARBITRATION_SCHEME   "no-arb"
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      70 (arbitration locking enabled)
-//   ST_DATA_W:           107
+//   ST_DATA_W:           103
 //   ST_CHANNEL_W:        7
 // ------------------------------------------
 
@@ -41,14 +41,14 @@ module first_nios2_system_rsp_xbar_mux
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [107-1   : 0]  sink0_data,
+    input [103-1   : 0]  sink0_data,
     input [7-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
-    input [107-1   : 0]  sink1_data,
+    input [103-1   : 0]  sink1_data,
     input [7-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
@@ -59,7 +59,7 @@ module first_nios2_system_rsp_xbar_mux
     // Source
     // ----------------------
     output                      src_valid,
-    output [107-1    : 0] src_data,
+    output [103-1    : 0] src_data,
     output [7-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
@@ -71,11 +71,11 @@ module first_nios2_system_rsp_xbar_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 107 + 7 + 2;
+    localparam PAYLOAD_W        = 103 + 7 + 2;
     localparam NUM_INPUTS       = 2;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
-    localparam ST_DATA_W        = 107;
+    localparam ST_DATA_W        = 103;
     localparam ST_CHANNEL_W     = 7;
     localparam PKT_TRANS_LOCK   = 70;
 

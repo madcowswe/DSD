@@ -7,6 +7,7 @@ width_adapter:                                                            ./libr
 rsp_xbar_mux_001:                                                         ./libraries/rsp_xbar_mux_001/                                                        
 rsp_xbar_mux:                                                             ./libraries/rsp_xbar_mux/                                                            
 rsp_xbar_demux_001:                                                       ./libraries/rsp_xbar_demux_001/                                                      
+rsp_xbar_demux:                                                           ./libraries/rsp_xbar_demux/                                                          
 cmd_xbar_mux_001:                                                         ./libraries/cmd_xbar_mux_001/                                                        
 cmd_xbar_mux:                                                             ./libraries/cmd_xbar_mux/                                                            
 cmd_xbar_demux_002:                                                       ./libraries/cmd_xbar_demux_002/                                                      
@@ -14,6 +15,7 @@ cmd_xbar_demux_001:                                                       ./libr
 cmd_xbar_demux:                                                           ./libraries/cmd_xbar_demux/                                                          
 rst_controller:                                                           ./libraries/rst_controller/                                                          
 burst_adapter:                                                            ./libraries/burst_adapter/                                                           
+limiter:                                                                  ./libraries/limiter/                                                                 
 id_router_002:                                                            ./libraries/id_router_002/                                                           
 id_router_001:                                                            ./libraries/id_router_001/                                                           
 id_router:                                                                ./libraries/id_router/                                                               

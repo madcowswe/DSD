@@ -46,29 +46,46 @@ float detmat(float matrix[][MXSIZE]){
 	float det = 1.0f;
 
 	//Copy Matrix to tempmat
-	for(int i = 0; i != MXSIZE; ++i){
+	for(int i = 0; i != MXSIZE; ++i)
 		for(int j = 0; j != MXSIZE; j++)
 			tempmat[i][j] = matrix[i][j];
-	}
 
 	// Fill Lower with 0's
 	int rswapcount = 0;
+
+	//iterate over columns
 	for(int i =0; i < MXSIZE; ++i){
+
+		//swap or calculate
 		if (tempmat[i][i] != 0){
+
+			//clear swap count
+			rswapcount =0;
+
+			//for each row (j) bleow diagonal of current column
 			for(int j = i+1; j < MXSIZE; j++){
-				rswapcount =0;
+
+				//compute normalization factor
 				float f = tempmat[j][i]/tempmat[i][i];
+
+				//subtract f * i'th row from j'th row
 				for (int k = i; k < MXSIZE; ++k)
-					tempmat[j][k] = tempmat[j][k] - f*tempmat[i][k];
+					tempmat[j][k] -= f*tempmat[i][k];
 			}
 		} else {
+
+			//if we have exhausted all swap options, we know it must be singular
 			if ((MXSIZE - 1 - i) == rswapcount++){
 				return 0;
 			} else {
+
+				//maintain a sorted list of swaps so we know we have tried all
 				for (int k = i; k < MXSIZE - 1; ++k){
 					rswap(tempmat,k,k+1);
 					det *= -1;
 				}
+
+				//retry this column
 				i--;
 			}
 		}

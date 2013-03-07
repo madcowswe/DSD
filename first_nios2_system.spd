@@ -37,6 +37,10 @@
    type="SYSTEM_VERILOG"
    library="rsp_xbar_demux_001" />
  <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_xbar_demux" />
+ <file
    path="first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
    library="cmd_xbar_mux_001" />
@@ -80,6 +84,14 @@
    path="first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv"
    type="SYSTEM_VERILOG"
    library="burst_adapter" />
+ <file
+   path="first_nios2_system/simulation/submodules/altera_merlin_traffic_limiter.sv"
+   type="SYSTEM_VERILOG"
+   library="limiter" />
+ <file
+   path="first_nios2_system/simulation/submodules/altera_avalon_st_pipeline_base.v"
+   type="VERILOG"
+   library="limiter" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_id_router_002.sv"
    type="SYSTEM_VERILOG"
@@ -173,12 +185,52 @@
    type="OTHER"
    library="cpu" />
  <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.ocp"
+   type="OTHER"
+   library="cpu" />
+ <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.sdc"
    type="SDC"
    library="cpu" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.v"
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu.vo"
    type="VERILOG"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.dat"
+   type="DAT"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.hex"
+   type="HEX"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_bht_ram.mif"
+   type="MIF"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.dat"
+   type="DAT"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.hex"
+   type="HEX"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_dc_tag_ram.mif"
+   type="MIF"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.dat"
+   type="DAT"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.hex"
+   type="HEX"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.mif"
+   type="MIF"
    library="cpu" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v"
@@ -190,6 +242,10 @@
    library="cpu" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"
+   type="VERILOG"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_mult_cell.v"
    type="VERILOG"
    library="cpu" />
  <file

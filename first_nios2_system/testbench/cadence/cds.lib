@@ -14,6 +14,7 @@ DEFINE width_adapter                                                            
 DEFINE rsp_xbar_mux_001                                                         ./libraries/rsp_xbar_mux_001/                                                        
 DEFINE rsp_xbar_mux                                                             ./libraries/rsp_xbar_mux/                                                            
 DEFINE rsp_xbar_demux_001                                                       ./libraries/rsp_xbar_demux_001/                                                      
+DEFINE rsp_xbar_demux                                                           ./libraries/rsp_xbar_demux/                                                          
 DEFINE cmd_xbar_mux_001                                                         ./libraries/cmd_xbar_mux_001/                                                        
 DEFINE cmd_xbar_mux                                                             ./libraries/cmd_xbar_mux/                                                            
 DEFINE cmd_xbar_demux_002                                                       ./libraries/cmd_xbar_demux_002/                                                      
@@ -21,6 +22,7 @@ DEFINE cmd_xbar_demux_001                                                       
 DEFINE cmd_xbar_demux                                                           ./libraries/cmd_xbar_demux/                                                          
 DEFINE rst_controller                                                           ./libraries/rst_controller/                                                          
 DEFINE burst_adapter                                                            ./libraries/burst_adapter/                                                           
+DEFINE limiter                                                                  ./libraries/limiter/                                                                 
 DEFINE id_router_002                                                            ./libraries/id_router_002/                                                           
 DEFINE id_router_001                                                            ./libraries/id_router_001/                                                           
 DEFINE id_router                                                                ./libraries/id_router/                                                               

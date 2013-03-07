@@ -78,12 +78,12 @@ ALT_CPPFLAGS += -DSYSTEM_BUS_WIDTH=32 \
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 12.1sp1
-ACDS_VERSION := 12.1sp1
+# ACDS_VERSION: 12.1
+ACDS_VERSION := 12.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 243
+# BUILD_NUMBER: 177
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
@@ -121,8 +121,8 @@ ELF_PATCH_FLAG  += --cpu_name $(CPU_NAME)
 ALT_CFLAGS += -mno-hw-div
 
 # Hardware Multiplier present. 
-# setting HARDWARE_MULTIPLY is false
-ALT_CFLAGS += -mno-hw-mul
+# setting HARDWARE_MULTIPLY is true
+ALT_CFLAGS += -mhw-mul
 
 # Hardware Mulx present. 
 # setting HARDWARE_MULX is false
@@ -156,9 +156,9 @@ SOPC_SYSID_FLAG += --sidp=0x1001030
 ELF_PATCH_FLAG  += --sidp 0x1001030
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1362429039
-SOPC_SYSID_FLAG += --timestamp=1362429039
-ELF_PATCH_FLAG  += --timestamp 1362429039
+# setting SOPC_TIMESTAMP is 1362456154
+SOPC_SYSID_FLAG += --timestamp=1362456154
+ELF_PATCH_FLAG  += --timestamp 1362456154
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
