@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Thu Mar 07 22:23:16 GMT 2013
+ * Generated: Sun Mar 10 05:13:36 GMT 2013
  */
 
 /*
@@ -51,8 +51,7 @@
 MEMORY
 {
     reset : ORIGIN = 0x800000, LENGTH = 32
-    sdram_code : ORIGIN = 0x800020, LENGTH = 6291424
-    beeth : ORIGIN = 0xe00000, LENGTH = 2097152
+    sdram_0 : ORIGIN = 0x800020, LENGTH = 8388576
 }
 
 /* Define symbols for each memory base-address */
@@ -111,17 +110,9 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > sdram_code
+    } > sdram_0
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
-
-    .beeth :
-    {
-        PROVIDE (_alt_partition_beeth_start = ABSOLUTE(.));
-        *(.beeth .beeth.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_beeth_end = ABSOLUTE(.));
-    } > beeth
 
     .text :
     {
@@ -215,7 +206,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > sdram_code = 0x3a880100 /* Nios II NOP instruction */
+    } > sdram_0 = 0x3a880100 /* Nios II NOP instruction */
 
     .rodata :
     {
@@ -225,7 +216,7 @@ SECTIONS
         *(.rodata1)
         . = ALIGN(4);
         PROVIDE (__ram_rodata_end = ABSOLUTE(.));
-    } > sdram_code
+    } > sdram_0
 
     PROVIDE (__flash_rodata_start = LOADADDR(.rodata));
 
@@ -259,7 +250,7 @@ SECTIONS
         _edata = ABSOLUTE(.);
         PROVIDE (edata = ABSOLUTE(.));
         PROVIDE (__ram_rwdata_end = ABSOLUTE(.));
-    } > sdram_code
+    } > sdram_0
 
     PROVIDE (__flash_rwdata_start = LOADADDR(.rwdata));
 
@@ -290,7 +281,7 @@ SECTIONS
 
         . = ALIGN(4);
         __bss_end = ABSOLUTE(.);
-    } > sdram_code
+    } > sdram_0
 
     /*
      *
@@ -310,21 +301,23 @@ SECTIONS
 
     /*
      *
-     * The heap will start at the end of the .bss section
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
      *
      */
-    PROVIDE( _end = __bss_end );
-    _end = __bss_end;
-    PROVIDE( end = __bss_end );
-    end = __bss_end;
 
-    /*
-     *
-     * The stack base
-     *
-     */
-    PROVIDE( __alt_stack_base = ABSOLUTE(.) );
-    __alt_stack_base = ABSOLUTE(.);
+    .sdram_0 LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
+    {
+        PROVIDE (_alt_partition_sdram_0_start = ABSOLUTE(.));
+        *(.sdram_0. sdram_0.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_sdram_0_end = ABSOLUTE(.));
+        _end = ABSOLUTE(.);
+        end = ABSOLUTE(.);
+        __alt_stack_base = ABSOLUTE(.);
+    } > sdram_0
+
+    PROVIDE (_alt_partition_sdram_0_load_addr = LOADADDR(.sdram_0));
 
     /*
      * Stabs debugging sections.
@@ -373,7 +366,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xe00000;
+__alt_data_end = 0x1000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -389,4 +382,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xe00000 );
+PROVIDE( __alt_heap_limit    = 0x1000000 );

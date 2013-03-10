@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2013-mar-07 22:28:10</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1362695290782</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 10, 2013 5:13:36 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1362892416363</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -146,7 +146,7 @@
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>none</Value>
+                <Value>sdram_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'exception_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'exception_stack' memory region.</Description>
@@ -182,7 +182,7 @@
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>none</Value>
+                <Value>sdram_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'interrupt_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'interrupt_stack' memory region.</Description>
@@ -850,30 +850,6 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
-        <LinkerRegion>
-                <regionName>reset</regionName>
-                <memoryName>sdram_0</memoryName>
-                <offset>0</offset>
-                <size>32</size>
-                <baseAddress>0x800000</baseAddress>
-                <addressRange>0x00800000 - 0x0080001F</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>sdram_code</regionName>
-                <memoryName>sdram_0</memoryName>
-                <offset>32</offset>
-                <size>6291424</size>
-                <baseAddress>0x800020</baseAddress>
-                <addressRange>0x00800020 - 0x00DFFFFF</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>beeth</regionName>
-                <memoryName>sdram_0</memoryName>
-                <offset>6291456</offset>
-                <size>2097152</size>
-                <baseAddress>0xe00000</baseAddress>
-                <addressRange>0x00E00000 - 0x00FFFFFF</addressRange>
-        </LinkerRegion>
         <MemoryMap>
                 <slaveDescriptor>determinant_0</slaveDescriptor>
                 <addressRange>0x00000000 - 0x00000007</addressRange>
@@ -912,30 +888,26 @@
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>
-                <regionName>sdram_code</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rodata</sectionName>
-                <regionName>sdram_code</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rwdata</sectionName>
-                <regionName>sdram_code</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.bss</sectionName>
-                <regionName>sdram_code</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.heap</sectionName>
-                <regionName>sdram_code</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.stack</sectionName>
-                <regionName>sdram_code</regionName>
-        </LinkerSection>
-        <LinkerSection>
-                <sectionName>.beeth</sectionName>
-                <regionName>beeth</regionName>
+                <regionName>sdram_0</regionName>
         </LinkerSection>
 </sch:Settings>

@@ -102,6 +102,11 @@ float detmat(float matrix[][MXSIZE]){
 int main()
 {
 
+//ld -r -b binary -o beeth.o /cygdrive/h/DSD/student_files_v2/notch_files/beeth5_noise.bin
+//binary__cygdrive_h_DSD_student_files_v2_notch_files_beeth5_noise_bin_end
+//binary__cygdrive_h_DSD_student_files_v2_notch_files_beeth5_noise_bin_size
+//binary__cygdrive_h_DSD_student_files_v2_notch_files_beeth5_noise_bin_start
+
 //	int i = 0;
 //	while(1){
 //		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, init_dma_transfer((void*)1337, 4));

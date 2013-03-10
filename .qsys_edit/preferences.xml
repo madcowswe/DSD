@@ -15,7 +15,7 @@
   </columns>
  </clocktable>
  <library
-   expandedCategories="Library/Memories and Memory Controllers,Project,Library" />
+   expandedCategories="Project,Library/Memories and Memory Controllers,Library" />
  <window width="1280" height="1400" x="1280" y="0" />
  <hdlexample language="VERILOG" />
  <generation

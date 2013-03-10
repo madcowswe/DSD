@@ -6,6 +6,7 @@
 *.pin
 *.summary
 *.lck
+*.elf
 .metadata/
 first_nios2_system/simulation/
 first_nios2_system/testbench/
