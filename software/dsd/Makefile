@@ -35,6 +35,9 @@ ALT_CPPFLAGS :=
 ALT_ASFLAGS :=
 ALT_LDFLAGS :=
 
+# User object files
+OBJS := #beeth.o
+
 
 #------------------------------------------------------------------------------
 #                         The adjust-path macro

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 10, 2013 5:13:36 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1362892416363</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 10, 2013 5:43:31 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1362894211105</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -850,6 +850,22 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <LinkerRegion>
+                <regionName>reset</regionName>
+                <memoryName>sdram_0</memoryName>
+                <offset>0</offset>
+                <size>32</size>
+                <baseAddress>0x800000</baseAddress>
+                <addressRange>0x00800000 - 0x0080001F</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>sdram_0</regionName>
+                <memoryName>sdram_0</memoryName>
+                <offset>32</offset>
+                <size>6291424</size>
+                <baseAddress>0x800020</baseAddress>
+                <addressRange>0x00800020 - 0x00DFFFFF</addressRange>
+        </LinkerRegion>
         <MemoryMap>
                 <slaveDescriptor>determinant_0</slaveDescriptor>
                 <addressRange>0x00000000 - 0x00000007</addressRange>
