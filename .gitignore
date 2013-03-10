@@ -5,6 +5,12 @@
 *.sof
 *.pin
 *.summary
+*.lck
+.metadata/
+first_nios2_system/simulation/
+first_nios2_system/testbench/
+software/dsd/obj/
+software/dsd_bsp/obj/
 software/dsd_bsp/settings.bsp
 db/
 incremental_db/

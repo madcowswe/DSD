@@ -1,7 +1,0 @@
-
-**** Build of configuration Nios II for project dsd_dsp ****
-
-make -j16 all 
-[BSP build complete]
-
-**** Build Finished ****
