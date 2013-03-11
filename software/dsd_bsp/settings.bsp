@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 10, 2013 5:43:31 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1362894211105</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>11-Mar-2013 16:08:36</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1363018116767</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -867,12 +867,6 @@
                 <addressRange>0x00800020 - 0x00DFFFFF</addressRange>
         </LinkerRegion>
         <MemoryMap>
-                <slaveDescriptor>determinant_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00000007</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>sdram_0</slaveDescriptor>
                 <addressRange>0x00800000 - 0x00FFFFFF</addressRange>
                 <addressSpan>8388608</addressSpan>
@@ -891,14 +885,26 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sysid</slaveDescriptor>
+                <slaveDescriptor>notchfilter_0</slaveDescriptor>
                 <addressRange>0x01001030 - 0x01001037</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>jtag_uart</slaveDescriptor>
+                <slaveDescriptor>determinant_0</slaveDescriptor>
                 <addressRange>0x01001038 - 0x0100103F</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sysid</slaveDescriptor>
+                <addressRange>0x01001040 - 0x01001047</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>jtag_uart</slaveDescriptor>
+                <addressRange>0x01001048 - 0x0100104F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

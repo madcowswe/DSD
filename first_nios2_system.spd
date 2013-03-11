@@ -57,6 +57,10 @@
    type="SYSTEM_VERILOG"
    library="cmd_xbar_mux" />
  <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_demux_003.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_xbar_demux_003" />
+ <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv"
    type="SYSTEM_VERILOG"
    library="cmd_xbar_demux_002" />
@@ -105,6 +109,10 @@
    type="SYSTEM_VERILOG"
    library="id_router" />
  <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_addr_router_003.sv"
+   type="SYSTEM_VERILOG"
+   library="addr_router_003" />
+ <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_addr_router_002.sv"
    type="SYSTEM_VERILOG"
    library="addr_router_002" />
@@ -140,6 +148,10 @@
    path="first_nios2_system/simulation/submodules/altera_merlin_master_translator.sv"
    type="SYSTEM_VERILOG"
    library="cpu_instruction_master_translator" />
+ <file
+   path="first_nios2_system/simulation/submodules/notchfilter.v"
+   type="VERILOG"
+   library="notchfilter_0" />
  <file
    path="first_nios2_system/simulation/submodules/determinant.v"
    type="VERILOG"

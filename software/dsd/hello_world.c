@@ -101,6 +101,11 @@ float detmat(float matrix[][MXSIZE]){
 int main()
 {
 
+	IOWR(NOTCHFILTER_0_BASE, 0, &main);
+
+	//barrier for old tests--------------------------------
+	while(1);
+
 //	int i = 0;
 //	while(1){
 //		IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, init_dma_transfer((void*)1337, 4));

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Thu Mar 07 22:23:16 GMT 2013
+ * Generated: Mon Mar 11 16:08:37 GMT 2013
  */
 
 /*
@@ -134,6 +134,7 @@
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_QSYS
 #define __DETERMINANT
+#define __NOTCHFILTER
 
 
 /*
@@ -152,19 +153,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x1001038
+#define ALT_STDERR_BASE 0x1001048
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x1001038
+#define ALT_STDIN_BASE 0x1001048
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x1001038
+#define ALT_STDOUT_BASE 0x1001048
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -178,7 +179,7 @@
  */
 
 #define ALT_MODULE_CLASS_determinant_0 determinant
-#define DETERMINANT_0_BASE 0x0
+#define DETERMINANT_0_BASE 0x1001038
 #define DETERMINANT_0_IRQ 20
 #define DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define DETERMINANT_0_NAME "/dev/determinant_0"
@@ -202,7 +203,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x1001038
+#define JTAG_UART_BASE 0x1001048
 #define JTAG_UART_IRQ 1
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
@@ -239,6 +240,20 @@
 #define LED_PIO_RESET_VALUE 0x0
 #define LED_PIO_SPAN 16
 #define LED_PIO_TYPE "altera_avalon_pio"
+
+
+/*
+ * notchfilter_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_notchfilter_0 notchfilter
+#define NOTCHFILTER_0_BASE 0x1001030
+#define NOTCHFILTER_0_IRQ -1
+#define NOTCHFILTER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define NOTCHFILTER_0_NAME "/dev/notchfilter_0"
+#define NOTCHFILTER_0_SPAN 8
+#define NOTCHFILTER_0_TYPE "notchfilter"
 
 
 /*
@@ -312,13 +327,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x1001030
+#define SYSID_BASE 0x1001040
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1362456154
+#define SYSID_TIMESTAMP 1363017989
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

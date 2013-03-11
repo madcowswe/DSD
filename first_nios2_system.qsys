@@ -29,6 +29,22 @@
    {
       datum baseAddress
       {
+         value = "16781384";
+         type = "String";
+      }
+   }
+   element notchfilter_0.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "16781360";
+         type = "String";
+      }
+   }
+   element determinant_0.avalon_slave
+   {
+      datum baseAddress
+      {
          value = "16781368";
          type = "String";
       }
@@ -53,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "16781360";
+         value = "16781376";
          type = "String";
       }
    }
@@ -97,6 +113,14 @@
          type = "int";
       }
    }
+   element notchfilter_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
    element onchip_mem
    {
       datum _sortIndex
@@ -108,14 +132,6 @@
       {
          value = "0";
          type = "boolean";
-      }
-   }
-   element sdram_0.s1
-   {
-      datum baseAddress
-      {
-         value = "8388608";
-         type = "String";
       }
    }
    element onchip_mem.s1
@@ -139,6 +155,14 @@
       datum baseAddress
       {
          value = "16781344";
+         type = "String";
+      }
+   }
+   element sdram_0.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
          type = "String";
       }
    }
@@ -186,7 +210,7 @@
  <parameter name="projectName" value="hello_world.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1362443821094" />
+ <parameter name="timeStamp" value="1362889246131" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -327,7 +351,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='determinant_0.avalon_slave' start='0x0' end='0x8' /><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='sys_clk_timer.s1' start='0x1001000' end='0x1001020' /><slave name='led_pio.s1' start='0x1001020' end='0x1001030' /><slave name='sysid.control_slave' start='0x1001030' end='0x1001038' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001038' end='0x1001040' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='sys_clk_timer.s1' start='0x1001000' end='0x1001020' /><slave name='led_pio.s1' start='0x1001020' end='0x1001030' /><slave name='notchfilter_0.avalon_slave' start='0x1001030' end='0x1001038' /><slave name='determinant_0.avalon_slave' start='0x1001038' end='0x1001040' /><slave name='sysid.control_slave' start='0x1001040' end='0x1001048' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001048' end='0x1001050' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone III" />
   <parameter name="internalIrqMaskSystemInfo" value="1114114" />
@@ -607,6 +631,9 @@
  <module kind="determinant" version="1.0" enabled="1" name="determinant_0">
   <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="50000000" />
  </module>
+ <module kind="notchfilter" version="1.0" enabled="1" name="notchfilter_0">
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+ </module>
  <connection
    kind="avalon"
    version="12.1"
@@ -656,7 +683,7 @@
    start="cpu.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001038" />
+  <parameter name="baseAddress" value="0x01001048" />
  </connection>
  <connection
    kind="reset"
@@ -678,7 +705,7 @@
    start="cpu.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001030" />
+  <parameter name="baseAddress" value="0x01001040" />
  </connection>
  <connection kind="avalon" version="12.1" start="cpu.data_master" end="led_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -754,7 +781,7 @@
    start="cpu.data_master"
    end="determinant_0.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x01001038" />
  </connection>
  <connection
    kind="avalon"
@@ -770,5 +797,31 @@
    start="cpu.d_irq"
    end="determinant_0.interrupt_sender">
   <parameter name="irqNumber" value="20" />
+ </connection>
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="notchfilter_0.clock_sink_reset" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="clk_0.clk"
+   end="notchfilter_0.clock_sink" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="notchfilter_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001030" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="notchfilter_0.avalon_master"
+   end="sdram_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00800000" />
  </connection>
 </system>
