@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 12.1 177 (Future versions may contain additional information.) -->
- <!-- 2013.03.11.16:06:29 -->
+ <!-- 2013.03.12.03:24:08 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1363017989</value>
+  <value>1363058648</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -4184,7 +4184,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1363017989</value>
+   <value>1363058648</value>
   </assignment>
   <parameter name="id">
    <type>int</type>
@@ -4196,7 +4196,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1363017989</value>
+   <value>1363058648</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -9198,14 +9198,6 @@ parameters are a RESULT of the module parameters. -->
   <version>12.1</version>
  </plugin>
  <plugin>
-  <instanceCount>1</instanceCount>
-  <name>notchfilter</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>notchfilter</displayName>
-  <version>1.0</version>
- </plugin>
- <plugin>
   <instanceCount>5</instanceCount>
   <name>reset_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
@@ -9388,6 +9380,14 @@ parameters are a RESULT of the module parameters. -->
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>SDRAM Controller</displayName>
   <version>12.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>notchfilter</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>notchfilter</displayName>
+  <version>1.0</version>
  </plugin>
  <plugin>
   <instanceCount>4</instanceCount>

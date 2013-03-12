@@ -20,7 +20,7 @@ module notchfilter #(
 		input  wire [31:0] slave_writedata,    //                 .writedata
 		output reg  [31:0] master_address,     //    avalon_master.address
 		input  wire [15:0] master_readdata,    //                 .readdata
-		output wire        master_read,        //                 .read
+		output reg         master_read,        //                 .read
 		input  wire        master_waitrequest, //                 .waitrequest
 		output reg  [9:0]  master_burstcount,  //                 .burstcount
 		output wire        master_write,       //                 .write
@@ -40,8 +40,6 @@ module notchfilter #(
 
 	assign master_write = 1'b0;
 
-	assign master_read = 1'b0;
-
 	wire infifo_empty;
 	wire infifo_full;
 	wire [8:0] infifo_usedw;
@@ -52,6 +50,7 @@ module notchfilter #(
 
 	reg start_pulse = 0;
 	reg [32:0] input_ptr = 0;
+	reg reqnotdone = 0;
 
 	//Depth: 512
 	notchfifo	notchfifo_inst (
@@ -66,9 +65,20 @@ module notchfilter #(
 	);
 
 	always @(posedge clk) begin : proc_sdraminterface_req
+		master_read <= 0;
+		reqnotdone <= 0;
+
 		if (start_pulse) begin
+			master_read <= 1;
 			master_burstcount <= 512;
 			master_address <= input_ptr;
+
+			reqnotdone <= 1;
+		end
+
+		if (reqnotdone && master_waitrequest) begin
+			master_read <= 1;
+			reqnotdone <= 1;
 		end
 	end
 
@@ -91,6 +101,17 @@ module notchfilter #(
 			start_pulse <= 1;
 		end
 	end
+
+	reg filtercore_en;
+	reg [15:0] filtercore_in;
+	wire [15:0] filtercore_out;
+	Hdsdsos_copy_hardwired filtercore (
+		.clk ( clk ),
+		.clk_enable ( filtercore_en ),
+		.reset ( reset ),
+		.filter_in ( filtercore_in ),
+		.filter_out ( filtercore_out )
+	);
 
 
 endmodule

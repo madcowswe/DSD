@@ -56,7 +56,7 @@ module notchfilter #(
 	notchfifo	notchfifo_inst (
 		.clock ( clk ),
 		.data ( infifo_writedata ),
-		.rdreq ( infifo_rdreq ),
+		.rdreq ( ~infifo_empty ), //infifo_rdreq ),
 		.wrreq ( infifo_wrreq ),
 		.empty ( infifo_empty ),
 		.full ( infifo_full ),
@@ -102,27 +102,16 @@ module notchfilter #(
 		end
 	end
 
-	localparam N = 2;
-
-	reg [15:0] b [0:N];
-	reg [15:0] a [1:N];
-
-	reg [15:0] w [0:1]; //filters state
-	reg [15:0] y; //filter output
-	reg [15:0] x;
-
-	integer i;
-	always @(posedge clk) begin : proc_notchfilter
-
-		y = b[0]*x + w[0];
-
-		for (i = 1; i < N; i = i + 1)
-		begin
-			w[i-1] = w[i] + b[i]*x - a[i]*y;
-		end
-
-		w[N-1] = b[N]*x - a[N]*y;
-	end
+	reg filtercore_en;
+	reg [15:0] filtercore_in;
+	wire [15:0] filtercore_out;
+	Hdsdsos_copy_hardwired filtercore (
+		.clk ( clk ),
+		.clk_enable ( ~infifo_empty ), //filtercore_en ),
+		.reset ( reset ),
+		.filter_in ( infifo_readdata ), //filtercore_in ),
+		.filter_out ( filtercore_out )
+	);
 
 
 endmodule

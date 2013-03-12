@@ -1,12 +1,12 @@
-# system info first_nios2_system_tb on 2013.03.11.16:06:26
+# system info first_nios2_system_tb on 2013.03.12.03:24:06
 system_info:
 name,value
 DEVICE,EP3C16F484C6
 DEVICE_FAMILY,Cyclone III
-GENERATION_ID,1363017950
+GENERATION_ID,1363058610
 #
 #
-# Files generated for first_nios2_system_tb on 2013.03.11.16:06:26
+# Files generated for first_nios2_system_tb on 2013.03.12.03:24:06
 files:
 filepath,kind,attributes,module,is_top
 first_nios2_system/testbench/first_nios2_system_tb/simulation/first_nios2_system_tb.v,VERILOG,,first_nios2_system_tb,true

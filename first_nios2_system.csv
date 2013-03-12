@@ -1,12 +1,12 @@
-# system info first_nios2_system on 2013.03.11.16:05:35
+# system info first_nios2_system on 2013.03.12.03:23:16
 system_info:
 name,value
 DEVICE,EP3C16F484C6
 DEVICE_FAMILY,Cyclone III
-GENERATION_ID,1363017899
+GENERATION_ID,1363058561
 #
 #
-# Files generated for first_nios2_system on 2013.03.11.16:05:35
+# Files generated for first_nios2_system on 2013.03.12.03:23:16
 files:
 filepath,kind,attributes,module,is_top
 first_nios2_system/simulation/first_nios2_system.v,VERILOG,,first_nios2_system,true
