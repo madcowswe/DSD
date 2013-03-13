@@ -91,6 +91,7 @@ module notchfilter #(
 	reg [31:0] next_ptr;
 	reg isrunning = 0;
 	reg readreqactive = 0;
+	reg [9:0] temp_next_step;
 	always @(posedge clk) begin : proc_sdraminterface_req
 		master_read <= 0;
 
@@ -114,8 +115,10 @@ module notchfilter #(
 					if (~infifo_usedw[9]) begin
 
 						master_address <= next_ptr;
-						next_ptr <= next_ptr + ((512 - infifo_usedw) * 2);
-						master_burstcount <= (512 - infifo_usedw);
+
+						temp_next_step = ((end_ptr - next_ptr) < (512 - infifo_usedw)) ? (end_ptr - next_ptr) : (512 - infifo_usedw) ;
+						next_ptr <= next_ptr + temp_next_step * 2;
+						master_burstcount <= temp_next_step;
 						master_read <= 1;
 					end
 				end
