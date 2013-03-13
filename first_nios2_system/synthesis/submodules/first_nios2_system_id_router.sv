@@ -151,7 +151,7 @@ module first_nios2_system_id_router
         if (destid == 0 ) begin
             src_channel = 8'b01;
         end
-        if (destid == 1 ) begin
+        if (destid == 2 ) begin
             src_channel = 8'b10;
         end
 

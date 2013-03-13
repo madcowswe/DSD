@@ -19,11 +19,11 @@
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_mux_001" />
+   library="rsp_xbar_mux_002" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv"
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_002.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_mux_001" />
+   library="rsp_xbar_mux_002" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"

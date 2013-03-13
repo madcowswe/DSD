@@ -15,3 +15,4 @@ software/dsd_bsp/obj/
 software/dsd_bsp/settings.bsp
 db/
 incremental_db/
+software/dsd/beeth5_noise.bin

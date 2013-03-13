@@ -2,7 +2,7 @@ set_global_assignment -entity "first_nios2_system" -library "first_nios2_system"
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
 set_global_assignment -library "first_nios2_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../first_nios2_system.sopcinfo"]
-set_instance_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1363058648"
+set_instance_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1363143387"
 set_global_assignment -library "first_nios2_system" -name MISC_FILE [file join $::quartus(qip_path) "../../first_nios2_system.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "first_nios2_system" -name MISC_FILE [file join $::quartus(qip_path) "../../first_nios2_system.qsys"]
@@ -13,7 +13,7 @@ set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [fi
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_address_alignment.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
-set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_rsp_xbar_mux_001.sv"]
+set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_rsp_xbar_mux_002.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_rsp_xbar_mux.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_rsp_xbar_demux_001.sv"]
 set_global_assignment -library "first_nios2_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_rsp_xbar_demux.sv"]
@@ -74,9 +74,9 @@ set_global_assignment -entity "first_nios2_system_irq_mapper" -library "first_ni
 set_global_assignment -entity "altera_merlin_width_adapter" -library "first_nios2_system" -name IP_TOOL_NAME "altera_merlin_width_adapter"
 set_global_assignment -entity "altera_merlin_width_adapter" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "altera_merlin_width_adapter" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
-set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_001" -library "first_nios2_system" -name IP_TOOL_NAME "altera_merlin_multiplexer"
-set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_001" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
-set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_001" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
+set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_002" -library "first_nios2_system" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_002" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "first_nios2_system_rsp_xbar_mux_002" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"
 set_global_assignment -entity "first_nios2_system_rsp_xbar_mux" -library "first_nios2_system" -name IP_TOOL_NAME "altera_merlin_multiplexer"
 set_global_assignment -entity "first_nios2_system_rsp_xbar_mux" -library "first_nios2_system" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "first_nios2_system_rsp_xbar_mux" -library "first_nios2_system" -name IP_TOOL_ENV "qsys"

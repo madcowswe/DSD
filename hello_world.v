@@ -45,8 +45,8 @@ module hello_world(
         .sdram_0_wire_dqm                   (DRAM_DQM),                   //                            .dqm
         .sdram_0_wire_ras_n                 (DRAM_RAS_N),                 //                            .ras_n
         .sdram_0_wire_we_n                  (DRAM_WE_N),                  //                            .we_n
-        //.sdram_external_clk_clk             (DRAM_CLK)              //          sdram_external_clk.clk
-		  .clock_bridge_0_out_clk_clk				(DRAM_CLK)
+        .sdram_external_clk_clk             (DRAM_CLK)              //          sdram_external_clk.clk
+		  //.clock_bridge_0_out_clk_clk				(DRAM_CLK)
     );
 
 

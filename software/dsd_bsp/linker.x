@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Sun Mar 10 05:43:31 GMT 2013
+ * Generated: Wed Mar 13 01:42:39 GMT 2013
  */
 
 /*
@@ -52,6 +52,7 @@ MEMORY
 {
     reset : ORIGIN = 0x800000, LENGTH = 32
     sdram_0 : ORIGIN = 0x800020, LENGTH = 6291424
+    beeth : ORIGIN = 0xe00000, LENGTH = 2097152
 }
 
 /* Define symbols for each memory base-address */
@@ -113,6 +114,14 @@ SECTIONS
     } > sdram_0
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
+
+    beeth :
+    {
+        PROVIDE (_alt_partition_beeth_start = ABSOLUTE(.));
+        *(beeth beeth.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_beeth_end = ABSOLUTE(.));
+    } > beeth
 
     .text :
     {

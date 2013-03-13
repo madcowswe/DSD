@@ -17,9 +17,9 @@
 
 ## VENDOR  "Altera"
 ## PROGRAM "Quartus II"
-## VERSION "Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition"
+## VERSION "Version 12.1 Build 177 11/07/2012 SJ Web Edition"
 
-## DATE    "Sun Mar 03 12:44:10 2013"
+## DATE    "Tue Mar 12 18:10:47 2013"
 
 ##
 ## DEVICE  "EP3C16F484C6"
@@ -85,12 +85,17 @@ set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}]
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
+set_false_path -from [get_keepers {altera_reserved_tdi}] -to [get_keepers {pzdyqx*}]
 set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}]
 set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
 set_false_path -from [get_registers {*|alt_jtag_atlantic:*|read}] -to [get_registers {*|alt_jtag_atlantic:*|read1*}]

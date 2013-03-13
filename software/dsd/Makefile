@@ -36,7 +36,7 @@ ALT_ASFLAGS :=
 ALT_LDFLAGS :=
 
 # User object files
-OBJS := #beeth.o
+OBJS := beethsect.o
 
 
 #------------------------------------------------------------------------------

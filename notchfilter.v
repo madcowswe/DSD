@@ -27,68 +27,106 @@ module notchfilter #(
 		output wire [15:0] master_writedata,   //                 .writedata
 		input  wire        master_readdatavalid,         //                 .readdatavalid
 		input  wire        clk,                //       clock_sink.clk
-		input  wire        reset               // clock_sink_reset.reset
+		input  wire        reset,              // clock_sink_reset.reset
+		input  wire        core_clk
 	);
 
 	// TODO: Auto-generated HDL template
 
 	assign slave_waitrequest = 1'b0;
 
-	assign slave_readdata = 32'b00000000000000000000000000000000;
-
-	assign master_writedata = 32'b00000000000000000000000000000000;
-
 	assign master_write = 1'b0;
 
 	wire infifo_empty;
-	wire infifo_full;
-	wire [8:0] infifo_usedw;
-	reg  infifo_rdreq = 0;
-	reg  infifo_wrreq = 0;
-	reg  [15:0] infifo_writedata = 0;
-	wire [15:0] infifo_readdata;
+	wire [9:0] infifo_usedw;
+
+	wire outfifo_full;
+	wire [9:0] outfifo_usedw;
 
 	reg start_pulse = 0;
-	reg [32:0] input_ptr = 0;
-	reg reqnotdone = 0;
+	reg [31:0] input_ptr;
+	reg [31:0] end_ptr;
 
-	//Depth: 512
-	notchfifo	notchfifo_inst (
-		.clock ( clk ),
-		.data ( infifo_writedata ),
-		.rdreq ( ~infifo_empty ), //infifo_rdreq ),
-		.wrreq ( infifo_wrreq ),
-		.empty ( infifo_empty ),
-		.full ( infifo_full ),
-		.q ( infifo_readdata ),
-		.usedw ( infifo_usedw )
+	wire [15:0] filtercore_in;
+	wire [15:0] filtercore_out;
+
+	wire filter_en;
+	assign filter_en = ~infifo_empty && ~outfifo_full;
+
+	//Depth = 512, Show ahead: rd = ack
+	notch_dc_in_fifo	notch_dc_in_fifo_inst (
+		.data ( master_readdata ),
+		.rdclk ( core_clk ),
+		.rdreq ( filter_en ),
+		.wrclk ( clk ),
+		.wrreq ( master_readdatavalid ),
+		.q ( filtercore_in ),
+		.rdempty ( infifo_empty ),
+		.wrusedw ( infifo_usedw )
 	);
 
+	//Depth = 512, Show ahead: rd = ack
+	notch_dc_out_fifo	notch_dc_out_fifo_inst (
+		.data ( filtercore_out ),
+		.rdclk ( clk ),
+		.rdreq ( outfifo_usedw[5] ),
+		.wrclk ( core_clk ),
+		.wrreq ( filter_en ),
+		.q ( master_writedata ),
+		.rdusedw ( outfifo_usedw ),
+		.wrfull ( outfifo_full )
+	);
+
+
+	Hdsdsos_copy_hardwired filtercore (
+		.clk ( core_clk ),
+		.clk_enable ( filter_en ),
+		.reset ( reset ),
+		.filter_in ( filtercore_in ),
+		.filter_out ( filtercore_out )
+	);
+
+	assign slave_readdata = filtercore_out; //TEMP, do proper interface
+
+	reg [31:0] next_ptr;
+	reg isrunning = 0;
+	reg readreqactive = 0;
 	always @(posedge clk) begin : proc_sdraminterface_req
 		master_read <= 0;
-		reqnotdone <= 0;
 
 		if (start_pulse) begin
 			master_read <= 1;
 			master_burstcount <= 512;
 			master_address <= input_ptr;
+			next_ptr <= input_ptr + 512*2;
 
-			reqnotdone <= 1;
+			readreqactive <= 1;
+			isrunning <= 1;
 		end
 
-		if (reqnotdone && master_waitrequest) begin
-			master_read <= 1;
-			reqnotdone <= 1;
-		end
-	end
+		if (isrunning) begin
+			if (master_waitrequest && readreqactive) begin
+				master_read <= 1;
+			end
+			else begin
 
-	always @(posedge clk) begin : proc_sdraminterface_rec
-		infifo_wrreq <= 0;
+				if (next_ptr <= end_ptr) begin
+					if (~infifo_usedw[9]) begin
 
-		if (master_readdatavalid) begin
-			infifo_writedata <= master_readdata;
-			infifo_wrreq <= 1;
+						master_address <= next_ptr;
+						next_ptr <= next_ptr + ((512 - infifo_usedw) * 2);
+						master_burstcount <= (512 - infifo_usedw);
+						master_read <= 1;
+					end
+				end
+				else begin
+					readreqactive <= 0;
+					master_read <= 0;
+				end
+			end
 		end
+
+
 	end
 
 	always @(posedge clk) begin : proc_hostinterface
@@ -97,21 +135,21 @@ module notchfilter #(
 
 		//accept commands
 		if (slave_write) begin
-			input_ptr <= slave_writedata;
-			start_pulse <= 1;
+			case (slave_address)
+				0:
+					input_ptr <= slave_writedata;
+				1: begin
+					end_ptr <= slave_writedata;
+					start_pulse <= 1;
+				end
+
+			   	default : ;
+			endcase
+
 		end
 	end
 
-	reg filtercore_en;
-	reg [15:0] filtercore_in;
-	wire [15:0] filtercore_out;
-	Hdsdsos_copy_hardwired filtercore (
-		.clk ( clk ),
-		.clk_enable ( ~infifo_empty ), //filtercore_en ),
-		.reset ( reset ),
-		.filter_in ( infifo_readdata ), //filtercore_in ),
-		.filter_out ( filtercore_out )
-	);
+
 
 
 endmodule

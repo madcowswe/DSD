@@ -14,7 +14,7 @@
    <frequency preferredWidth="281" />
   </columns>
  </clocktable>
- <library expandedCategories="Project,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1280" height="1400" x="1280" y="0" />
  <hdlexample language="VERILOG" />
  <generation

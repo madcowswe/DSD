@@ -27,42 +27,53 @@ module notchfilter #(
 		output wire [15:0] master_writedata,   //                 .writedata
 		input  wire        master_readdatavalid,         //                 .readdatavalid
 		input  wire        clk,                //       clock_sink.clk
-		input  wire        reset               // clock_sink_reset.reset
+		input  wire        reset,              // clock_sink_reset.reset
+		input  wire        core_clk
 	);
 
 	// TODO: Auto-generated HDL template
 
 	assign slave_waitrequest = 1'b0;
 
-	assign slave_readdata = 32'b00000000000000000000000000000000;
-
 	assign master_writedata = 32'b00000000000000000000000000000000;
 
 	assign master_write = 1'b0;
 
-	wire infifo_empty;
-	wire infifo_full;
-	wire [8:0] infifo_usedw;
-	reg  infifo_rdreq = 0;
+	//wire infifo_empty;
+	//wire infifo_full;
+	//wire [8:0] infifo_usedw;
+	//reg  infifo_rdreq = 0;
 	reg  infifo_wrreq = 0;
 	reg  [15:0] infifo_writedata = 0;
-	wire [15:0] infifo_readdata;
+	//wire [15:0] infifo_readdata;
 
 	reg start_pulse = 0;
 	reg [32:0] input_ptr = 0;
 	reg reqnotdone = 0;
 
 	//Depth: 512
-	notchfifo	notchfifo_inst (
-		.clock ( clk ),
-		.data ( infifo_writedata ),
-		.rdreq ( infifo_rdreq ),
-		.wrreq ( infifo_wrreq ),
-		.empty ( infifo_empty ),
-		.full ( infifo_full ),
-		.q ( infifo_readdata ),
-		.usedw ( infifo_usedw )
+	//notchfifo	notchfifo_inst (
+	//	.clock ( clk ),
+	//	.data ( infifo_writedata ),
+	//	.rdreq ( ~infifo_empty ), //infifo_rdreq ),
+	//	.wrreq ( infifo_wrreq ),
+	//	.empty ( infifo_empty ),
+	//	.full ( infifo_full ),
+	//	.q ( infifo_readdata ),
+	//	.usedw ( infifo_usedw )
+	//);
+
+	reg [15:0] filtercore_in;
+	wire [15:0] filtercore_out;
+	Hdsdsos_copy_hardwired filtercore (
+		.clk ( clk ),
+		.clk_enable ( master_readdatavalid ),
+		.reset ( reset ),
+		.filter_in ( master_readdata ), //filtercore_in ),
+		.filter_out ( filtercore_out )
 	);
+
+	assign slave_readdata = filtercore_out; //temp! use FIFO!
 
 	always @(posedge clk) begin : proc_sdraminterface_req
 		master_read <= 0;
@@ -82,15 +93,6 @@ module notchfilter #(
 		end
 	end
 
-	always @(posedge clk) begin : proc_sdraminterface_rec
-		infifo_wrreq <= 0;
-
-		if (master_readdatavalid) begin
-			infifo_writedata <= master_readdata;
-			infifo_wrreq <= 1;
-		end
-	end
-
 	always @(posedge clk) begin : proc_hostinterface
 		//by default, the pulsed lines are 0
 		start_pulse <= 0;
@@ -102,16 +104,7 @@ module notchfilter #(
 		end
 	end
 
-	reg filtercore_en;
-	reg [15:0] filtercore_in;
-	wire [15:0] filtercore_out;
-	Hdsdsos_copy_hardwired filtercore (
-		.clk ( clk ),
-		.clk_enable ( filtercore_en ),
-		.reset ( reset ),
-		.filter_in ( filtercore_in ),
-		.filter_out ( filtercore_out )
-	);
+
 
 
 endmodule
