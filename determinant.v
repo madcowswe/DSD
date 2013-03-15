@@ -99,7 +99,7 @@ module determinant #(
 					isrunning <= 1;
 					start_dma_pulse <= 1;
 					timingtestctr <= 2047;
-					mxsize <= slave_writedata[4:0];
+					mxsize <= slave_writedata[5:0];
 				end
 
 				default : ;
