@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>15-Mar-2013 02:15:30</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1363313730950</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>15-Mar-2013 06:21:57</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1363328517902</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -862,9 +862,17 @@
                 <regionName>sdram_0</regionName>
                 <memoryName>sdram_0</memoryName>
                 <offset>32</offset>
-                <size>6291424</size>
+                <size>4194272</size>
                 <baseAddress>0x800020</baseAddress>
-                <addressRange>0x00800020 - 0x00DFFFFF</addressRange>
+                <addressRange>0x00800020 - 0x00BFFFFF</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>beethout</regionName>
+                <memoryName>sdram_0</memoryName>
+                <offset>4194304</offset>
+                <size>2097152</size>
+                <baseAddress>0xc00000</baseAddress>
+                <addressRange>0x00C00000 - 0x00DFFFFF</addressRange>
         </LinkerRegion>
         <LinkerRegion>
                 <regionName>beeth</regionName>

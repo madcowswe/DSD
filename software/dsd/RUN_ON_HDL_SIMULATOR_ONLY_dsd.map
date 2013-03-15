@@ -57,7 +57,8 @@ Memory Configuration
 
 Name             Origin             Length             Attributes
 reset            0x00800000         0x00000020
-sdram_0          0x00800020         0x005fffe0
+sdram_0          0x00800020         0x003fffe0
+beethout         0x00c00000         0x00200000
 beeth            0x00e00000         0x00200000
 *default*        0x00000000         0xffffffff
 
@@ -146,7 +147,7 @@ beeth           0x00e00000   0x1d6490
                 0x00fd6490                . = ALIGN (0x4)
                 0x00fd6490                PROVIDE (_alt_partition_beeth_end, ABSOLUTE (.))
 
-.text           0x00800184     0x127c
+.text           0x00800184     0x1504
                 0x00800184                PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -193,207 +194,207 @@ beeth           0x00e00000   0x1d6490
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x00800184       0x1c ../dsd_bsp/obj/HAL/src/crt0.o
                 0x00800184                _start
- .text          0x008001a0      0x500 obj/default/hello_world.o
-                0x008001a0                det3x3
-                0x008002a4                rswap
-                0x008002d0                main
-                0x008002f8                alt_main
-                0x008002fc                det_start
-                0x00800350                reg_isr
-                0x00800380                det_result
-                0x008003a4                det_status
-                0x008003b4                detmat
-                0x00800688                det_done_isr
- .text          0x008006a0      0x2b8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
-                0x00800884                __subsf3
-                0x008008f4                __addsf3
- .text          0x00800958      0x1e0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
-                0x00800958                __mulsf3
- .text          0x00800b38      0x174 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
-                0x00800b38                __divsf3
- .text          0x00800cac       0x78 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
-                0x00800cac                __nesf2
- .text          0x00800d24       0x98 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
-                0x00800d24                __floatsisf
- .text          0x00800dbc        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
- .text          0x00800dbc       0x98 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
-                0x00800dbc                __muldi3
- .text          0x00800e54       0x80 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
-                0x00800e54                __clzsi2
- .text          0x00800ed4      0x160 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
-                0x00800ed4                __pack_f
- .text          0x00801034       0xc8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
-                0x00801034                __unpack_f
- .text          0x008010fc       0xa8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
-                0x008010fc                __fpcmp_parts_f
- .text          0x008011a4        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
- .text          0x008011a4       0x28 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
-                0x008011a4                alt_dcache_flush
- .text          0x008011cc       0x9c ../dsd_bsp\libhal_bsp.a(alt_iic.o)
-                0x008011cc                alt_ic_irq_enabled
-                0x008011e4                alt_ic_irq_enable
-                0x00801224                alt_ic_irq_disable
-                0x00801264                alt_ic_isr_register
- .text          0x00801268       0x88 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
-                0x00801268                alt_iic_isr_register
- .text          0x008012f0        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
- .text          0x008012f0        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
- .text          0x008012f0        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
- .text          0x008012f0       0xb4 ../dsd_bsp\libhal_bsp.a(alt_load.o)
-                0x008012f0                alt_load
- .text          0x008013a4       0x18 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
-                0x008013a4                alt_dcache_flush_all
- .text          0x008013bc        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
- .text          0x008013bc        0xc ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
-                0x008013bc                alt_icache_flush_all
- .text          0x008013c8       0x38 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
-                0x008013c8                alt_icache_flush
+ .text          0x008001a0      0x788 obj/default/hello_world.o
+                0x008001a0                det_status
+                0x008001c8                det_result
+                0x008001fc                det_done_isr
+                0x00800230                reg_isr
+                0x00800270                det_start
+                0x008002dc                det3x3
+                0x00800478                rswap
+                0x00800518                detmat
+                0x008008c4                main
+                0x00800900                alt_main
+ .text          0x00800928      0x2b8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
+                0x00800b0c                __subsf3
+                0x00800b7c                __addsf3
+ .text          0x00800be0      0x1e0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
+                0x00800be0                __mulsf3
+ .text          0x00800dc0      0x174 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
+                0x00800dc0                __divsf3
+ .text          0x00800f34       0x78 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
+                0x00800f34                __nesf2
+ .text          0x00800fac       0x98 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
+                0x00800fac                __floatsisf
+ .text          0x00801044        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
+ .text          0x00801044       0x98 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
+                0x00801044                __muldi3
+ .text          0x008010dc       0x80 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
+                0x008010dc                __clzsi2
+ .text          0x0080115c      0x160 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
+                0x0080115c                __pack_f
+ .text          0x008012bc       0xc8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
+                0x008012bc                __unpack_f
+ .text          0x00801384       0xa8 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
+                0x00801384                __fpcmp_parts_f
+ .text          0x0080142c        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
+ .text          0x0080142c       0x28 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
+                0x0080142c                alt_dcache_flush
+ .text          0x00801454       0x9c ../dsd_bsp\libhal_bsp.a(alt_iic.o)
+                0x00801454                alt_ic_irq_enabled
+                0x0080146c                alt_ic_irq_enable
+                0x008014ac                alt_ic_irq_disable
+                0x008014ec                alt_ic_isr_register
+ .text          0x008014f0       0x88 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
+                0x008014f0                alt_iic_isr_register
+ .text          0x00801578        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
+ .text          0x00801578        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
+ .text          0x00801578        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
+ .text          0x00801578       0xb4 ../dsd_bsp\libhal_bsp.a(alt_load.o)
+                0x00801578                alt_load
+ .text          0x0080162c       0x18 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0080162c                alt_dcache_flush_all
+ .text          0x00801644        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
+ .text          0x00801644        0xc ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
+                0x00801644                alt_icache_flush_all
+ .text          0x00801650       0x38 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
+                0x00801650                alt_icache_flush
  *(.gnu.warning.*)
  *(.fini)
-                0x00801400                PROVIDE (__etext, ABSOLUTE (.))
-                0x00801400                PROVIDE (_etext, ABSOLUTE (.))
-                0x00801400                PROVIDE (etext, ABSOLUTE (.))
+                0x00801688                PROVIDE (__etext, ABSOLUTE (.))
+                0x00801688                PROVIDE (_etext, ABSOLUTE (.))
+                0x00801688                PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x00801400                . = ALIGN (0x4)
-                0x00801400                PROVIDE (__preinit_array_start, ABSOLUTE (.))
+                0x00801688                . = ALIGN (0x4)
+                0x00801688                PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
-                0x00801400                PROVIDE (__preinit_array_end, ABSOLUTE (.))
-                0x00801400                PROVIDE (__init_array_start, ABSOLUTE (.))
+                0x00801688                PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                0x00801688                PROVIDE (__init_array_start, ABSOLUTE (.))
  *(.init_array)
-                0x00801400                PROVIDE (__init_array_end, ABSOLUTE (.))
-                0x00801400                PROVIDE (__fini_array_start, ABSOLUTE (.))
+                0x00801688                PROVIDE (__init_array_end, ABSOLUTE (.))
+                0x00801688                PROVIDE (__fini_array_start, ABSOLUTE (.))
  *(.fini_array)
-                0x00801400                PROVIDE (__fini_array_end, ABSOLUTE (.))
+                0x00801688                PROVIDE (__fini_array_end, ABSOLUTE (.))
  *(.eh_frame)
  *(.gcc_except_table)
  *(.dynamic)
-                0x00801400                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+                0x00801688                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
  *(.ctors)
  *(SORT(.ctors.*))
-                0x00801400                PROVIDE (__CTOR_END__, ABSOLUTE (.))
-                0x00801400                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+                0x00801688                PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                0x00801688                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
  *(.dtors)
  *(SORT(.dtors.*))
-                0x00801400                PROVIDE (__DTOR_END__, ABSOLUTE (.))
+                0x00801688                PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x00801400                . = ALIGN (0x4)
+                0x00801688                . = ALIGN (0x4)
 
-.rodata         0x00801400      0x110
-                0x00801400                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x00801400                . = ALIGN (0x4)
+.rodata         0x00801688      0x110
+                0x00801688                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00801688                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00801400       0x10 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
-                0x00801400                __thenan_sf
- .rodata        0x00801410      0x100 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
-                0x00801410                __clz_tab
+ .rodata        0x00801688       0x10 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
+                0x00801688                __thenan_sf
+ .rodata        0x00801698      0x100 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
+                0x00801698                __clz_tab
  *(.rodata1)
-                0x00801510                . = ALIGN (0x4)
-                0x00801510                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x00801400                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x00801798                . = ALIGN (0x4)
+                0x00801798                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00801688                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x00801510        0x4 load address 0x00801514
-                0x00801510                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x00801510                . = ALIGN (0x4)
+.rwdata         0x00801798        0x4 load address 0x0080179c
+                0x00801798                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x00801798                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x00801510        0x0 ../dsd_bsp/obj/HAL/src/crt0.o
- .data          0x00801510        0x0 obj/default/hello_world.o
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
- .data          0x00801510        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_load.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x00801510        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
-                0x00809510                _gp = ABSOLUTE ((. + 0x8000))
-                0x00809510                PROVIDE (gp, _gp)
+ .data          0x00801798        0x0 ../dsd_bsp/obj/HAL/src/crt0.o
+ .data          0x00801798        0x0 obj/default/hello_world.o
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x00801798        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_load.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x00801798        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
+                0x00809798                _gp = ABSOLUTE ((. + 0x8000))
+                0x00809798                PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x00801510        0x4 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
-                0x00801510                alt_priority_mask
+ .sdata         0x00801798        0x4 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
+                0x00801798                alt_priority_mask
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x00801514                . = ALIGN (0x4)
-                0x00801514                _edata = ABSOLUTE (.)
-                0x00801514                PROVIDE (edata, ABSOLUTE (.))
-                0x00801514                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x00801514                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x0080179c                . = ALIGN (0x4)
+                0x0080179c                _edata = ABSOLUTE (.)
+                0x0080179c                PROVIDE (edata, ABSOLUTE (.))
+                0x0080179c                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0080179c                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x00801518      0x10c
-                0x00801518                __bss_start = ABSOLUTE (.)
-                0x00801518                PROVIDE (__sbss_start, ABSOLUTE (.))
-                0x00801518                PROVIDE (___sbss_start, ABSOLUTE (.))
+.bss            0x008017a0      0x10c
+                0x008017a0                __bss_start = ABSOLUTE (.)
+                0x008017a0                PROVIDE (__sbss_start, ABSOLUTE (.))
+                0x008017a0                PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x00801518        0x4 obj/default/hello_world.o
-                0x00801518                irqcommunicationtest
- .sbss          0x0080151c        0x4 obj/default/hello_world.o
-                0x0080151c                tempmat
- .sbss          0x00801520        0x4 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
-                0x00801520                alt_irq_active
+ .sbss          0x008017a0        0x4 obj/default/hello_world.o
+                0x008017a0                irqcommunicationtest
+ .sbss          0x008017a4        0x4 obj/default/hello_world.o
+                0x008017a4                tempmat
+ .sbss          0x008017a8        0x4 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
+                0x008017a8                alt_irq_active
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
-                0x00801524                PROVIDE (__sbss_end, ABSOLUTE (.))
-                0x00801524                PROVIDE (___sbss_end, ABSOLUTE (.))
+                0x008017ac                PROVIDE (__sbss_end, ABSOLUTE (.))
+                0x008017ac                PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00801524        0x0 ../dsd_bsp/obj/HAL/src/crt0.o
- .bss           0x00801524        0x0 obj/default/hello_world.o
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
- .bss           0x00801524        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_load.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x00801524        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp/obj/HAL/src/crt0.o
+ .bss           0x008017ac        0x0 obj/default/hello_world.o
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_addsub_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_mul_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_div_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_ne_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_si_to_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_thenan_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_muldi3.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clzsi2.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_pack_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_unpack_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x008017ac        0x0 c:/altera/12.1/nios2eds/bin/gnu/h-i686-mingw32/bin/../lib/gcc/nios2-elf/4.1.2\libgcc.a(_clz.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_iic_isr_register.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_entry.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_irq_vars.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_load.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_exception_entry.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x008017ac        0x0 ../dsd_bsp\libhal_bsp.a(alt_icache_flush.o)
  *(COMMON)
- COMMON         0x00801524      0x100 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
-                0x00801524                alt_irq
-                0x00801624                . = ALIGN (0x4)
-                0x00801624                __bss_end = ABSOLUTE (.)
+ COMMON         0x008017ac      0x100 ../dsd_bsp\libhal_bsp.a(alt_irq_handler.o)
+                0x008017ac                alt_irq
+                0x008018ac                . = ALIGN (0x4)
+                0x008018ac                __bss_end = ABSOLUTE (.)
 
-.sdram_0        0x00801624        0x0
-                0x00801624                PROVIDE (_alt_partition_sdram_0_start, ABSOLUTE (.))
+.sdram_0        0x008018ac        0x0
+                0x008018ac                PROVIDE (_alt_partition_sdram_0_start, ABSOLUTE (.))
  *(.sdram_0. sdram_0.*)
-                0x00801624                . = ALIGN (0x4)
-                0x00801624                PROVIDE (_alt_partition_sdram_0_end, ABSOLUTE (.))
-                0x00801624                _end = ABSOLUTE (.)
-                0x00801624                end = ABSOLUTE (.)
-                0x00801624                __alt_stack_base = ABSOLUTE (.)
-                0x00801624                PROVIDE (_alt_partition_sdram_0_load_addr, LOADADDR (.sdram_0))
+                0x008018ac                . = ALIGN (0x4)
+                0x008018ac                PROVIDE (_alt_partition_sdram_0_end, ABSOLUTE (.))
+                0x008018ac                _end = ABSOLUTE (.)
+                0x008018ac                end = ABSOLUTE (.)
+                0x008018ac                __alt_stack_base = ABSOLUTE (.)
+                0x008018ac                PROVIDE (_alt_partition_sdram_0_load_addr, LOADADDR (.sdram_0))
 
 .stab
  *(.stab)
@@ -630,11 +631,11 @@ beeth           0x00e00000   0x1d6490
 
 .debug_alt_sim_info
  *(.debug_alt_sim_info)
-                0x00e00000                __alt_data_end = 0xe00000
-                0x00e00000                PROVIDE (__alt_stack_pointer, __alt_data_end)
-                0x00801624                PROVIDE (__alt_stack_limit, __alt_stack_base)
-                0x00801624                PROVIDE (__alt_heap_start, end)
-                0x00e00000                PROVIDE (__alt_heap_limit, 0xe00000)
+                0x00c00000                __alt_data_end = 0xc00000
+                0x00c00000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                0x008018ac                PROVIDE (__alt_stack_limit, __alt_stack_base)
+                0x008018ac                PROVIDE (__alt_heap_start, end)
+                0x00c00000                PROVIDE (__alt_heap_limit, 0xc00000)
 OUTPUT(RUN_ON_HDL_SIMULATOR_ONLY_dsd.elf elf32-littlenios2)
 
 .debug_ranges   0x00000000      0x228

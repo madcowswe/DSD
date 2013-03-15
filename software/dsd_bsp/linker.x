@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Wed Mar 13 01:42:39 GMT 2013
+ * Generated: Fri Mar 15 06:12:55 GMT 2013
  */
 
 /*
@@ -51,7 +51,8 @@
 MEMORY
 {
     reset : ORIGIN = 0x800000, LENGTH = 32
-    sdram_0 : ORIGIN = 0x800020, LENGTH = 6291424
+    sdram_0 : ORIGIN = 0x800020, LENGTH = 4194272
+    beethout : ORIGIN = 0xc00000, LENGTH = 2097152
     beeth : ORIGIN = 0xe00000, LENGTH = 2097152
 }
 
@@ -375,7 +376,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xe00000;
+__alt_data_end = 0xc00000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -391,4 +392,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xe00000 );
+PROVIDE( __alt_heap_limit    = 0xc00000 );

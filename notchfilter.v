@@ -161,12 +161,12 @@ module notchfilter #(
 			end
 
 			if (~willread && ~master_read && ~writestate) begin //transition to write state
-				if (outfifo_usedw > 0) begin
+				if (outfifo_usedw > 1) begin
 					writestate <= 1;
 					master_address <= next_write_ptr;
-					next_write_ptr <= next_write_ptr + outfifo_usedw*2;
-					master_burstcount <= outfifo_usedw;
-					outstanding_writes <= outfifo_usedw;
+					next_write_ptr <= next_write_ptr + (outfifo_usedw-1)*2;
+					master_burstcount <= outfifo_usedw-1;
+					outstanding_writes <= outfifo_usedw-1;
 					master_write <= 1;
 				end
 			end
