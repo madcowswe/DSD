@@ -90,6 +90,7 @@ module notchfilter #(
 
 	reg [20:0] next_ptr;
 	reg isrunning = 0;
+	reg readstagedone;
 	reg [9:0] temp_next_step;
 	reg [9:0] outstanding_transfers;
 	reg writestate = 0;
@@ -118,6 +119,7 @@ module notchfilter #(
 			master_read <= 1;
 			willread = 1;
 			writestate <= 0;
+			readstagedone <= 0;
 		end
 
 		temp_next_step_enddelta <= (end_ptr - next_ptr)/2; //fine to pipe here
@@ -139,7 +141,7 @@ module notchfilter #(
 		if (isrunning) begin
 
 			if ((~master_waitrequest || ~master_read) && ~writestate) begin //are we allowed to make a new request?
-				if (next_ptr_pipe <= end_ptr_pipe) begin
+				if (next_ptr_pipe < end_ptr_pipe) begin
 
 					if (temp_next_step >= 32 && ~readholdoff) begin //only read if we will read more than 32 words (use readholdoff to holdoff 1 cycle due to outstanding_transfers pipeline)
 						master_address <= {input_base_ptr, next_ptr_pipe};
@@ -156,7 +158,7 @@ module notchfilter #(
 				end
 				else begin
 					master_read <= 0;
-					isrunning <= 0; //TODO dont stop running untill output is flushed too
+					readstagedone <= 1; //TODO dont stop running untill output is flushed too
 				end
 			end
 
@@ -177,6 +179,10 @@ module notchfilter #(
 					master_write <= 0;
 					writestate <= 0;
 				end
+			end
+
+			if (readstagedone && outfifo_usedw == 0) begin
+				isrunning <= 0;
 			end
 
 		end

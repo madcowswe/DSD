@@ -156,9 +156,9 @@ SOPC_SYSID_FLAG += --sidp=0x1001040
 ELF_PATCH_FLAG  += --sidp 0x1001040
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1363325530
-SOPC_SYSID_FLAG += --timestamp=1363325530
-ELF_PATCH_FLAG  += --timestamp 1363325530
+# setting SOPC_TIMESTAMP is 1363330091
+SOPC_SYSID_FLAG += --timestamp=1363330091
+ELF_PATCH_FLAG  += --timestamp 1363330091
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_jtag_uart_driver.enable_small_driver is false
@@ -234,7 +234,7 @@ ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 # loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk. When 
 # this setting is true, the BSP shouldn't be used to build applications that 
 # are expected to run real hardware. 
-# setting hal.enable_sim_optimize is 1
+# setting hal.enable_sim_optimize is true
 ALT_CPPFLAGS += -DALT_SIM_OPTIMIZE
 
 # Causes the small newlib (C library) to be used. This reduces code and data 

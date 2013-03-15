@@ -35,51 +35,51 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC, SMALL_DATA
   7 .comment      00000023  00000000  00000000  001d9490  2**0
                   CONTENTS, READONLY
-  8 .debug_aranges 000001d0  00000000  00000000  001d94b8  2**3
+  8 .debug_aranges 000001f0  00000000  00000000  001d94b8  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_pubnames 00000190  00000000  00000000  001d9688  2**0
+  9 .debug_pubnames 00000246  00000000  00000000  001d96a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_info   00001e9a  00000000  00000000  001d9818  2**0
+ 10 .debug_info   00002374  00000000  00000000  001d98ee  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00000f86  00000000  00000000  001db6b2  2**0
+ 11 .debug_abbrev 0000109b  00000000  00000000  001dbc62  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_line   0000152e  00000000  00000000  001dc638  2**0
+ 12 .debug_line   00001984  00000000  00000000  001dccfd  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_frame  000001b0  00000000  00000000  001ddb68  2**2
+ 13 .debug_frame  000002e0  00000000  00000000  001de684  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    00000369  00000000  00000000  001ddd18  2**0
+ 14 .debug_str    0000037b  00000000  00000000  001de964  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_loc    000007c5  00000000  00000000  001de081  2**0
+ 15 .debug_loc    00000975  00000000  00000000  001decdf  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000228  00000000  00000000  001de848  2**3
+ 16 .debug_ranges 00000228  00000000  00000000  001df658  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  001dfc88  2**0
+ 17 .thread_model 00000003  00000000  00000000  001e0a98  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  001dfc8b  2**0
+ 18 .cpu          00000003  00000000  00000000  001e0a9b  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  001dfc8e  2**0
+ 19 .qsys         00000001  00000000  00000000  001e0a9e  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  001dfc8f  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  001e0a9f  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  001dfc90  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  001e0aa0  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  001dfc94  2**0
+ 22 .sysid_base   00000004  00000000  00000000  001e0aa4  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  001dfc98  2**0
+ 23 .sysid_time   00000004  00000000  00000000  001e0aa8  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   00000009  00000000  00000000  001dfc9c  2**0
+ 24 .stderr_dev   00000009  00000000  00000000  001e0aac  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    00000009  00000000  00000000  001dfca5  2**0
+ 25 .stdin_dev    00000009  00000000  00000000  001e0ab5  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   00000009  00000000  00000000  001dfcae  2**0
+ 26 .stdout_dev   00000009  00000000  00000000  001e0abe  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 00000012  00000000  00000000  001dfcb7  2**0
+ 27 .sopc_system_name 00000012  00000000  00000000  001e0ac7  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 0000001c  00000000  00000000  001dfcc9  2**0
+ 28 .quartus_project_dir 0000001c  00000000  00000000  001e0ad9  2**0
                   CONTENTS, READONLY
- 29 .jdi          000053f2  00000000  00000000  001dfce5  2**0
+ 29 .jdi          000053f2  00000000  00000000  001e0af5  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     00050a42  00000000  00000000  001e50d7  2**0
+ 30 .sopcinfo     00050a42  00000000  00000000  001e5ee7  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00800000 l    d  .entry	00000000 .entry
@@ -461,26 +461,38 @@ alt_after_alt_main:
   80019c:	003fff06 	br	80019c <alt_after_alt_main>
 
 008001a0 <det_status>:
+#define DET_STATUS_READY 0
+#define DET_STATUS_BUSY 1
+
+int irqcommunicationtest = 0;
+
+inline int det_status(){
   8001a0:	deffff04 	addi	sp,sp,-4
   8001a4:	df000015 	stw	fp,0(sp)
   8001a8:	d839883a 	mov	fp,sp
+	return IORD(DETERMINANT_0_BASE, DET_STATUS_OFFSET);
   8001ac:	00804034 	movhi	r2,256
   8001b0:	10840f04 	addi	r2,r2,4156
   8001b4:	10800037 	ldwio	r2,0(r2)
+}
   8001b8:	e037883a 	mov	sp,fp
   8001bc:	df000017 	ldw	fp,0(sp)
   8001c0:	dec00104 	addi	sp,sp,4
   8001c4:	f800283a 	ret
 
 008001c8 <det_result>:
+
+inline float det_result(){
   8001c8:	defffe04 	addi	sp,sp,-8
   8001cc:	dfc00115 	stw	ra,4(sp)
   8001d0:	df000015 	stw	fp,0(sp)
   8001d4:	d839883a 	mov	fp,sp
+	return IORD(DETERMINANT_0_BASE, DET_RESULT_OFFSET);
   8001d8:	00804034 	movhi	r2,256
   8001dc:	10840e04 	addi	r2,r2,4152
   8001e0:	11000037 	ldwio	r4,0(r2)
   8001e4:	0800fac0 	call	800fac <__floatsisf>
+}
   8001e8:	e037883a 	mov	sp,fp
   8001ec:	dfc00117 	ldw	ra,4(sp)
   8001f0:	df000017 	ldw	fp,0(sp)
@@ -488,14 +500,19 @@ alt_after_alt_main:
   8001f8:	f800283a 	ret
 
 008001fc <det_done_isr>:
+
+void det_done_isr(void* context){
   8001fc:	defffd04 	addi	sp,sp,-12
   800200:	dfc00215 	stw	ra,8(sp)
   800204:	df000115 	stw	fp,4(sp)
   800208:	df000104 	addi	fp,sp,4
   80020c:	e13fff15 	stw	r4,-4(fp)
+	det_result();
   800210:	08001c80 	call	8001c8 <det_result>
+	irqcommunicationtest = 1;
   800214:	00800044 	movi	r2,1
   800218:	d0a00215 	stw	r2,-32760(gp)
+}
   80021c:	e037883a 	mov	sp,fp
   800220:	dfc00117 	ldw	ra,4(sp)
   800224:	df000017 	ldw	fp,0(sp)
@@ -503,10 +520,13 @@ alt_after_alt_main:
   80022c:	f800283a 	ret
 
 00800230 <reg_isr>:
+
+inline int reg_isr(){
   800230:	defffd04 	addi	sp,sp,-12
   800234:	dfc00215 	stw	ra,8(sp)
   800238:	df000115 	stw	fp,4(sp)
   80023c:	df000104 	addi	fp,sp,4
+	return alt_ic_isr_register(DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID,
   800240:	d8000015 	stw	zero,0(sp)
   800244:	0009883a 	mov	r4,zero
   800248:	01400504 	movi	r5,20
@@ -514,6 +534,11 @@ alt_after_alt_main:
   800250:	31807f04 	addi	r6,r6,508
   800254:	000f883a 	mov	r7,zero
   800258:	08014ec0 	call	8014ec <alt_ic_isr_register>
+						DETERMINANT_0_IRQ,
+	                    &det_done_isr,
+	                    NULL,
+	                    NULL);
+}
   80025c:	e037883a 	mov	sp,fp
   800260:	dfc00117 	ldw	ra,4(sp)
   800264:	df000017 	ldw	fp,0(sp)
@@ -521,12 +546,17 @@ alt_after_alt_main:
   80026c:	f800283a 	ret
 
 00800270 <det_start>:
+
+
+
+inline void det_start(float* ptr, int N){
   800270:	defffc04 	addi	sp,sp,-16
   800274:	dfc00315 	stw	ra,12(sp)
   800278:	df000215 	stw	fp,8(sp)
   80027c:	df000204 	addi	fp,sp,8
   800280:	e13ffe15 	stw	r4,-8(fp)
   800284:	e17fff15 	stw	r5,-4(fp)
+	alt_dcache_flush (ptr, N * N * sizeof(float));
   800288:	e0ffff17 	ldw	r3,-4(fp)
   80028c:	e0bfff17 	ldw	r2,-4(fp)
   800290:	1885383a 	mul	r2,r3,r2
@@ -535,14 +565,17 @@ alt_after_alt_main:
   80029c:	100b883a 	mov	r5,r2
   8002a0:	e13ffe17 	ldw	r4,-8(fp)
   8002a4:	080142c0 	call	80142c <alt_dcache_flush>
+	IOWR(DETERMINANT_0_BASE, DET_PTR_OFFSET, (int)ptr);
   8002a8:	e0fffe17 	ldw	r3,-8(fp)
   8002ac:	00804034 	movhi	r2,256
   8002b0:	10840e04 	addi	r2,r2,4152
   8002b4:	10c00035 	stwio	r3,0(r2)
+	IOWR(DETERMINANT_0_BASE, DET_LEN_OFFSET, N);
   8002b8:	00c04034 	movhi	r3,256
   8002bc:	18c40f04 	addi	r3,r3,4156
   8002c0:	e0bfff17 	ldw	r2,-4(fp)
   8002c4:	18800035 	stwio	r2,0(r3)
+}
   8002c8:	e037883a 	mov	sp,fp
   8002cc:	dfc00117 	ldw	ra,4(sp)
   8002d0:	df000017 	ldw	fp,0(sp)
@@ -550,6 +583,12 @@ alt_after_alt_main:
   8002d8:	f800283a 	ret
 
 008002dc <det3x3>:
+#define MXSIZE 10
+
+float **tempmat;
+
+typedef float mat3x3[3][3];
+float det3x3(volatile mat3x3 inmat){
   8002dc:	defffa04 	addi	sp,sp,-24
   8002e0:	dfc00515 	stw	ra,20(sp)
   8002e4:	df000415 	stw	fp,16(sp)
@@ -557,6 +596,7 @@ alt_after_alt_main:
   8002ec:	dc000215 	stw	r16,8(sp)
   8002f0:	df000204 	addi	fp,sp,8
   8002f4:	e13fff15 	stw	r4,-4(fp)
+	float result = inmat[0][0] * (inmat[1][1] * inmat[2][2] - inmat[2][1] * inmat[1][2]);
   8002f8:	e0bfff17 	ldw	r2,-4(fp)
   8002fc:	14000017 	ldw	r16,0(r2)
   800300:	e0bfff17 	ldw	r2,-4(fp)
@@ -585,6 +625,7 @@ alt_after_alt_main:
   80035c:	100b883a 	mov	r5,r2
   800360:	0800be00 	call	800be0 <__mulsf3>
   800364:	e0bffe15 	stw	r2,-8(fp)
+	result -= inmat[1][0] * (inmat[0][1] * inmat[2][2] - inmat[2][1] * inmat[0][2]);
   800368:	e0bfff17 	ldw	r2,-4(fp)
   80036c:	10800304 	addi	r2,r2,12
   800370:	14000017 	ldw	r16,0(r2)
@@ -615,6 +656,7 @@ alt_after_alt_main:
   8003d4:	100b883a 	mov	r5,r2
   8003d8:	0800b0c0 	call	800b0c <__subsf3>
   8003dc:	e0bffe15 	stw	r2,-8(fp)
+	result += inmat[2][0] * (inmat[0][1] * inmat[1][2] - inmat[1][1] * inmat[0][2]);
   8003e0:	e0bfff17 	ldw	r2,-4(fp)
   8003e4:	10800604 	addi	r2,r2,24
   8003e8:	14000017 	ldw	r16,0(r2)
@@ -645,7 +687,9 @@ alt_after_alt_main:
   80044c:	100b883a 	mov	r5,r2
   800450:	0800b7c0 	call	800b7c <__addsf3>
   800454:	e0bffe15 	stw	r2,-8(fp)
+	return result;
   800458:	e0bffe17 	ldw	r2,-8(fp)
+}
   80045c:	e037883a 	mov	sp,fp
   800460:	dfc00317 	ldw	ra,12(sp)
   800464:	df000217 	ldw	fp,8(sp)
@@ -655,12 +699,15 @@ alt_after_alt_main:
   800474:	f800283a 	ret
 
 00800478 <rswap>:
+
+void rswap (float **tempmat, size_t i, size_t j){
   800478:	defffb04 	addi	sp,sp,-20
   80047c:	df000415 	stw	fp,16(sp)
   800480:	df000404 	addi	fp,sp,16
   800484:	e13ffd15 	stw	r4,-12(fp)
   800488:	e17ffe15 	stw	r5,-8(fp)
   80048c:	e1bfff15 	stw	r6,-4(fp)
+	float *tmp = tempmat[i];
   800490:	e0bffe17 	ldw	r2,-8(fp)
   800494:	1085883a 	add	r2,r2,r2
   800498:	1085883a 	add	r2,r2,r2
@@ -669,6 +716,7 @@ alt_after_alt_main:
   8004a4:	1885883a 	add	r2,r3,r2
   8004a8:	10800017 	ldw	r2,0(r2)
   8004ac:	e0bffc15 	stw	r2,-16(fp)
+	tempmat[i] = tempmat[j]; tempmat[j] = tmp;
   8004b0:	e0bffe17 	ldw	r2,-8(fp)
   8004b4:	1085883a 	add	r2,r2,r2
   8004b8:	1085883a 	add	r2,r2,r2
@@ -691,12 +739,15 @@ alt_after_alt_main:
   8004fc:	1887883a 	add	r3,r3,r2
   800500:	e0bffc17 	ldw	r2,-16(fp)
   800504:	18800015 	stw	r2,0(r3)
+}
   800508:	e037883a 	mov	sp,fp
   80050c:	df000017 	ldw	fp,0(sp)
   800510:	dec00104 	addi	sp,sp,4
   800514:	f800283a 	ret
 
 00800518 <detmat>:
+
+float detmat(float matrix[][MXSIZE]){
   800518:	defff004 	addi	sp,sp,-64
   80051c:	dfc00f15 	stw	ra,60(sp)
   800520:	df000e15 	stw	fp,56(sp)
@@ -704,12 +755,18 @@ alt_after_alt_main:
   800528:	dc000c15 	stw	r16,48(sp)
   80052c:	df000c04 	addi	fp,sp,48
   800530:	e13ffe15 	stw	r4,-8(fp)
+	float det = 1.0f;
   800534:	008fe034 	movhi	r2,16256
   800538:	e0bffd15 	stw	r2,-12(fp)
+
+	//Copy Matrix to tempmat
+	for(int i = 0; i != MXSIZE; ++i)
   80053c:	e03ffb15 	stw	zero,-20(fp)
   800540:	00002106 	br	8005c8 <detmat+0xb0>
+		for(int j = 0; j != MXSIZE; j++)
   800544:	e03ffa15 	stw	zero,-24(fp)
   800548:	00001906 	br	8005b0 <detmat+0x98>
+			tempmat[i][j] = matrix[i][j];
   80054c:	e0bffb17 	ldw	r2,-20(fp)
   800550:	1085883a 	add	r2,r2,r2
   800554:	1085883a 	add	r2,r2,r2
@@ -732,21 +789,44 @@ alt_after_alt_main:
   800598:	10c5883a 	add	r2,r2,r3
   80059c:	10800017 	ldw	r2,0(r2)
   8005a0:	20800015 	stw	r2,0(r4)
+float detmat(float matrix[][MXSIZE]){
+	float det = 1.0f;
+
+	//Copy Matrix to tempmat
+	for(int i = 0; i != MXSIZE; ++i)
+		for(int j = 0; j != MXSIZE; j++)
   8005a4:	e0bffa17 	ldw	r2,-24(fp)
   8005a8:	10800044 	addi	r2,r2,1
   8005ac:	e0bffa15 	stw	r2,-24(fp)
   8005b0:	e0bffa17 	ldw	r2,-24(fp)
   8005b4:	10800298 	cmpnei	r2,r2,10
   8005b8:	103fe41e 	bne	r2,zero,80054c <detmat+0x34>
+
+float detmat(float matrix[][MXSIZE]){
+	float det = 1.0f;
+
+	//Copy Matrix to tempmat
+	for(int i = 0; i != MXSIZE; ++i)
   8005bc:	e0bffb17 	ldw	r2,-20(fp)
   8005c0:	10800044 	addi	r2,r2,1
   8005c4:	e0bffb15 	stw	r2,-20(fp)
   8005c8:	e0bffb17 	ldw	r2,-20(fp)
   8005cc:	10800298 	cmpnei	r2,r2,10
   8005d0:	103fdc1e 	bne	r2,zero,800544 <detmat+0x2c>
+		for(int j = 0; j != MXSIZE; j++)
+			tempmat[i][j] = matrix[i][j];
+
+	// Fill Lower with 0's
+	int rswapcount = 0;
   8005d4:	e03ffc15 	stw	zero,-16(fp)
+
+	//iterate over columns
+	for(int i =0; i < MXSIZE; ++i){
   8005d8:	e03ff915 	stw	zero,-28(fp)
   8005dc:	00009306 	br	80082c <detmat+0x314>
+
+		//swap or calculate
+		if (tempmat[i][i] != 0){
   8005e0:	e0bff917 	ldw	r2,-28(fp)
   8005e4:	1085883a 	add	r2,r2,r2
   8005e8:	1085883a 	add	r2,r2,r2
@@ -765,11 +845,20 @@ alt_after_alt_main:
   80061c:	1004c03a 	cmpne	r2,r2,zero
   800620:	1000011e 	bne	r2,zero,800628 <detmat+0x110>
   800624:	00005a06 	br	800790 <detmat+0x278>
+
+			//clear swap count
+			rswapcount =0;
   800628:	e03ffc15 	stw	zero,-16(fp)
+
+			//for each row (j) bleow diagonal of current column
+			for(int j = i+1; j < MXSIZE; j++){
   80062c:	e0bff917 	ldw	r2,-28(fp)
   800630:	10800044 	addi	r2,r2,1
   800634:	e0bff815 	stw	r2,-32(fp)
   800638:	00005106 	br	800780 <detmat+0x268>
+
+				//compute normalization factor
+				float f = tempmat[j][i]/tempmat[i][i];
   80063c:	e0bff817 	ldw	r2,-32(fp)
   800640:	1085883a 	add	r2,r2,r2
   800644:	1085883a 	add	r2,r2,r2
@@ -797,9 +886,13 @@ alt_after_alt_main:
   80069c:	100b883a 	mov	r5,r2
   8006a0:	0800dc00 	call	800dc0 <__divsf3>
   8006a4:	e0bff715 	stw	r2,-36(fp)
+
+				//subtract f * i'th row from j'th row
+				for (int k = i; k < MXSIZE; ++k)
   8006a8:	e0bff917 	ldw	r2,-28(fp)
   8006ac:	e0bff615 	stw	r2,-40(fp)
   8006b0:	00002d06 	br	800768 <detmat+0x250>
+					tempmat[j][k] -= f*tempmat[i][k];
   8006b4:	e0bff817 	ldw	r2,-32(fp)
   8006b8:	1085883a 	add	r2,r2,r2
   8006bc:	1085883a 	add	r2,r2,r2
@@ -842,12 +935,24 @@ alt_after_alt_main:
   800750:	100b883a 	mov	r5,r2
   800754:	0800b0c0 	call	800b0c <__subsf3>
   800758:	80800015 	stw	r2,0(r16)
+
+				//compute normalization factor
+				float f = tempmat[j][i]/tempmat[i][i];
+
+				//subtract f * i'th row from j'th row
+				for (int k = i; k < MXSIZE; ++k)
   80075c:	e0bff617 	ldw	r2,-40(fp)
   800760:	10800044 	addi	r2,r2,1
   800764:	e0bff615 	stw	r2,-40(fp)
   800768:	e0bff617 	ldw	r2,-40(fp)
   80076c:	10800290 	cmplti	r2,r2,10
   800770:	103fd01e 	bne	r2,zero,8006b4 <detmat+0x19c>
+
+			//clear swap count
+			rswapcount =0;
+
+			//for each row (j) bleow diagonal of current column
+			for(int j = i+1; j < MXSIZE; j++){
   800774:	e0bff817 	ldw	r2,-32(fp)
   800778:	10800044 	addi	r2,r2,1
   80077c:	e0bff815 	stw	r2,-32(fp)
@@ -855,6 +960,12 @@ alt_after_alt_main:
   800784:	10800290 	cmplti	r2,r2,10
   800788:	103fac1e 	bne	r2,zero,80063c <detmat+0x124>
   80078c:	00002406 	br	800820 <detmat+0x308>
+					tempmat[j][k] -= f*tempmat[i][k];
+			}
+		} else {
+
+			//if we have exhausted all swap options, we know it must be singular
+			if ((MXSIZE - 1 - i) == rswapcount++){
   800790:	00c00244 	movi	r3,9
   800794:	e0bff917 	ldw	r2,-28(fp)
   800798:	1887c83a 	sub	r3,r3,r2
@@ -867,38 +978,70 @@ alt_after_alt_main:
   8007b4:	18803fcc 	andi	r2,r3,255
   8007b8:	1005003a 	cmpeq	r2,r2,zero
   8007bc:	1000031e 	bne	r2,zero,8007cc <detmat+0x2b4>
+				return 0;
   8007c0:	0005883a 	mov	r2,zero
   8007c4:	e0bfff15 	stw	r2,-4(fp)
   8007c8:	00003506 	br	8008a0 <detmat+0x388>
+			} else {
+
+				//maintain a sorted list of swaps so we know we have tried all
+				for (int k = i; k < MXSIZE - 1; ++k){
   8007cc:	e0bff917 	ldw	r2,-28(fp)
   8007d0:	e0bff515 	stw	r2,-44(fp)
   8007d4:	00000c06 	br	800808 <detmat+0x2f0>
+					rswap(tempmat,k,k+1);
   8007d8:	d1200317 	ldw	r4,-32756(gp)
   8007dc:	e17ff517 	ldw	r5,-44(fp)
   8007e0:	e0bff517 	ldw	r2,-44(fp)
   8007e4:	10800044 	addi	r2,r2,1
   8007e8:	100d883a 	mov	r6,r2
   8007ec:	08004780 	call	800478 <rswap>
+					det *= -1;
   8007f0:	e0bffd17 	ldw	r2,-12(fp)
   8007f4:	10a0003c 	xorhi	r2,r2,32768
   8007f8:	e0bffd15 	stw	r2,-12(fp)
+			if ((MXSIZE - 1 - i) == rswapcount++){
+				return 0;
+			} else {
+
+				//maintain a sorted list of swaps so we know we have tried all
+				for (int k = i; k < MXSIZE - 1; ++k){
   8007fc:	e0bff517 	ldw	r2,-44(fp)
   800800:	10800044 	addi	r2,r2,1
   800804:	e0bff515 	stw	r2,-44(fp)
   800808:	e0bff517 	ldw	r2,-44(fp)
   80080c:	10800250 	cmplti	r2,r2,9
   800810:	103ff11e 	bne	r2,zero,8007d8 <detmat+0x2c0>
+					rswap(tempmat,k,k+1);
+					det *= -1;
+				}
+
+				//retry this column
+				i--;
   800814:	e0bff917 	ldw	r2,-28(fp)
   800818:	10bfffc4 	addi	r2,r2,-1
   80081c:	e0bff915 	stw	r2,-28(fp)
+
+	// Fill Lower with 0's
+	int rswapcount = 0;
+
+	//iterate over columns
+	for(int i =0; i < MXSIZE; ++i){
   800820:	e0bff917 	ldw	r2,-28(fp)
   800824:	10800044 	addi	r2,r2,1
   800828:	e0bff915 	stw	r2,-28(fp)
   80082c:	e0bff917 	ldw	r2,-28(fp)
   800830:	10800290 	cmplti	r2,r2,10
   800834:	103f6a1e 	bne	r2,zero,8005e0 <detmat+0xc8>
+				i--;
+			}
+		}
+	}
+	// Calculate Determinant
+	for(int i=0; i < MXSIZE; ++i)
   800838:	e03ff415 	stw	zero,-48(fp)
   80083c:	00001306 	br	80088c <detmat+0x374>
+		det *= tempmat[i][i];
   800840:	e0bff417 	ldw	r2,-48(fp)
   800844:	1085883a 	add	r2,r2,r2
   800848:	1085883a 	add	r2,r2,r2
@@ -915,16 +1058,27 @@ alt_after_alt_main:
   800874:	100b883a 	mov	r5,r2
   800878:	0800be00 	call	800be0 <__mulsf3>
   80087c:	e0bffd15 	stw	r2,-12(fp)
+				i--;
+			}
+		}
+	}
+	// Calculate Determinant
+	for(int i=0; i < MXSIZE; ++i)
   800880:	e0bff417 	ldw	r2,-48(fp)
   800884:	10800044 	addi	r2,r2,1
   800888:	e0bff415 	stw	r2,-48(fp)
   80088c:	e0bff417 	ldw	r2,-48(fp)
   800890:	10800290 	cmplti	r2,r2,10
   800894:	103fea1e 	bne	r2,zero,800840 <detmat+0x328>
+		det *= tempmat[i][i];
+
+	// return det
+	return det;
   800898:	e0fffd17 	ldw	r3,-12(fp)
   80089c:	e0ffff15 	stw	r3,-4(fp)
   8008a0:	e0ffff17 	ldw	r3,-4(fp)
   8008a4:	1805883a 	mov	r2,r3
+}
   8008a8:	e037883a 	mov	sp,fp
   8008ac:	dfc00317 	ldw	ra,12(sp)
   8008b0:	df000217 	ldw	fp,8(sp)
@@ -934,28 +1088,49 @@ alt_after_alt_main:
   8008c0:	f800283a 	ret
 
 008008c4 <main>:
+extern short _binary_beeth5_noise_bin_start[];
+//extern short _binary_beeth5_noise_bin_end[];
+//extern int _binary_beeth5_noise_bin_size;
+
+int main()
+{
   8008c4:	deff7904 	addi	sp,sp,-540
   8008c8:	df008615 	stw	fp,536(sp)
   8008cc:	df008604 	addi	fp,sp,536
+
+	IOWR(NOTCHFILTER_0_BASE, 0, _binary_beeth5_noise_bin_start);
   8008d0:	00c03834 	movhi	r3,224
   8008d4:	18c00004 	addi	r3,r3,0
   8008d8:	00804034 	movhi	r2,256
   8008dc:	10840c04 	addi	r2,r2,4144
   8008e0:	10c00035 	stwio	r3,0(r2)
+	IOWR(NOTCHFILTER_0_BASE, 1, (int)_binary_beeth5_noise_bin_start + 0x2000);// 0x001d6490);
   8008e4:	00803834 	movhi	r2,224
   8008e8:	10800004 	addi	r2,r2,0
   8008ec:	10c80004 	addi	r3,r2,8192
   8008f0:	00804034 	movhi	r2,256
   8008f4:	10840d04 	addi	r2,r2,4148
   8008f8:	10c00035 	stwio	r3,0(r2)
+
+
+	//barrier for old tests--------------------------------
+	while(1);
   8008fc:	003fff06 	br	8008fc <main+0x38>
 
 00800900 <alt_main>:
+	}
+
+	return 0;
+}
+
+int alt_main(){
   800900:	defffe04 	addi	sp,sp,-8
   800904:	dfc00115 	stw	ra,4(sp)
   800908:	df000015 	stw	fp,0(sp)
   80090c:	d839883a 	mov	fp,sp
+	return main();
   800910:	08008c40 	call	8008c4 <main>
+}
   800914:	e037883a 	mov	sp,fp
   800918:	dfc00117 	ldw	ra,4(sp)
   80091c:	df000017 	ldw	fp,0(sp)

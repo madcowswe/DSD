@@ -99,7 +99,7 @@ float detmat(float matrix[][MXSIZE]){
 }
 
 extern short _binary_beeth5_noise_bin_start[];
-//extern short* _binary_beeth5_noise_bin_end;
+//extern short _binary_beeth5_noise_bin_end[];
 //extern int _binary_beeth5_noise_bin_size;
 
 int main()
