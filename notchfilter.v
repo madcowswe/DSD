@@ -44,6 +44,7 @@ module notchfilter #(
 	reg start_pulse = 0;
 	reg [31:0] input_ptr;
 	reg [31:0] end_ptr;
+	reg [31:0] next_write_ptr = 32'h00c00000; //TEMP!!!
 
 	wire [15:0] filtercore_in;
 	wire [15:0] filtercore_out;
@@ -93,18 +94,18 @@ module notchfilter #(
 	reg writestate = 0;
 	reg willread = 0;
 	reg [9:0] outstanding_writes;
-	reg [31:0] next_write_ptr = 32'h00c00000; //TEMP!!!
+	reg readholdoff = 0;
+
 	always @(posedge clk) begin : proc_sdraminterface
 
-		outstanding_transfers = outstanding_transfers - master_readdatavalid;
-		outstanding_transfers = outstanding_transfers + ((master_read & ~master_waitrequest) ? master_burstcount : 0);
+		outstanding_transfers <= outstanding_transfers - master_readdatavalid + ((master_read & ~master_waitrequest) ? master_burstcount : 0);
 		willread = 0;
 
 		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
 			master_burstcount = 512;
 			master_address <= input_ptr;
-			outstanding_transfers = 0;
+			outstanding_transfers <= 0;
 			isrunning <= 1;
 			master_read <= 1;
 			willread = 1;
@@ -118,18 +119,23 @@ module notchfilter #(
 			temp_next_step = (end_ptr - next_ptr)/2 ? 512 - infifo_usedw - outstanding_transfers : (end_ptr - next_ptr)/2;
 		end
 
+		readholdoff <= readholdoff;
+		if (master_read & ~master_waitrequest)
+			readholdoff <= 0;
+
 		if (isrunning) begin
 
 			if ((~master_waitrequest || ~master_read) && ~writestate) begin //are we allowed to make a new request?
 				if (next_ptr <= end_ptr) begin
 
-					if (temp_next_step >= 32) begin //only read if we will read more than 32 words
+					if (temp_next_step >= 32 && ~readholdoff) begin //only read if we will read more than 32 words (use readholdoff to holdoff 1 cycle due to outstanding_transfers pipeline)
 						master_address <= next_ptr;
 						master_burstcount = temp_next_step;
 						next_ptr <= next_ptr + master_burstcount*2;
 
 						master_read <= 1;
 						willread = 1;
+						readholdoff <= 1;
 					end
 					else begin
 						master_read <= 0;
