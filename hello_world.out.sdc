@@ -19,7 +19,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 12.1 Build 177 11/07/2012 SJ Web Edition"
 
-## DATE    "Tue Mar 12 18:10:47 2013"
+## DATE    "Fri Mar 15 00:18:21 2013"
 
 ##
 ## DEVICE  "EP3C16F484C6"
@@ -48,6 +48,7 @@ create_clock -name {CLOCK_50} -period 20.000 -waveform { 0.000 10.000 } [get_por
 
 create_generated_clock -name {u0|altpll_0|sd1|pll7|clk[0]} -source [get_pins {u0|altpll_0|sd1|pll7|inclk[0]}] -duty_cycle 50.000 -multiply_by 16 -divide_by 5 -phase -146.250 -master_clock {CLOCK_50} [get_pins {u0|altpll_0|sd1|pll7|clk[0]}] 
 create_generated_clock -name {u0|altpll_0|sd1|pll7|clk[1]} -source [get_pins {u0|altpll_0|sd1|pll7|inclk[0]}] -duty_cycle 50.000 -multiply_by 16 -divide_by 5 -master_clock {CLOCK_50} [get_pins {u0|altpll_0|sd1|pll7|clk[1]}] 
+create_generated_clock -name {u0|altpll_0|sd1|pll7|clk[2]} -source [get_pins {u0|altpll_0|sd1|pll7|inclk[0]}] -duty_cycle 50.000 -multiply_by 8 -divide_by 5 -master_clock {CLOCK_50} [get_pins {u0|altpll_0|sd1|pll7|clk[2]}] 
 
 
 #**************************************************************
@@ -89,12 +90,18 @@ set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}]
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
+set_clock_groups -exclusive -group [get_clocks {altera_reserved_tck}] 
 
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
+set_false_path -from [get_keepers {*rdptr_g*}] -to [get_keepers {*ws_dgrp|dffpipe_b09:dffpipe17|dffe18a*}]
+set_false_path -from [get_keepers {*delayed_wrptr_g*}] -to [get_keepers {*rs_dgwp|dffpipe_a09:dffpipe12|dffe13a*}]
+set_false_path -from [get_keepers {*rdptr_g*}] -to [get_keepers {*ws_dgrp|dffpipe_d09:dffpipe8|dffe9a*}]
+set_false_path -from [get_keepers {*delayed_wrptr_g*}] -to [get_keepers {*rs_dgwp|dffpipe_c09:dffpipe5|dffe6a*}]
 set_false_path -from [get_keepers {altera_reserved_tdi}] -to [get_keepers {pzdyqx*}]
 set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}]
 set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]

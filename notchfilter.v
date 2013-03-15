@@ -20,10 +20,10 @@ module notchfilter #(
 		input  wire [31:0] slave_writedata,    //                 .writedata
 		output reg  [31:0] master_address,     //    avalon_master.address
 		input  wire [15:0] master_readdata,    //                 .readdata
-		output reg         master_read,        //                 .read
+		output reg         master_read = 0,        //                 .read
 		input  wire        master_waitrequest, //                 .waitrequest
 		output reg  [9:0]  master_burstcount,  //                 .burstcount
-		output wire        master_write,       //                 .write
+		output reg         master_write = 0,       //                 .write
 		output wire [15:0] master_writedata,   //                 .writedata
 		input  wire        master_readdatavalid,         //                 .readdatavalid
 		input  wire        clk,                //       clock_sink.clk
@@ -34,8 +34,6 @@ module notchfilter #(
 	// TODO: Auto-generated HDL template
 
 	assign slave_waitrequest = 1'b0;
-
-	assign master_write = 1'b0;
 
 	wire infifo_empty;
 	wire [9:0] infifo_usedw;
@@ -69,7 +67,7 @@ module notchfilter #(
 	notch_dc_out_fifo	notch_dc_out_fifo_inst (
 		.data ( filtercore_out ),
 		.rdclk ( clk ),
-		.rdreq ( outfifo_usedw[5] ),
+		.rdreq ( master_write && ~master_waitrequest ), //temp
 		.wrclk ( core_clk ),
 		.wrreq ( filter_en ),
 		.q ( master_writedata ),
@@ -90,43 +88,78 @@ module notchfilter #(
 
 	reg [31:0] next_ptr;
 	reg isrunning = 0;
-	reg readreqactive = 0;
 	reg [9:0] temp_next_step;
-	always @(posedge clk) begin : proc_sdraminterface_req
-		master_read <= 0;
+	reg [9:0] outstanding_transfers;
+	reg writestate = 0;
+	reg willread = 0;
+	reg [9:0] outstanding_writes;
+	reg [31:0] next_write_ptr = 32'h00c00000; //TEMP!!!
+	always @(posedge clk) begin : proc_sdraminterface
 
-		if (start_pulse) begin
-			master_read <= 1;
-			master_burstcount <= 512;
-			master_address <= input_ptr;
+		outstanding_transfers = outstanding_transfers - master_readdatavalid;
+		outstanding_transfers = outstanding_transfers + ((master_read & ~master_waitrequest) ? master_burstcount : 0);
+		willread = 0;
+
+		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
-
-			readreqactive <= 1;
+			master_burstcount = 512;
+			master_address <= input_ptr;
+			outstanding_transfers = 0;
 			isrunning <= 1;
+			master_read <= 1;
+			willread = 1;
+			writestate <= 0;
+		end
+
+		if (infifo_usedw + outstanding_transfers >= 512) begin
+			temp_next_step = 0;
+		end
+		else begin
+			temp_next_step = (end_ptr - next_ptr)/2 ? 512 - infifo_usedw - outstanding_transfers : (end_ptr - next_ptr)/2;
 		end
 
 		if (isrunning) begin
-			if (master_waitrequest && readreqactive) begin
-				master_read <= 1;
-			end
-			else begin
 
+			if ((~master_waitrequest || ~master_read) && ~writestate) begin //are we allowed to make a new request?
 				if (next_ptr <= end_ptr) begin
-					if (~infifo_usedw[9]) begin
 
+					if (temp_next_step >= 32) begin //only read if we will read more than 32 words
 						master_address <= next_ptr;
+						master_burstcount = temp_next_step;
+						next_ptr <= next_ptr + master_burstcount*2;
 
-						temp_next_step = ((end_ptr - next_ptr) < (512 - infifo_usedw)) ? (end_ptr - next_ptr) : (512 - infifo_usedw) ;
-						next_ptr <= next_ptr + temp_next_step * 2;
-						master_burstcount <= temp_next_step;
 						master_read <= 1;
+						willread = 1;
+					end
+					else begin
+						master_read <= 0;
 					end
 				end
 				else begin
-					readreqactive <= 0;
 					master_read <= 0;
+					isrunning <= 0; //TODO dont stop running untill output is flushed too
 				end
 			end
+
+			if (~willread && ~master_read && ~writestate) begin //transition to write state
+				if (outfifo_usedw > 0) begin
+					writestate <= 1;
+					master_address <= next_write_ptr;
+					next_write_ptr <= next_write_ptr + outfifo_usedw*2;
+					master_burstcount <= outfifo_usedw;
+					outstanding_writes <= outfifo_usedw;
+					master_write <= 1;
+				end
+			end
+
+			if (master_write && ~master_waitrequest) begin
+				outstanding_writes <= outstanding_writes - 1;
+				if (outstanding_writes == 1) begin
+					master_write <= 0;
+					writestate <= 0;
+				end
+			end
+
 		end
 
 

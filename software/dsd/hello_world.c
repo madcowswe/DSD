@@ -106,7 +106,7 @@ int main()
 {
 
 	IOWR(NOTCHFILTER_0_BASE, 0, _binary_beeth5_noise_bin_start);
-	IOWR(NOTCHFILTER_0_BASE, 1, _binary_beeth5_noise_bin_start + 0x423);//0x001d6490);
+	IOWR(NOTCHFILTER_0_BASE, 1, _binary_beeth5_noise_bin_start + 0x001d6490);
 
 
 	//barrier for old tests--------------------------------
