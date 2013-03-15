@@ -95,14 +95,18 @@ module notchfilter #(
 	reg writestate = 0;
 	reg willread = 0;
 	reg [9:0] outstanding_writes;
+	reg [9:0] infifo_usedw_pipe;
 	reg readholdoff = 0;
 
 	reg [21:0] temp_next_step_enddelta;
 	reg [9:0] temp_next_step_fifodelta;
+	reg [20:0] next_ptr_pipe;
+	reg [20:0] end_ptr_pipe;
 
 	always @(posedge clk) begin : proc_sdraminterface
 
 		outstanding_transfers <= outstanding_transfers - master_readdatavalid + ((master_read & ~master_waitrequest) ? master_burstcount : 0);
+		infifo_usedw_pipe <= infifo_usedw;
 		willread = 0;
 
 		if (start_pulse && ~isrunning) begin
@@ -116,10 +120,12 @@ module notchfilter #(
 			writestate <= 0;
 		end
 
-		temp_next_step_enddelta = (end_ptr - next_ptr)/2;
-		temp_next_step_fifodelta = 512 - infifo_usedw - outstanding_transfers;
+		temp_next_step_enddelta <= (end_ptr - next_ptr)/2; //fine to pipe here
+		temp_next_step_fifodelta = 512 - infifo_usedw_pipe - outstanding_transfers; //do not pipe, inputs piped
+		next_ptr_pipe <= next_ptr;
+		end_ptr_pipe <= end_ptr;
 
-		if (infifo_usedw + outstanding_transfers >= 512 || next_ptr > end_ptr) begin
+		if (infifo_usedw_pipe + outstanding_transfers >= 512 || next_ptr_pipe > end_ptr_pipe) begin
 			temp_next_step = 0;
 		end
 		else begin
@@ -133,12 +139,12 @@ module notchfilter #(
 		if (isrunning) begin
 
 			if ((~master_waitrequest || ~master_read) && ~writestate) begin //are we allowed to make a new request?
-				if (next_ptr <= end_ptr) begin
+				if (next_ptr_pipe <= end_ptr_pipe) begin
 
 					if (temp_next_step >= 32 && ~readholdoff) begin //only read if we will read more than 32 words (use readholdoff to holdoff 1 cycle due to outstanding_transfers pipeline)
-						master_address <= {input_base_ptr, next_ptr};
+						master_address <= {input_base_ptr, next_ptr_pipe};
 						master_burstcount = temp_next_step;
-						next_ptr <= next_ptr + master_burstcount*2;
+						next_ptr <= next_ptr_pipe + master_burstcount*2;
 
 						master_read <= 1;
 						willread = 1;
