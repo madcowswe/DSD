@@ -45,7 +45,7 @@ module notchfilter #(
 	reg [32:21] input_base_ptr;
 	reg [20:0] input_ptr;
 	reg [20:0] end_ptr;
-	reg [31:0] next_write_ptr = 32'h00c00000; //TEMP!!!
+	reg [31:0] next_write_ptr;
 
 	wire [15:0] filtercore_in;
 	wire [15:0] filtercore_out;
@@ -112,6 +112,7 @@ module notchfilter #(
 
 		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
+			next_write_ptr = 32'h00c00000; //TEMP!!!
 			master_burstcount = 512;
 			master_address <= {input_base_ptr, input_ptr};
 			outstanding_transfers <= 0;

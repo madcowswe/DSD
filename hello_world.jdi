@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="2d2af166cfab42b31abb"/>
+    <hash md5_digest_80b="c1452ee6283c5cc084c2"/>
   </project>
   <file_info>
-    <file checksum="0x00522CB1" device="EP3C16F484C6" path="hello_world_time_limited.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x00527A5B" device="EP3C16F484C6" path="hello_world_time_limited.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info ir_width="2" node_count="3"/>
   <node_info>

@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 15, 2013 7:27:27 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1363332447205</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>15-Mar-2013 08:12:11</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1363335131019</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
-        <BspSettingsFile>C:\Users\Oskar\Documents\DSD\software\dsd_bsp\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
@@ -794,7 +794,7 @@
                 <SettingName>hal.enable_sim_optimize</SettingName>
                 <Identifier>ALT_SIM_OPTIMIZE</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>The BSP is compiled with optimizations to speedup HDL simulation such as initializing the cache, clearing the .bss section, and skipping long delay loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk.</Description>

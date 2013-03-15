@@ -106,7 +106,7 @@ int main()
 {
 
 	IOWR(NOTCHFILTER_0_BASE, 0, _binary_beeth5_noise_bin_start);
-	IOWR(NOTCHFILTER_0_BASE, 1, (int)_binary_beeth5_noise_bin_start + 0x2000);// 0x001d6490);
+	IOWR(NOTCHFILTER_0_BASE, 1, (int)_binary_beeth5_noise_bin_start + 0x001d6490);
 
 
 	//barrier for old tests--------------------------------
@@ -171,6 +171,6 @@ int main()
 	return 0;
 }
 
-int alt_main(){
-	return main();
-}
+//int alt_main(){
+//	return main();
+//}
