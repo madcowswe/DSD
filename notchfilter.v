@@ -42,8 +42,9 @@ module notchfilter #(
 	wire [9:0] outfifo_usedw;
 
 	reg start_pulse = 0;
-	reg [31:0] input_ptr;
-	reg [31:0] end_ptr;
+	reg [32:21] input_base_ptr;
+	reg [20:0] input_ptr;
+	reg [20:0] end_ptr;
 	reg [31:0] next_write_ptr = 32'h00c00000; //TEMP!!!
 
 	wire [15:0] filtercore_in;
@@ -87,7 +88,7 @@ module notchfilter #(
 
 	assign slave_readdata = filtercore_out; //TEMP, do proper interface
 
-	reg [31:0] next_ptr;
+	reg [20:0] next_ptr;
 	reg isrunning = 0;
 	reg [9:0] temp_next_step;
 	reg [9:0] outstanding_transfers;
@@ -95,6 +96,9 @@ module notchfilter #(
 	reg willread = 0;
 	reg [9:0] outstanding_writes;
 	reg readholdoff = 0;
+
+	reg [21:0] temp_next_step_enddelta;
+	reg [9:0] temp_next_step_fifodelta;
 
 	always @(posedge clk) begin : proc_sdraminterface
 
@@ -104,7 +108,7 @@ module notchfilter #(
 		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
 			master_burstcount = 512;
-			master_address <= input_ptr;
+			master_address <= {input_base_ptr, input_ptr};
 			outstanding_transfers <= 0;
 			isrunning <= 1;
 			master_read <= 1;
@@ -112,11 +116,14 @@ module notchfilter #(
 			writestate <= 0;
 		end
 
-		if (infifo_usedw + outstanding_transfers >= 512) begin
+		temp_next_step_enddelta = (end_ptr - next_ptr)/2;
+		temp_next_step_fifodelta = 512 - infifo_usedw - outstanding_transfers;
+
+		if (infifo_usedw + outstanding_transfers >= 512 || next_ptr > end_ptr) begin
 			temp_next_step = 0;
 		end
 		else begin
-			temp_next_step = (end_ptr - next_ptr)/2 ? 512 - infifo_usedw - outstanding_transfers : (end_ptr - next_ptr)/2;
+			temp_next_step = (temp_next_step_enddelta > temp_next_step_fifodelta) ? temp_next_step_fifodelta : temp_next_step_enddelta;
 		end
 
 		readholdoff <= readholdoff;
@@ -129,7 +136,7 @@ module notchfilter #(
 				if (next_ptr <= end_ptr) begin
 
 					if (temp_next_step >= 32 && ~readholdoff) begin //only read if we will read more than 32 words (use readholdoff to holdoff 1 cycle due to outstanding_transfers pipeline)
-						master_address <= next_ptr;
+						master_address <= {input_base_ptr, next_ptr};
 						master_burstcount = temp_next_step;
 						next_ptr <= next_ptr + master_burstcount*2;
 
@@ -158,7 +165,7 @@ module notchfilter #(
 				end
 			end
 
-			if (master_write && ~master_waitrequest) begin
+			if (master_write && ~master_waitrequest) begin //do write
 				outstanding_writes <= outstanding_writes - 1;
 				if (outstanding_writes == 1) begin
 					master_write <= 0;
@@ -179,9 +186,9 @@ module notchfilter #(
 		if (slave_write) begin
 			case (slave_address)
 				0:
-					input_ptr <= slave_writedata;
+					{input_base_ptr, input_ptr} <= slave_writedata;
 				1: begin
-					end_ptr <= slave_writedata;
+					end_ptr <= slave_writedata[20:0];
 					start_pulse <= 1;
 				end
 

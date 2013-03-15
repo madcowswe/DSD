@@ -1,0 +1,31 @@
+diff --git a/notchfilter.v b/notchfilter.v
+index 1dd2de5..be5a3b8 100644
+--- a/notchfilter.v
++++ b/notchfilter.v
+@@ -96,6 +96,9 @@ module notchfilter #(
+        reg [9:0] outstanding_writes;
+        reg readholdoff = 0;
+
++       reg [23:0] temp_next_step_enddelta;
++       reg [9:0] temp_next_step_fifodelta;
++
+        always @(posedge clk) begin : proc_sdraminterface
+
+                outstanding_transfers <= outstanding_transfers - master_readdatavalid + ((master_read & ~master_waitrequest) ? master_burstcount : 0);
+@@ -112,11 +115,14 @@ module notchfilter #(
+                        writestate <= 0;
+                end
+
+-               if (infifo_usedw + outstanding_transfers >= 512) begin
++               temp_next_step_enddelta = (end_ptr - next_ptr)/2;
++               temp_next_step_fifodelta = 512 - infifo_usedw - outstanding_transfers;
++
++               if (infifo_usedw + outstanding_transfers >= 512 || next_ptr > end_ptr) begin
+                        temp_next_step = 0;
+                end
+                else begin
+-                       temp_next_step = (end_ptr - next_ptr)/2 ? 512 - infifo_usedw - outstanding_transfers : (end_ptr - next_ptr)/2;
++                       temp_next_step = (temp_next_step_enddelta > temp_next_step_fifodelta) ? temp_next_step_fifodelta : temp_next_step_enddelta;
+                end
+
+                readholdoff <= readholdoff;
