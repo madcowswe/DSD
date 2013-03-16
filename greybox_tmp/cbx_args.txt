@@ -1,5 +1,4 @@
 ADD_USEDW_MSB_BIT=ON
-INTENDED_DEVICE_FAMILY="Cyclone III"
 LPM_NUMWORDS=512
 LPM_SHOWAHEAD=ON
 LPM_TYPE=dcfifo
@@ -17,5 +16,5 @@ rdreq
 wrclk
 wrreq
 q
-rdusedw
-wrfull
+rdempty
+wrusedw

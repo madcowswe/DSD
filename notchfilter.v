@@ -28,7 +28,8 @@ module notchfilter #(
 		input  wire        master_readdatavalid,         //                 .readdatavalid
 		input  wire        clk,                //       clock_sink.clk
 		input  wire        reset,              // clock_sink_reset.reset
-		input  wire        core_clk
+		input  wire        core_clk,
+		output reg         irq = 0
 	);
 
 	// TODO: Auto-generated HDL template
