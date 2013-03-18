@@ -19,11 +19,11 @@
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_mux_002" />
+   library="rsp_xbar_mux_001" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_002.sv"
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_xbar_mux_002" />
+   library="rsp_xbar_mux_001" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
@@ -32,6 +32,10 @@
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv"
    type="SYSTEM_VERILOG"
    library="rsp_xbar_mux" />
+ <file
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_xbar_demux_002" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv"
    type="SYSTEM_VERILOG"
@@ -56,10 +60,6 @@
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv"
    type="SYSTEM_VERILOG"
    library="cmd_xbar_mux" />
- <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_003.sv"
-   type="SYSTEM_VERILOG"
-   library="cmd_xbar_demux_003" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv"
    type="SYSTEM_VERILOG"
@@ -109,10 +109,6 @@
    type="SYSTEM_VERILOG"
    library="id_router" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_003.sv"
-   type="SYSTEM_VERILOG"
-   library="addr_router_003" />
- <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_002.sv"
    type="SYSTEM_VERILOG"
    library="addr_router_002" />
@@ -152,10 +148,6 @@
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/notchfilter.v"
    type="VERILOG"
    library="notchfilter_0" />
- <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v"
-   type="VERILOG"
-   library="determinant_0" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v"
    type="VERILOG"

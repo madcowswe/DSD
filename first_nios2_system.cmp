@@ -11,8 +11,7 @@
 			sdram_0_wire_dq                    : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
 			sdram_0_wire_dqm                   : out   std_logic_vector(1 downto 0);                     -- dqm
 			sdram_0_wire_ras_n                 : out   std_logic;                                        -- ras_n
-			sdram_0_wire_we_n                  : out   std_logic;                                        -- we_n
-			clock_bridge_0_out_clk_clk         : out   std_logic                                         -- clk
+			sdram_0_wire_we_n                  : out   std_logic                                         -- we_n
 		);
 	end component first_nios2_system;
 

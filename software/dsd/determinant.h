@@ -1,4 +1,5 @@
 #ifndef _DETERMINANT_H
+#define _DETERMINANT_H
 
 #include "system.h"
 #include <io.h>

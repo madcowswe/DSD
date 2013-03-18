@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Fri Mar 15 08:12:11 GMT 2013
+ * Generated: Mon Mar 18 08:05:57 GMT 2013
  */
 
 /*
@@ -133,7 +133,6 @@
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_QSYS
-#define __DETERMINANT
 #define __NOTCHFILTER
 
 
@@ -171,20 +170,6 @@
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "first_nios2_system"
-
-
-/*
- * determinant_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_determinant_0 determinant
-#define DETERMINANT_0_BASE 0x1001038
-#define DETERMINANT_0_IRQ 20
-#define DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define DETERMINANT_0_NAME "/dev/determinant_0"
-#define DETERMINANT_0_SPAN 8
-#define DETERMINANT_0_TYPE "determinant"
 
 
 /*
@@ -333,7 +318,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1363334927
+#define SYSID_TIMESTAMP 1363593336
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

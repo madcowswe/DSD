@@ -28,8 +28,7 @@ module notchfilter #(
 		input  wire        master_readdatavalid,         //                 .readdatavalid
 		input  wire        clk,                //       clock_sink.clk
 		input  wire        reset,              // clock_sink_reset.reset
-		input  wire        core_clk,
-		output reg         irq = 0
+		input  wire        core_clk
 	);
 
 	// TODO: Auto-generated HDL template
@@ -87,7 +86,6 @@ module notchfilter #(
 		.filter_out ( filtercore_out )
 	);
 
-	assign slave_readdata = filtercore_out; //TEMP, do proper interface
 
 	reg [20:0] next_ptr;
 	reg isrunning = 0;
@@ -104,6 +102,19 @@ module notchfilter #(
 	reg [9:0] temp_next_step_fifodelta;
 	reg [20:0] next_ptr_pipe;
 	reg [20:0] end_ptr_pipe;
+
+	reg [31:0] performancetimer = 0;
+
+	assign slave_readdata = slave_address ? performancetimer : {31'b0000000000000000000000000000000, isrunning};
+
+	always @(posedge clk) begin : proc_performancetiming
+		if (isrunning) begin
+			performancetimer <= performancetimer + 1;
+		end
+		if (start_pulse) begin
+			performancetimer <= 0;
+		end
+	end
 
 	always @(posedge clk) begin : proc_sdraminterface
 
