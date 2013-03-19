@@ -779,7 +779,7 @@ inline unsigned int notch_performance(){
 0080028c <main>:
 extern short _binary_beeth5_noise_bin_start[];
 extern short _binary_beeth5_noise_bin_end[];
-//extern int _binary_beeth5_noise_bin_size;
+extern int _binary_beeth5_noise_bin_size;
 
 int main()
 {
@@ -793,14 +793,20 @@ int main()
   8002a4:	01403f74 	movhi	r5,253
   8002a8:	29592404 	addi	r5,r5,25744
   8002ac:	08001f80 	call	8001f8 <start_notch>
+
+	//The notch filtering will be conducted in the background.
+	//Code to perform other useful tasks can be put here.
 	while(notch_busy());
   8002b0:	08001d00 	call	8001d0 <notch_busy>
   8002b4:	1004c03a 	cmpne	r2,r2,zero
   8002b8:	103ffd1e 	bne	r2,zero,8002b0 <main+0x24>
+
+	//Read performance counter
 	unsigned int performance = notch_performance();
   8002bc:	08002640 	call	800264 <notch_performance>
   8002c0:	e0bffb15 	stw	r2,-20(fp)
 
+	//Print time taken for filtering operation
 	char buf[16];
 	gcvt((float)performance/ALT_CPU_FREQ, 10, buf);
   8002c4:	e13ffb17 	ldw	r4,-20(fp)

@@ -171,7 +171,7 @@ module notchfilter #(
 				end
 				else begin
 					master_read <= 0;
-					readstagedone <= 1; //TODO dont stop running untill output is flushed too
+					readstagedone <= 1;
 				end
 			end
 
