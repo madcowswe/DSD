@@ -2,7 +2,6 @@
 *.o
 *.rpt
 *.pof
-*.sof
 *.pin
 *.summary
 *.lck
