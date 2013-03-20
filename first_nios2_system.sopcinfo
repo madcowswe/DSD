@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 12.1 177 (Future versions may contain additional information.) -->
- <!-- 2013.03.20.00:04:03 -->
+ <!-- 2013.03.20.00:54:49 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1363737843</value>
+  <value>1363740889</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -4121,7 +4121,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1363737843</value>
+   <value>1363740889</value>
   </assignment>
   <parameter name="id">
    <type>int</type>
@@ -4133,7 +4133,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1363737843</value>
+   <value>1363740889</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>false</visible>

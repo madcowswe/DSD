@@ -125,7 +125,7 @@ module notchfilter #(
 
 		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
-			next_write_ptr = 32'h00c00000;//out_ptr; //TEMP!!!
+			next_write_ptr = out_ptr;
 			master_burstcount = 512;
 			master_address <= {input_base_ptr, input_ptr};
 			outstanding_transfers <= 0;
