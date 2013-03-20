@@ -8,11 +8,12 @@ inline int notch_busy(){
 	return IORD(NOTCHFILTER_0_BASE,0);
 }
 
-inline int start_notch(short* ptrstart, short* ptrend){
+inline int start_notch(short* ptrstart, short* ptrend, short* ptrout){
 	if (notch_busy()){
 		return -1;
 	} else {
 		IOWR(NOTCHFILTER_0_BASE, 0, ptrstart);
+		IOWR(NOTCHFILTER_0_BASE, 2, ptrout);
 		IOWR(NOTCHFILTER_0_BASE, 1, ptrend);
 		return 0;
 	}

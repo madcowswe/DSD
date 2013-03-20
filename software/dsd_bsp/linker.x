@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/Users/Oskar/Documents/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Fri Mar 15 06:12:55 GMT 2013
+ * Generated: Tue Mar 19 23:47:24 GMT 2013
  */
 
 /*
@@ -123,6 +123,14 @@ SECTIONS
         . = ALIGN(4);
         PROVIDE (_alt_partition_beeth_end = ABSOLUTE(.));
     } > beeth
+
+    beethout :
+    {
+        PROVIDE (_alt_partition_beethout_start = ABSOLUTE(.));
+        *(beethout beethout.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_beethout_end = ABSOLUTE(.));
+    } > beethout
 
     .text :
     {

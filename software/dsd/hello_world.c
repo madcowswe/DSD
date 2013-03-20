@@ -10,9 +10,15 @@ extern short _binary_beeth5_noise_bin_start[];
 extern short _binary_beeth5_noise_bin_end[];
 extern int _binary_beeth5_noise_bin_size;
 
+extern short _alt_partition_beethout_start[];
+
 int main()
 {
-	start_notch(_binary_beeth5_noise_bin_start, _binary_beeth5_noise_bin_end);
+	start_notch(
+			_binary_beeth5_noise_bin_start,
+			_binary_beeth5_noise_bin_end,
+			_alt_partition_beethout_start
+			);
 
 	//The notch filtering will be conducted in the background.
 	//Code to perform other useful tasks can be put here.
@@ -25,6 +31,12 @@ int main()
 	char buf[16];
 	gcvt((float)performance/ALT_CPU_FREQ, 10, buf);
 	alt_putstr(" proc time = "); alt_putstr(buf); alt_putstr(" seconds \n");
+
+	//start_notch(
+	//		_binary_beeth5_noise_bin_start,
+	//		_binary_beeth5_noise_bin_end,
+	//		PWM_0_BASE
+	//		);
 
 	while(1);
 }

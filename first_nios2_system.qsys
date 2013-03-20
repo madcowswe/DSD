@@ -159,6 +159,35 @@
          type = "boolean";
       }
    }
+   element pwm_0
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element led_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "16781344";
+         type = "String";
+      }
+   }
+   element sdram_0.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "8388608";
+         type = "String";
+      }
+   }
    element onchip_mem.s1
    {
       datum baseAddress
@@ -167,27 +196,11 @@
          type = "long";
       }
    }
-   element sdram_0.s1
-   {
-      datum baseAddress
-      {
-         value = "8388608";
-         type = "String";
-      }
-   }
    element sys_clk_timer.s1
    {
       datum baseAddress
       {
          value = "16781312";
-         type = "String";
-      }
-   }
-   element led_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "16781344";
          type = "String";
       }
    }
@@ -245,7 +258,7 @@
  <parameter name="projectName" value="hello_world.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1363326063336" />
+ <parameter name="timeStamp" value="1363736111861" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -262,6 +275,7 @@
    type="clock"
    dir="start" />
  <interface name="clock_bridge_0_out_clk" internal="clock_bridge_0.out_clk" />
+ <interface name="pwm_0_pwm_out" internal="pwm_0.pwm_out" />
  <module kind="clock_source" version="12.1" enabled="1" name="clk_0">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -386,7 +400,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='sys_clk_timer.s1' start='0x1001000' end='0x1001020' /><slave name='led_pio.s1' start='0x1001020' end='0x1001030' /><slave name='notchfilter_0.avalon_slave' start='0x1001030' end='0x1001038' /><slave name='sysid.control_slave' start='0x1001040' end='0x1001048' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001048' end='0x1001050' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='cpu.jtag_debug_module' start='0x1000800' end='0x1001000' /><slave name='sys_clk_timer.s1' start='0x1001000' end='0x1001020' /><slave name='led_pio.s1' start='0x1001020' end='0x1001030' /><slave name='notchfilter_0.avalon_slave' start='0x1001030' end='0x1001040' /><slave name='sysid.control_slave' start='0x1001040' end='0x1001048' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1001048' end='0x1001050' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="160000000" />
   <parameter name="deviceFamilyName" value="Cyclone III" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
@@ -668,8 +682,8 @@
  </module>
  <module kind="notchfilter" version="1.0" enabled="1" name="notchfilter_0">
   <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="160000000" />
-  <parameter name="AUTO_CLOCK_SINK_CORE_CLOCK_RATE" value="80000000" />
  </module>
+ <module kind="pwm" version="1.0" enabled="0" name="pwm_0" />
  <connection
    kind="avalon"
    version="12.1"
@@ -828,32 +842,6 @@
    version="12.1"
    start="altpll_0.c1"
    end="determinant_0.clock_sink" />
- <connection
-   kind="avalon"
-   version="12.1"
-   start="notchfilter_0.avalon_master"
-   end="sdram_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00800000" />
- </connection>
- <connection
-   kind="avalon"
-   version="12.1"
-   start="cpu.data_master"
-   end="notchfilter_0.avalon_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001030" />
- </connection>
- <connection
-   kind="reset"
-   version="12.1"
-   start="clk_0.clk_reset"
-   end="notchfilter_0.clock_sink_reset" />
- <connection
-   kind="clock"
-   version="12.1"
-   start="altpll_0.c1"
-   end="notchfilter_0.clock_sink" />
  <connection kind="clock" version="12.1" start="altpll_0.c1" end="sdram_0.clk" />
  <connection kind="clock" version="12.1" start="altpll_0.c1" end="led_pio.clk" />
  <connection
@@ -863,10 +851,58 @@
    end="sys_clk_timer.clk" />
  <connection kind="clock" version="12.1" start="altpll_0.c1" end="sysid.clk" />
  <connection kind="clock" version="12.1" start="altpll_0.c1" end="cpu.clk" />
+ <connection kind="clock" version="12.1" start="altpll_0.c1" end="jtag_uart.clk" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="altpll_0.c1"
+   end="notchfilter_0.clock_sink" />
  <connection
    kind="clock"
    version="12.1"
    start="altpll_0.c2"
    end="notchfilter_0.clock_sink_core" />
- <connection kind="clock" version="12.1" start="altpll_0.c1" end="jtag_uart.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="notchfilter_0.clock_sink_reset" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="notchfilter_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001030" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="notchfilter_0.avalon_master"
+   end="sdram_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00800000" />
+ </connection>
+ <connection kind="clock" version="12.1" start="clk_0.clk" end="pwm_0.clock_sink" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="pwm_0.reset_sink" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="notchfilter_0.avalon_master"
+   end="pwm_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="pwm_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
 </system>

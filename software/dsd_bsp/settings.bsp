@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>18-Mar-2013 08:12:33</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1363594353957</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>20-Mar-2013 00:26:20</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1363739180653</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Oskar\Documents\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Oskar\Documents\DSD\first_nios2_system.sopcinfo</SopcDesignFile>
@@ -902,8 +902,8 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>notchfilter_0</slaveDescriptor>
-                <addressRange>0x01001030 - 0x01001037</addressRange>
-                <addressSpan>8</addressSpan>
+                <addressRange>0x01001030 - 0x0100103F</addressRange>
+                <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
@@ -945,5 +945,9 @@
         <LinkerSection>
                 <sectionName>beeth</sectionName>
                 <regionName>beeth</regionName>
+        </LinkerSection>
+        <LinkerSection>
+                <sectionName>beethout</sectionName>
+                <regionName>beethout</regionName>
         </LinkerSection>
 </sch:Settings>

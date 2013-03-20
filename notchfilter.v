@@ -12,7 +12,7 @@
 module notchfilter #(
 		parameter AUTO_CLOCK_SINK_CLOCK_RATE = "-1"
 	) (
-		input  wire        slave_address,      //     avalon_slave.address
+		input  wire [1:0]  slave_address,      //     avalon_slave.address
 		input  wire        slave_read,         //                 .read
 		output wire [31:0] slave_readdata,     //                 .readdata
 		output wire        slave_waitrequest,  //                 .waitrequest
@@ -45,6 +45,7 @@ module notchfilter #(
 	reg [32:21] input_base_ptr;
 	reg [20:0] input_ptr;
 	reg [20:0] end_ptr;
+	reg [31:0] out_ptr = 32'h00c00000; //default
 	reg [31:0] next_write_ptr;
 
 	wire [15:0] filtercore_in;
@@ -124,7 +125,7 @@ module notchfilter #(
 
 		if (start_pulse && ~isrunning) begin
 			next_ptr <= input_ptr + 512*2;
-			next_write_ptr = 32'h00c00000; //TEMP!!!
+			next_write_ptr = 32'h00c00000;//out_ptr; //TEMP!!!
 			master_burstcount = 512;
 			master_address <= {input_base_ptr, input_ptr};
 			outstanding_transfers <= 0;
@@ -212,10 +213,14 @@ module notchfilter #(
 			case (slave_address)
 				0:
 					{input_base_ptr, input_ptr} <= slave_writedata;
+
 				1: begin
 					end_ptr <= slave_writedata[20:0];
 					start_pulse <= 1;
 				end
+
+				2:
+					out_ptr <= slave_writedata;
 
 			   	default : ;
 			endcase
